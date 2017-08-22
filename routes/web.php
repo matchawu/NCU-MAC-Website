@@ -58,6 +58,21 @@ Route::get('/openclass/classmanage/class',function(){
   return view('openclass.class');
 });
 
+//單位申請
+Route::get('/application', function () {
+    return view('application.index');
+});
+
+Route::get('/application/form1', function () {
+    return view('application.form1');
+});
+Route::get('/application/form2', function () {
+    return view('application.form2');
+});
+Route::get('/application/form3', function () {
+    return view('application.form3');
+});
+
 //歷年紀錄
 Route::get('record', function () {
     return view('record.index');
