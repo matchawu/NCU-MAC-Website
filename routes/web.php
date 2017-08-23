@@ -62,7 +62,15 @@ Route::get('/openclass/classmanage/class',function(){
 Route::get('/application', function () {
     return view('application.index');
 });
-
+Route::get('/application/login', function () {
+    return view('application.login');
+});
+Route::get('/application/form', function () {
+    return view('application.form');
+});
+Route::get('/application/form0', function () {
+    return view('application.form0');
+});
 Route::get('/application/form1', function () {
     return view('application.form1');
 });

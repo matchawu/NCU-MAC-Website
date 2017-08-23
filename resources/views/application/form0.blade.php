@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '登入申請')
+@section('title', '選擇課程屬性')
 
 @section('content')
 <div class="container">
@@ -18,32 +18,7 @@
 <legend><b>開課單位申請</b></legend>
 
 <div class="alert alert-info">
-  <strong>初次使用? </strong> 申請流程請參照 <a href="{{ url('/introduce') }}" class="alert-link">微學分課程申請簡介。</a>
-</div>
-
-<!-- 此處input name尚未更改 -->
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">申請帳號</label>
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="ID" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">申請密碼</label>
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input  name="first_name" placeholder="password" class="form-control"  type="password">
-    </div>
-  </div>
+  <strong>如何區分課程屬性? </strong> 請參照 <a href="{{ url('/introduce') }}" class="alert-link">微學分課程申請教學。</a>
 </div>
 
 <!-- Success message -->
@@ -54,8 +29,14 @@
   <!-- <label class="col-md-4 control-label"></label>
   <div class="col-md-4"> -->
   <center>
-    <a href="{{ url('/application/login') }}">
-    <button type="button" class="btn btn-primary">登入<span class="glyphicon glyphicon-log-in"></span></button>
+    <a href="{{ url('/application/form1') }}" data-toggle="tooltip" title="獨立開授之課程，一次性課程">
+    <button type="button" class="btn btn-success btn-md">個別課程 <span class="glyphicon glyphicon-log-in"></span></button>
+    </a>
+    <a href="{{ url('/application/form2') }}" data-toggle="tooltip" title="一整套的課程，需安排各次上課進度及內容">
+    <button type="button" class="btn btn-info btn-md">模組課程 <span class="glyphicon glyphicon-log-in"></span></button>
+    </a>
+    <a href="{{ url('/application/form3') }}" data-toggle="tooltip" title="學校已有的課程，其中幾堂特別公開授課">
+    <button type="button" class="btn btn-warning btn-md">碎形課程 <span class="glyphicon glyphicon-log-in"></span></button>
     </a>
   </center>
   <!-- </div> -->
@@ -65,6 +46,8 @@
 </form>
 </div>
 </div>
+
+
 @endsection
 
 @section('css')
