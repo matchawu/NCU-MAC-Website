@@ -33,10 +33,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class="info">
         <td>1</td>
         <td>python</td>
-        <td>碎形課程</td>
+        <td>模組課程</td>
         <td>10</td>
         <td>10</td>
         <td>2017/08/30</td>
@@ -55,7 +55,7 @@
           </a>
         </td>
       </tr>
-      <tr>
+      <tr class="warning">
         <td>2</td>
         <td>孤帆遠影畢書盡</td>
         <td>碎形課程</td>
@@ -65,10 +65,10 @@
         <td></td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="success">
         <td>3</td>
         <td>python</td>
-        <td>碎形課程</td>
+        <td>個別課程</td>
         <td>10</td>
         <td>10</td>
         <td>2017/08/30</td>

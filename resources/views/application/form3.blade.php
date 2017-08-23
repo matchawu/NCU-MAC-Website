@@ -49,7 +49,7 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">課程類別</label>
+  <label class="col-md-4 control-label">課程領域</label>
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
@@ -77,7 +77,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="last_name" placeholder="請輸入系館中文名稱及教室號碼" class="form-control"  type="text">
+  <input name="last_name" placeholder="請輸入上課地點" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -88,7 +88,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-  <input name="email" placeholder="ex. 星期二 9:00-12:00" class="form-control"  type="text">
+  <input name="email" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -103,6 +103,30 @@
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="phone" placeholder="請輸入授課講師中文名字" class="form-control" type="text">
     </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">聯絡方式</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="phone" placeholder="請填入Email或手機號碼" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text area -->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">講師介紹</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
+          <textarea class="form-control full" name="comment" placeholder="講師背景及專長介紹"></textarea>
+  </div>
   </div>
 </div>
 
@@ -136,7 +160,7 @@
   <label class="col-md-4 control-label" data-toggle="tooltip" title="Hooray!">課程簡介</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
           <textarea class="form-control full" name="comment" placeholder="課程介紹"></textarea>
   </div>
   </div>
