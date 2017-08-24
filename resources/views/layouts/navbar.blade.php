@@ -20,7 +20,7 @@
                         <a href="{{ url('/openclass') }}">開課單位入口</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="{{ url('/student') }}">學生單位入口</a>
+                        <a href="{{ url('/application') }}">開課單位登入</a>
                     </li>
                     <li class="page-scroll">
                         <a href="{{ url('/record') }}">歷年紀錄</a>

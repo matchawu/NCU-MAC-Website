@@ -15,10 +15,11 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend><b>開課單位申請</b></legend>
+<legend><b>選擇課程屬性</b></legend>
 
 <div class="alert alert-info">
-  <strong>如何區分課程屬性? </strong> 請參照 <a href="{{ url('/introduce') }}" class="alert-link">微學分課程申請教學。</a>
+  <strong>如何區分課程屬性? </strong> 請參照 <a href="{{ url('/introduce') }}" class="alert-link">微學分課程開設教學。</a>
+  <!-- 應該要跳到屬性介紹的區塊# -->
 </div>
 
 <!-- Success message -->
