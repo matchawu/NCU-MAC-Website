@@ -58,15 +58,24 @@ Route::get('/openclass/classmanage/class',function(){
   return view('openclass.class');
 });
 
-//單位申請
+//application
 Route::get('/application', function () {
     return view('application.index');
 });
 Route::get('/application/login', function () {
     return view('application.login');
 });
-Route::get('/application/form', function () {
-    return view('application.form');
+Route::get('/application/class', function () {
+    return view('application.class');
+});
+Route::get('/application/edit01', function () {
+    return view('application.edit01');
+});
+Route::get('/application/edit02', function () {
+    return view('application.edit02');
+});
+Route::get('/application/edit03', function () {
+    return view('application.edit03');
 });
 Route::get('/application/form0', function () {
     return view('application.form0');
@@ -79,6 +88,9 @@ Route::get('/application/form2', function () {
 });
 Route::get('/application/form3', function () {
     return view('application.form3');
+});
+Route::get('/application/finish', function () {
+    return view('application.finish');
 });
 
 //歷年紀錄

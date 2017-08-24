@@ -8,62 +8,61 @@
     <b></b>
   </h2>
 </div>
+
 <div class="container col-sm-2">
 </div>
+
 <div class="container col-sm-8">
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-<fieldset>
+  <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <fieldset>
 
-<!-- Form Name -->
-<legend><b>開課單位申請</b></legend>
+    <!-- Form Name -->
+    <legend><b>開課單位登入</b></legend>
 
-<div class="alert alert-info">
-  <strong>初次使用? </strong> 申請流程請參照 <a href="{{ url('/introduce') }}" class="alert-link">微學分課程申請簡介。</a>
-</div>
-
-<!-- 此處input name尚未更改 -->
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">申請帳號</label>
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="ID" class="form-control"  type="text">
+    <!-- alert -->
+    <div class="alert alert-info">
+      <strong>初次使用? </strong> 申請流程請參照 <a href="{{ url('/introduce') }}" class="alert-link">微學分課程開課資格申請流程。</a>
     </div>
-  </div>
-</div>
 
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">申請密碼</label>
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input  name="first_name" placeholder="password" class="form-control"  type="password">
+    <!-- 此處input name尚未更改 -->
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label">申請帳號</label>
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input  name="first_name" placeholder="ID" class="form-control"  type="text">
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- Success message -->
-<!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div> -->
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label">申請密碼</label>
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input  name="first_name" placeholder="password" class="form-control"  type="password">
+        </div>
+      </div>
+    </div>
 
-<!-- Button -->
-<div class="form-group">
-  <!-- <label class="col-md-4 control-label"></label>
-  <div class="col-md-4"> -->
-  <center>
-    <a href="{{ url('/application/login') }}">
-    <button type="button" class="btn btn-primary">登入<span class="glyphicon glyphicon-log-in"></span></button>
-    </a>
-  </center>
-  <!-- </div> -->
-</div>
+    <!-- Button log in -->
+    <div class="form-group">
+      <center>
+        <a href="{{ url('/application/login') }}">
+          <button type="button" class="btn btn-primary">登入 <span class="glyphicon glyphicon-log-in"></span></button>
+        </a>
+      </center>
+    </div>
 
-</fieldset>
-</form>
-</div>
+    <!-- forget pwd -->
+    <center>
+      <h6><span class="glyphicon glyphicon-question-sign"></span> 忘記密碼請逕向教學發展中心聯繫</h6>
+    </center>
+
+    </fieldset>
+  </form>
 </div>
 @endsection
 

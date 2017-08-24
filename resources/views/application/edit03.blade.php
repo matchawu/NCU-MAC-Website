@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '碎形課程')
+@section('title', '編輯碎形課程')
 
 @section('content')
 <div class="container">
@@ -15,12 +15,10 @@
 <div class="container col-sm-10">
   <form class="well form-horizontal" action=" " method="post"  id="contact_form">
     <fieldset>
-
       <!-- Form Name -->
-      <legend><b>開設碎形課程</b></legend>
+      <legend><b>編輯碎形課程</b></legend>
 
       <!-- 此處input name尚未更改 -->
-
       <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label">開課學期</label>
@@ -175,11 +173,15 @@
         </div>
       </div>
 
-      <!-- Button submit -->
+      <!-- Button submit-->
       <div class="form-group">
         <center>
-          <a href="{{ url('/application/finish') }}">
-            <button type="submit" class="btn btn-success"> 送出申請表單 <span class="glyphicon glyphicon-send"></span></button>
+          <!-- 確認更改以後將資料回傳到login上面 顯示 -->
+          <a href="{{ url('/application/login') }}">
+            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 確認更改 </button>
+          </a>
+          <a href="{{ url('/application/login') }}">
+            <button type="button" class="btn btn-info">返回 <span class="glyphicon glyphicon-log-out"></span></button>
           </a>
         </center>
       </div>
@@ -193,6 +195,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+
+</script>
 @endsection
 
 @section('js')
