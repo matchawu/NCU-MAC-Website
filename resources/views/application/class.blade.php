@@ -3,6 +3,8 @@
 @section('title', '查看詳情')
 
 @section('content')
+<!-- 此頁未編輯 -->
+
 <!-- 各課程的 編輯 modal -->
 <!-- 個別課程 success-->
 <div class="modal fade" id="edit01" role="dialog">
