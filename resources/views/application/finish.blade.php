@@ -27,7 +27,7 @@
     <!-- Button log in -->
     <div class="form-group">
       <center>
-        <a href="{{ url('/application/login') }}">
+        <a href="{{ url('/application') }}">
           <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> 查看已開設課程</button>
         </a>
         <a href="{{ url('/Homepage') }}">
