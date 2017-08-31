@@ -59,36 +59,63 @@ Route::get('/openclass/classmanage/class',function(){
 });
 
 //application
-Route::get('/application', function () {
-    return view('application.index');
+//log in
+Route::get('/application', 'AppUserController@index');
+Route::get('/application/logout', 'AppUserController@logout');
+Route::post('/application', 'AppUserController@login');
+Route::post('/application/addappUser', 'AppUserController@register'
+);
+//manage
+Route::get('/application/mgt', function () {
+    return view('application.mgt');
 });
-Route::get('/application/login', function () {
-    return view('application.login');
-});
+//browse class
 Route::get('/application/class', function () {
     return view('application.class');
 });
-Route::get('/application/edit01', function () {
-    return view('application.edit01');
+//edit
+Route::get('/application/edit_single', function () {
+    return view('application.edit_single');
 });
-Route::get('/application/edit02', function () {
-    return view('application.edit02');
+Route::get('/application/edit_module', function () {
+    return view('application.edit_module');
 });
-Route::get('/application/edit03', function () {
-    return view('application.edit03');
+Route::get('/application/edit_fractal', function () {
+    return view('application.edit_fractal');
 });
-Route::get('/application/form0', function () {
-    return view('application.form0');
+Route::get('/application/choose', function () {
+    return view('application.choose');
 });
-Route::get('/application/form1', function () {
-    return view('application.form1');
-});
-Route::get('/application/form2', function () {
-    return view('application.form2');
-});
-Route::get('/application/form3', function () {
-    return view('application.form3');
-});
+//single
+Route::get('/application/single','Single_classController@index');
+Route::post('/application/single','Single_classController@store');
+//edit single
+Route::get('/application/edit_single/{id}','Single_classController@edit');
+Route::post('/application/edit_single/{id}','Single_classController@edit_fin');
+//delete single
+Route::get('/application/deleteSingle/{id}','Single_classController@delete');
+
+//module
+Route::get('/application/module','Module_classController@index');
+Route::post('/application/module','Module_classController@store');
+//edit module
+Route::get('/application/edit_module/{id}','Module_classController@index');
+Route::post('/application/edit_module/{id}','Module_classController@store');
+//add small module
+Route::post('/application/edit_module','ModuleController@store');
+Route::post('/application/add_module','ModuleController@store');
+//delete module
+Route::get('/application/deleteModule/{id}','Module_classController@delete');
+
+//fractal
+Route::get('/application/fractal','Fractal_classController@index');
+Route::post('/application/fractal','Fractal_classController@store');
+//edit fractal
+Route::get('/application/edit_fractal/{id}','Fractal_classController@edit');
+Route::post('/application/edit_fractal/{id}','Fractal_classController@edit_fin');
+//delete fractal
+Route::get('/application/deleteFractal/{id}','Fractal_classController@delete');
+//finish
 Route::get('/application/finish', function () {
     return view('application.finish');
 });

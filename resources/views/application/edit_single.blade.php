@@ -13,140 +13,140 @@
 </div>
 
 <div class="container col-sm-10">
-  <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+  <form class="well form-horizontal" action="{{asset('/application/edit_single')}}/{{$single_class->id}}" method="post"  id="contact_form">
     <fieldset>
       <!-- Form Name -->
       <legend><b>編輯個別課程</b></legend>
 
-      <!-- 此處input name尚未更改 -->
-      <!-- Text input-->
+      <!-- 此處input name更改 -->
+      <!-- Text term req-->
       <div class="form-group">
         <label class="col-md-4 control-label">開課學期</label>
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
-        <input  name="first_name" value="106-2" placeholder="ex. 106-1" class="form-control"  type="text">
+        <input  name="term" value="{{$single_class->term}}" placeholder="ex. 106-1" class="form-control"  type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text name req-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程名稱</label>
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="first_name" value="python" placeholder="課程中文名稱" class="form-control"  type="text">
+        <input  name="name" value="{{$single_class->name}}" placeholder="課程中文名稱" class="form-control"  type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text field req-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程領域</label>
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="first_name" value="程式設計" placeholder="人文藝術、" class="form-control"  type="text">
+        <input  name="field" value="{{$single_class->field}}" placeholder="人文藝術、" class="form-control"  type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text location req-->
       <div class="form-group">
         <label class="col-md-4 control-label" >上課地點</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input name="last_name" value="綜教館204" placeholder="請輸入上課地點" class="form-control"  type="text">
+        <input name="location" value="{{$single_class->location}}" placeholder="請輸入上課地點" class="form-control"  type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text time req-->
       <div class="form-group">
         <label class="col-md-4 control-label">上課時間</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="email" value="9/20 5:00-7:00" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="text">
+        <input name="time" value="{{$single_class->time}}" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text limit req-->
       <div class="form-group">
         <label class="col-md-4 control-label">人數限制</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-        <input name="email" value="50" placeholder="ex. 50" class="form-control"  type="text">
+        <input name="limit" value="{{$single_class->limit}}" placeholder="ex. 50" class="form-control"  type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text teacher req-->
       <div class="form-group">
         <label class="col-md-4 control-label">講師姓名</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="phone" value="承師傅" placeholder="請輸入授課講師中文名字" class="form-control" type="text">
+        <input name="teacher" value="{{$single_class->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text email req-->
       <div class="form-group">
         <label class="col-md-4 control-label">聯絡方式</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input name="phone" value="0919530742" placeholder="請填入Email或手機號碼" class="form-control" type="text">
+        <input name="email" value="{{$single_class->email}}" placeholder="請填入Email或手機號碼" class="form-control" type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text area -->
+      <!-- textarea no_req teacher_intro -->
       <div class="form-group">
         <label class="col-md-4 control-label">講師介紹</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
-                <textarea class="form-control full" name="comment" placeholder="講師背景及專長介紹">承師傅就是就是熊孩子</textarea>
+                <textarea class="form-control full" name="teacher_intro" placeholder="講師背景及專長介紹">{{$single_class->teacher_intro}}</textarea>
         </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text class_hr req-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程時數</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-        <input name="address" value="2" placeholder="本課程上課總時數(hr)" class="form-control" type="text">
+        <input name="class_hr" value="{{$single_class->class_hr}}" placeholder="本課程上課總時數(hr)" class="form-control" type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text input-->
+      <!-- Text auth_hr req-->
       <div class="form-group">
         <label class="col-md-4 control-label">認證時數</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-        <input name="address" value="2" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text">
+        <input name="auth_hr" value="{{$single_class->auth_hr}}" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text">
           </div>
         </div>
       </div>
 
-      <!-- Text area -->
+      <!-- Textarea class_intro no_req -->
       <div class="form-group">
         <label class="col-md-4 control-label" data-toggle="tooltip" title="Hooray!">課程簡介</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-                <textarea class="form-control full" name="comment" placeholder="課程介紹">你好你好今天天氣真好</textarea>
+                <textarea class="form-control full" name="class_intro" placeholder="課程介紹">{{$single_class->class_intro}}</textarea>
         </div>
         </div>
       </div>
@@ -155,10 +155,11 @@
       <div class="form-group">
         <center>
           <!-- 確認更改以後將資料回傳到login上面 顯示 -->
-          <a href="{{ url('/application/login') }}">
+
+            {{ csrf_field() }}
             <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 確認更改 </button>
-          </a>
-          <a href="{{ url('/application/login') }}">
+
+          <a href="{{ url('/application') }}">
             <button type="button" class="btn btn-info">返回 <span class="glyphicon glyphicon-log-out"></span></button>
           </a>
         </center>
