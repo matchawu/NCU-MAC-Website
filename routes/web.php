@@ -18,6 +18,16 @@ Route::get('/', function () {
 Route::get('Homepage', function () {
     return view('Homepage.homepage');
 });
+//管理員登入
+Route::get('/authrize', function () {
+    return view('authrize.login');
+});
+Route::get('/authrize/menu', function () {
+    return view('authrize.menu');
+});
+Route::get('authrize', function () {
+    return view('authrize.login');
+});
 //簡介
 Route::get('/introduce', function () {
     return view('introduce.index');
@@ -25,22 +35,22 @@ Route::get('/introduce', function () {
 Route::get('/introduce/edit', function () {
     return view('introduce.edit');
 });
-//審核單位入口
-Route::get('/check',function() {
-  return view('check.index');
-});
-Route::get('/check/ckeckclass',function() {
-  return view('check.checkclass');
-});
-Route::get('/check/checkstudents',function() {
-  return view('check.checkstudents');
-});
-Route::get('/check/checkprojects',function() {
-  return view('check.checkprojects');
-});
-Route::get('/check/register',function() {
-  return view('check.register');
-});
+// //審核單位入口
+// Route::get('/check',function() {
+//   return view('check.index');
+// });
+// Route::get('/check/ckeckclass',function() {
+//   return view('check.checkclass');
+// });
+// Route::get('/check/checkstudents',function() {
+//   return view('check.checkstudents');
+// });
+// Route::get('/check/checkprojects',function() {
+//   return view('check.checkprojects');
+// });
+// Route::get('/check/register',function() {
+//   return view('check.register');
+// });
 //開課單位入口
 Route::get('/openclass',function() {
   return view('openclass.index');
@@ -97,5 +107,6 @@ Route::get('/application/finish', function () {
 Route::get('record', function () {
     return view('record.index');
 });
+
 
 Auth::routes();
