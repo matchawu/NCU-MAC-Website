@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '編輯個別課程')
+@section('title', '查看碎形課程')
 
 @section('content')
 <div class="container">
@@ -13,10 +13,10 @@
 </div>
 
 <div class="container col-sm-10">
-  <form class="well form-horizontal" action="{{asset('/application/edit_single')}}/{{$single_class->id}}" method="post"  id="contact_form">
+  <form class="well form-horizontal" action="{{asset('/application/view_fractal')}}/{{$fractal_class->id}}" method="post"  id="contact_form">
     <fieldset>
       <!-- Form Name -->
-      <legend><b>編輯個別課程</b></legend>
+      <legend><b>查看碎形課程</b></legend>
 
       <!-- 此處input name更改 -->
       <!-- Text term req-->
@@ -25,7 +25,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
-        <input  name="term" value="{{$single_class->term}}" placeholder="ex. 106-1" class="form-control"  type="text">
+        <input  name="term" placeholder="ex. 106-1" value="{{$fractal_class->term}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -36,7 +36,18 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" value="{{$single_class->name}}" placeholder="課程中文名稱" class="form-control"  type="text">
+        <input  name="name" placeholder="課程中文名稱" value="{{$fractal_class->name}}" class="form-control"  type="text" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text code req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">課程代號</label>
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
+        <input  name="code" placeholder="課程代碼" value="{{$fractal_class->code}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -47,7 +58,18 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="field" value="{{$single_class->field}}" placeholder="人文藝術、" class="form-control"  type="text">
+        <input  name="field" placeholder="人文藝術、" value="{{$fractal_class->field}}" class="form-control"  type="text" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text unit rerq-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">授課單元</label>
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
+        <input  name="unit" placeholder="開放授課之單元或類別" value="{{$fractal_class->unit}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -58,40 +80,18 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input name="location" value="{{$single_class->location}}" placeholder="請輸入上課地點" class="form-control"  type="text">
+        <input name="location" placeholder="請輸入上課地點" value="{{$fractal_class->location}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
 
-      <!-- text req date-->
+      <!-- Text time req-->
       <div class="form-group">
-        <label class="col-md-4 control-label">上課日期</label>
-          <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date" class="form-control" value="{{$single_class->date}}" type="date">
-          </div>
-        </div>
-      </div>
-
-      <!-- Text start req-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">起始時間</label>
+        <label class="col-md-4 control-label">上課時間</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="start" value="{{$single_class->start}}" class="form-control"  type="time">
-          </div>
-        </div>
-      </div>
-
-      <!-- Text end req-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">結束時間</label>
-          <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="end" value="{{$single_class->end}}"  class="form-control"  type="time">
+        <input name="time" placeholder="ex. 9/17 9:00-12:00" value="{{$fractal_class->time}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -102,7 +102,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-        <input name="limit" value="{{$single_class->limit}}" placeholder="ex. 50" class="form-control"  type="text">
+        <input name="limit" placeholder="ex. 50" value="{{$fractal_class->limit}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="teacher" value="{{$single_class->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text">
+        <input name="teacher" placeholder="請輸入授課講師中文名字" value="{{$fractal_class->teacher}}" class="form-control" type="text" disabled>
           </div>
         </div>
       </div>
@@ -124,18 +124,18 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input name="email" value="{{$single_class->email}}" placeholder="請填入Email或手機號碼" class="form-control" type="text">
+        <input name="email" placeholder="請填入Email或手機號碼" value="{{$fractal_class->email}}" class="form-control" type="text" disabled>
           </div>
         </div>
       </div>
 
-      <!-- textarea no_req teacher_intro -->
+      <!-- Textarea no_req teacher_intro -->
       <div class="form-group">
         <label class="col-md-4 control-label">講師介紹</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
-                <textarea class="form-control full" name="teacher_intro" placeholder="講師背景及專長介紹">{{$single_class->teacher_intro}}</textarea>
+                <textarea class="form-control full" name="teacher_intro" placeholder="講師背景及專長介紹" disabled> {{$fractal_class->teacher_intro}}</textarea>
         </div>
         </div>
       </div>
@@ -146,7 +146,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-        <input name="class_hr" value="{{$single_class->class_hr}}" placeholder="本課程上課總時數(hr)" class="form-control" type="text">
+        <input name="class_hr" placeholder="本課程上課總時數(hr)" value="{{$fractal_class->class_hr}}" class="form-control" type="text" disabled>
           </div>
         </div>
       </div>
@@ -157,18 +157,29 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-        <input name="auth_hr" value="{{$single_class->auth_hr}}" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text">
+        <input name="auth_hr" placeholder="修完本課程學生獲得認證時數(hr)" value="{{$fractal_class->auth_hr}}" class="form-control" type="text" disabled>
           </div>
         </div>
       </div>
 
-      <!-- Textarea class_intro no_req -->
+      <!-- Textarea no_req class_intro -->
       <div class="form-group">
-        <label class="col-md-4 control-label" data-toggle="tooltip" title="Hooray!">課程簡介</label>
+        <label class="col-md-4 control-label">課程簡介</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-                <textarea class="form-control full" name="class_intro" placeholder="課程介紹">{{$single_class->class_intro}}</textarea>
+                <textarea class="form-control full" name="class_intro" placeholder="課程介紹" disabled> {{$fractal_class->class_intro}}</textarea>
+        </div>
+        </div>
+      </div>
+
+      <!-- Textarea no_req comment -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">課程備註</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
+                <textarea class="form-control full" name="comment" placeholder="單一課程注意事項或是變動" disabled> {{$fractal_class->comments}}</textarea>
         </div>
         </div>
       </div>
@@ -176,11 +187,6 @@
       <!-- Button submit-->
       <div class="form-group">
         <center>
-          <!-- 確認更改以後將資料回傳到login上面 顯示 -->
-
-            {{ csrf_field() }}
-            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 確認更改 </button>
-
           <a href="{{ url('/application') }}">
             <button type="button" class="btn btn-info">返回 <span class="glyphicon glyphicon-log-out"></span></button>
           </a>

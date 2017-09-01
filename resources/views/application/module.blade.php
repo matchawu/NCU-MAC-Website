@@ -65,7 +65,7 @@
       </div>
 
       <!-- text req time-->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label class="col-md-4 control-label">上課時間</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
@@ -73,7 +73,7 @@
         <input name="time" placeholder="ex. 9/12 星期二 9:00-12:00" class="form-control"  type="text" >
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- text req limit-->
       <div class="form-group">

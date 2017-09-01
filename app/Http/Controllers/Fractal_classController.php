@@ -30,6 +30,7 @@ class Fractal_classController extends Controller
         $fractal_class -> class_hr = $request -> class_hr;
         $fractal_class -> auth_hr = $request -> auth_hr;
         $fractal_class -> class_intro = $request -> class_intro;
+        $fractal_class -> comment = $request -> comment;
 
         $fractal_class -> account = $request->session()->get('account');
 
@@ -45,6 +46,10 @@ class Fractal_classController extends Controller
         // return Redirect::to('/');
     }
 
+    public function view($id){
+      $fractal_class = Fractal_class::find($id);
+      return view('application.view_fractal',["fractal_class"=>$fractal_class]);
+    }
     public function edit($id){
       $fractal_class = Fractal_class::find($id);
       return view('application.edit_fractal',["fractal_class"=>$fractal_class]);
@@ -67,6 +72,7 @@ class Fractal_classController extends Controller
       $fractal_class -> class_hr = $request -> class_hr;
       $fractal_class -> auth_hr = $request -> auth_hr;
       $fractal_class -> class_intro = $request -> class_intro;
+      $fractal_class -> comment = $request -> comment;
 
       $fractal_class -> account = $request->session()->get('account');
 

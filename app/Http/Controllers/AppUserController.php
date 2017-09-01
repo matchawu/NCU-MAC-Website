@@ -18,7 +18,7 @@ class AppUserController extends Controller
      */
     public function index(Request $req)
     {
-      
+      // $req->session()->flush();
       $sessionChk = $req->session()->get('account');
       if(isset($sessionChk)){
         $loginUser = appUser::where('account',$sessionChk)->first();

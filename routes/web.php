@@ -83,22 +83,24 @@ Route::get('/application/mgt', function () {
 Route::get('/application/class', function () {
     return view('application.class');
 });
-//edit
-Route::get('/application/edit_single', function () {
-    return view('application.edit_single');
-});
-Route::get('/application/edit_module', function () {
-    return view('application.edit_module');
-});
-Route::get('/application/edit_fractal', function () {
-    return view('application.edit_fractal');
-});
+// //edit
+// Route::get('/application/edit_single', function () {
+//     return view('application.edit_single');
+// });
+// Route::get('/application/edit_module', function () {
+//     return view('application.edit_module');
+// });
+// Route::get('/application/edit_fractal', function () {
+//     return view('application.edit_fractal');
+// });
 Route::get('/application/choose', function () {
     return view('application.choose');
 });
 //single
 Route::get('/application/single','Single_classController@index');
 Route::post('/application/single','Single_classController@store');
+//view single
+Route::get('/application/view_single/{id}','Single_classController@view');
 //edit single
 Route::get('/application/edit_single/{id}','Single_classController@edit');
 Route::post('/application/edit_single/{id}','Single_classController@edit_fin');
@@ -108,18 +110,28 @@ Route::get('/application/deleteSingle/{id}','Single_classController@delete');
 //module
 Route::get('/application/module','Module_classController@index');
 Route::post('/application/module','Module_classController@store');
-//edit module
-Route::get('/application/edit_module/{id}','Module_classController@index');
-Route::post('/application/edit_module/{id}','Module_classController@store');
-//add small module
-Route::post('/application/edit_module','ModuleController@store');
-Route::post('/application/add_module','ModuleController@store');
-//delete module
+//view module class
+Route::get('/application/view_module/{id}','Module_classController@view');
+//edit module class
+Route::get('/application/edit_module/{id}','Module_classController@edit');
+Route::post('/application/edit_module/{id}','Module_classController@edit_fin');
+//delete module class
 Route::get('/application/deleteModule/{id}','Module_classController@delete');
+//module
+//add module
+Route::post('/application/add_module','ModuleController@store');
+//edit small module
+// Route::get('/application/edit_smallmodule/{id}','ModuleController@edit');
+Route::post('/application/edit_smallmodule/{id}','ModuleController@edit_fin');
+//delete module
+Route::get('/application/deleteModule/{id}','ModuleController@delete');
 
-//fractal
+
+//fractal class
 Route::get('/application/fractal','Fractal_classController@index');
 Route::post('/application/fractal','Fractal_classController@store');
+//view fractal
+Route::get('/application/view_fractal/{id}','Fractal_classController@view');
 //edit fractal
 Route::get('/application/edit_fractal/{id}','Fractal_classController@edit');
 Route::post('/application/edit_fractal/{id}','Fractal_classController@edit_fin');

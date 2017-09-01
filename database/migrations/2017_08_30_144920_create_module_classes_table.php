@@ -20,7 +20,7 @@ class CreateModuleClassesTable extends Migration
             $table->string('name')->nullable();
             $table->string('field')->nullable();
             $table->string('location')->nullable();
-            $table->string('time')->nullable();
+            //$table->string('time')->nullable();
             $table->string('limit')->nullable();
             $table->string('teacher')->nullable();
             $table->string('email')->nullable();

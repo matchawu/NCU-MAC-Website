@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '編輯碎形課程')
+@section('title', '查看模組課程')
 
 @section('content')
 <div class="container">
@@ -13,19 +13,19 @@
 </div>
 
 <div class="container col-sm-10">
-  <form class="well form-horizontal" action="{{asset('/application/edit_fractal')}}/{{$fractal_class->id}}" method="post"  id="contact_form">
+  <form class="well form-horizontal" action="{{asset('/application/view_module')}}/{{$module_class->id}}" method="post"  id="contact_form">
     <fieldset>
       <!-- Form Name -->
-      <legend><b>編輯碎形課程</b></legend>
+      <legend><b>查看模組課程</b></legend>
 
       <!-- 此處input name更改 -->
       <!-- Text term req-->
       <div class="form-group">
         <label class="col-md-4 control-label">開課學期</label>
         <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
-        <input  name="term" placeholder="ex. 106-1" value="{{$fractal_class->term}}" class="form-control"  type="text">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
+            <input  name="term" value="{{$module_class->term}}" placeholder="ex. 106-1" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -36,18 +36,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" placeholder="課程中文名稱" value="{{$fractal_class->name}}" class="form-control"  type="text">
-          </div>
-        </div>
-      </div>
-
-      <!-- Text code req-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">課程代號</label>
-        <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
-        <input  name="code" placeholder="課程代碼" value="{{$fractal_class->code}}" class="form-control"  type="text">
+        <input  name="name" value="{{$module_class->name}}" placeholder="課程中文名稱" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -58,18 +47,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="field" placeholder="人文藝術、" value="{{$fractal_class->field}}" class="form-control"  type="text">
-          </div>
-        </div>
-      </div>
-
-      <!-- Text unit rerq-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">授課單元</label>
-        <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-        <input  name="unit" placeholder="開放授課之單元或類別" value="{{$fractal_class->unit}}" class="form-control"  type="text">
+        <input  name="field" value="{{$module_class->field}}" placeholder="人文藝術、" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -80,21 +58,21 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input name="location" placeholder="請輸入上課地點" value="{{$fractal_class->location}}" class="form-control"  type="text">
+        <input name="location" value="{{$module_class->location}}" placeholder="請輸入上課地點" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
 
       <!-- Text time req-->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label class="col-md-4 control-label">上課時間</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="time" placeholder="ex. 9/17 9:00-12:00" value="{{$fractal_class->time}}" class="form-control"  type="text">
+        <input name="time" value="{{$module_class->time}}" placeholder="ex. 星期二 9:00-12:00" class="form-control"  type="text" disabled>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Text limit req-->
       <div class="form-group">
@@ -102,7 +80,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-        <input name="limit" placeholder="ex. 50" value="{{$fractal_class->limit}}" class="form-control"  type="text">
+        <input name="limit" value="{{$module_class->limit}}" placeholder="ex. 50" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -113,7 +91,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="teacher" placeholder="請輸入授課講師中文名字" value="{{$fractal_class->teacher}}" class="form-control" type="text">
+        <input name="teacher" value="{{$module_class->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text" disabled>
           </div>
         </div>
       </div>
@@ -124,7 +102,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input name="email" placeholder="請填入Email或手機號碼" value="{{$fractal_class->email}}" class="form-control" type="text">
+        <input name="email" value="{{$module_class->email}}" placeholder="請填入電子郵件" class="form-control" type="text" disabled>
           </div>
         </div>
       </div>
@@ -135,21 +113,21 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
-                <textarea class="form-control full" name="teacher_intro" placeholder="講師背景及專長介紹"> {{$fractal_class->teacher_intro}}</textarea>
+                <textarea class="form-control full" name="teacher_intro" placeholder="講師背景及專長介紹" disabled>{{$module_class->teacher_intro}}</textarea>
+          </div>
+          </div>
         </div>
-        </div>
-      </div>
 
       <!-- Text class_hr req-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程時數</label>
           <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
+            <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-        <input name="class_hr" placeholder="本課程上課總時數(hr)" value="{{$fractal_class->class_hr}}" class="form-control" type="text">
+              <input name="class_hr" value="{{$module_class->class_hr}}" placeholder="本課程上課總時數(hr)" class="form-control" type="text" disabled>
+            </div>
           </div>
         </div>
-      </div>
 
       <!-- Text auth_hr req-->
       <div class="form-group">
@@ -157,7 +135,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-        <input name="auth_hr" placeholder="修完本課程學生獲得認證時數(hr)" value="{{$fractal_class->auth_hr}}" class="form-control" type="text">
+        <input name="auth_hr" value="{{$module_class->auth_hr}}" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text" disabled>
           </div>
         </div>
       </div>
@@ -168,29 +146,80 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-                <textarea class="form-control full" name="class_intro" placeholder="課程介紹"> {{$fractal_class->class_intro}}</textarea>
+                <textarea class="form-control full" name="class_intro" placeholder="課程介紹" disabled>{{$module_class->class_intro}}</textarea>
         </div>
         </div>
       </div>
 
-      <!-- Textarea no_req comment -->
+      <!-- 以下三組為模組課程獨有 -->
+      <!-- Textarea no_req goal -->
       <div class="form-group">
-        <label class="col-md-4 control-label">課程備註</label>
+        <label class="col-md-4 control-label">課程目標</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
-                <textarea class="form-control full" name="comment" placeholder="單一課程注意事項或是變動"> {{$fractal_class->comments}}</textarea>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-screenshot"></i></span>
+                <textarea class="form-control full" name="goal" placeholder="本模組課程欲達成之學習目標" disabled>{{$module_class->goal}}</textarea>
         </div>
         </div>
       </div>
 
-      <!-- Button submit-->
+      <!-- Textarea no_req claim -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">課程要求</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-equalizer"></i></span>
+                <textarea class="form-control full" name="claim" placeholder="本課程對學生修課之要求" disabled>{{$module_class->claim}}</textarea>
+        </div>
+        </div>
+      </div>
+
+      <!-- Textarea no_req other-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">其他</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                <textarea class="form-control full" name="other" placeholder="其他注意事項" disabled>{{$module_class->other}}</textarea>
+        </div>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- table -->
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>上課日期</th>
+              <th>起始時間</th>
+              <th>結束時間</th>
+              <th>授課講師</th>
+              <th>上課主題</th>
+              <th>上課內容</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($modules as $module)
+            <tr>
+              <td>{{$module->date}}</td>
+              <td>{{$module->start}}</td>
+              <td>{{$module->end}}</td>
+              <td>{{$module->teacher}}</td>
+              <td>{{$module->unit}}</td>
+              <td>{{$module->detail}}</td>
+              <td>{{$module->comment}}</td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Button submit -->
       <div class="form-group">
         <center>
-          <!-- 確認更改以後將資料回傳到login上面 顯示 -->
-            {{ csrf_field() }}
-            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 確認更改 </button>
-
           <a href="{{ url('/application') }}">
             <button type="button" class="btn btn-info">返回 <span class="glyphicon glyphicon-log-out"></span></button>
           </a>
@@ -199,6 +228,8 @@
 
     </fieldset>
   </form>
+
+
 </div>
 @endsection
 
@@ -207,9 +238,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-
-</script>
+<style>
+  table{
+    table-layout:fixed;
+    word-break:break-all;
+    word-wrap:break-word;
+  }
+  td{
+    word-wrap:break-word;
+  }
+</style>
 @endsection
 
 @section('js')

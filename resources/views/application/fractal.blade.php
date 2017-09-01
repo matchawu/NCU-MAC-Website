@@ -165,11 +165,22 @@
 
       <!-- textarea no_req class_intro -->
       <div class="form-group">
-        <label class="col-md-4 control-label" data-toggle="tooltip" title="Hooray!">課程簡介</label>
+        <label class="col-md-4 control-label">課程簡介</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
                 <textarea class="form-control full" name="class_intro" placeholder="課程介紹"></textarea>
+        </div>
+        </div>
+      </div>
+
+      <!-- textarea no_req comment -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">課程備註</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
+                <textarea class="form-control full" name="comment" placeholder="單一課程注意事項或是變動"></textarea>
         </div>
         </div>
       </div>
