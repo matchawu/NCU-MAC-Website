@@ -21,7 +21,7 @@
 
     <!-- alert -->
     <div class="alert alert-success">
-      <strong><span class="glyphicon glyphicon-ok"></span> 恭喜 ! <a href="{{ url('/application/login') }}" class="alert-link">您所開設的課程</a> 已就緒。</strong>
+      <strong><span class="glyphicon glyphicon-ok"></span> 恭喜 ! <a href="{{ url('/application') }}" class="alert-link">您所開設的課程</a> 已就緒。</strong>
     </div>
 
     <!-- Button log in -->
