@@ -59,6 +59,7 @@
         <th>開課單位</th>
         <th>帳號</th>
         <th>聯絡方式</th>
+        <th>申請人姓名</th>>
         <th colspan = 2>操作</th>
       </tr>
     </thead>
@@ -67,6 +68,7 @@
         <td>AAA</td>
         <td>Defaultson</td>
         <td>def@somemail.com</td>
+        <td>123</td>
                 <!-- edit -->
         <td>
           <button type="button" class="btn btn-warning btn-sm">
@@ -84,6 +86,7 @@
         <td>BBB</td>
         <td>Doe</td>
         <td>john@example.com</td>
+        <td>456</td>
         <td>
           <button type="button" class="btn btn-warning btn-sm">
              <span class="glyphicon glyphicon-pencil"></span> 編輯
@@ -100,6 +103,7 @@
         <td>CCC</td>
         <td>Moe</td>
         <td>mary@example.com</td>
+        <td>123</td>
         <td>
           <button type="button" class="btn btn-warning btn-sm">
              <span class="glyphicon glyphicon-pencil"></span> 編輯
@@ -116,6 +120,7 @@
         <td>DDD</td>
         <td>Dooley</td>
         <td>july@example.com</td>
+        <td>123</td>
         <td>
           <button type="button" class="btn btn-warning btn-sm">
              <span class="glyphicon glyphicon-pencil"></span> 編輯
@@ -132,6 +137,7 @@
         <td>EEE</td>
         <td>Refs</td>
         <td>bo@example.com</td>
+        <td>123</td>
         <td>
           <button type="button" class="btn btn-warning btn-sm">
              <span class="glyphicon glyphicon-pencil"></span> 編輯
@@ -148,6 +154,7 @@
         <td>FFF</td>
         <td>Activeson</td>
         <td>act@example.com</td>
+        <td>123</td>
         <td>
           <button type="button" class="btn btn-warning btn-sm">
              <span class="glyphicon glyphicon-pencil"></span> 編輯

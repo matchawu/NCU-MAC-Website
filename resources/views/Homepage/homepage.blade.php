@@ -37,7 +37,7 @@
                     </div>
                 </div>
 
-                <div class="panel panel-default tab-pane  " id="tab2">
+                <!-- <div class="panel panel-default tab-pane  " id="tab2">
                     <div class="panel-body"   style="height:350px;">
                         Basic panel example2
                     </div>
@@ -53,7 +53,7 @@
                     <div class="panel-body"  style="height:350px;">
                         Basic panel example4
                     </div>
-                </div>
+                </div> -->
             </div>
 
 

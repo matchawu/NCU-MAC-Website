@@ -73,7 +73,18 @@
   </form>
 </div>
 
-
+<!-- @if (isset($hint))
+  <div class="alert alert-warning">
+    <span class="glyphicon glyphicon-exclamation-sign"></span>
+    <strong>{{$hint}}</strong>
+  </div>
+@endif
+<form class="" action="{{asset('/application/addappUser')}}" method="post">
+  {{ csrf_field() }}
+  account<input type="text" name="account" value="">
+  password<input type="password" name="password" value="">
+  <button type="submit" name="button">confirm</button>
+</form> -->
 @endsection
 
 @section('css')
