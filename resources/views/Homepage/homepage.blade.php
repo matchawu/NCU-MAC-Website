@@ -18,7 +18,7 @@
 
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>公告區</h2>
+                    <h1>公告區</h1>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -65,7 +65,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>相關單位連結</h2>
+                    <h1>相關單位連結</h1>
                     <hr class="star-light">
                 </div>
             </div>

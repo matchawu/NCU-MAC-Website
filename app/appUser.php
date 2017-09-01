@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class appUser extends Model
 {
-    protected $fillable = ['account','password'];
+    protected $fillable = ['unitname','account','password','password2','mail','name','phone'];
 }
+
