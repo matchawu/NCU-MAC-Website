@@ -85,13 +85,90 @@
         </div>
       </div>
 
-      <!-- Text time req-->
+      <!-- Text start req-->
       <div class="form-group">
-        <label class="col-md-4 control-label">上課時間</label>
+        <label class="col-md-4 control-label">起始時間</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="time" placeholder="ex. 9/17 9:00-12:00" value="{{$fractal_class->time}}" class="form-control"  type="text" disabled>
+        <input name="start" value="{{$fractal_class->start}}" class="form-control"  type="time" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text end req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">結束時間</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+        <input name="end" value="{{$fractal_class->end}}" class="form-control"  type="time" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text date1 req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第一堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date1" value="{{$fractal_class->date1}}" class="form-control"  type="date" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text date2 req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第二堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date2" value="{{$fractal_class->date2}}" class="form-control"  type="date" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text date3 req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第三堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date3" value="{{$fractal_class->date3}}" class="form-control"  type="date" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text date4 req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第四堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date4" value="{{$fractal_class->date4}}" class="form-control"  type="date" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text date5 req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第五堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date5" value="{{$fractal_class->date5}}" class="form-control"  type="date" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text date6 req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第六堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date6" value="{{$fractal_class->date6}}" class="form-control"  type="date" disabled>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <span class="glyphicon glyphicon-user"></span>
     <strong> {{$user->account}} </strong>
-    你好 ! 歡迎登入微學分系統 !
+    您好 ! 歡迎登入微學分系統 !
   </div>
 
   <div class="well form-horizontal">

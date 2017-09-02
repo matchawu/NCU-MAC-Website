@@ -86,13 +86,90 @@
         </div>
       </div>
 
-      <!-- text req time-->
+      <!-- text start time-->
       <div class="form-group">
-        <label class="col-md-4 control-label">上課時間</label>
+        <label class="col-md-4 control-label">開始時間</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="time" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="text" >
+        <input name="start" class="form-control"  type="time">
+          </div>
+        </div>
+      </div>
+
+      <!-- text end time-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">結束時間</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+        <input name="end" class="form-control"  type="time">
+          </div>
+        </div>
+      </div>
+
+      <!-- text date1 time-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第一堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date1" class="form-control"  type="date">
+          </div>
+        </div>
+      </div>
+
+      <!-- text date2 time-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第二堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date2" class="form-control"  type="date">
+          </div>
+        </div>
+      </div>
+
+      <!-- text date3 time-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第三堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date3" class="form-control"  type="date">
+          </div>
+        </div>
+      </div>
+
+      <!-- text date4 time-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第四堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date4" class="form-control"  type="date">
+          </div>
+        </div>
+      </div>
+
+      <!-- text date5 time-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第五堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date5" class="form-control"  type="date">
+          </div>
+        </div>
+      </div>
+
+      <!-- text date6 time-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">第六堂課</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date6" class="form-control"  type="date">
           </div>
         </div>
       </div>
