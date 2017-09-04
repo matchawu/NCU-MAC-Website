@@ -21,7 +21,9 @@ class Single_classController extends Controller
         $single_class -> name = $request -> name;
         $single_class -> field = $request -> field;
         $single_class -> location = $request -> location;
-        $single_class -> time = $request -> time;
+        $single_class -> date = $request -> date;
+        $single_class -> start = $request -> start;
+        $single_class -> end = $request -> end;
         $single_class -> limit = $request -> limit;
         $single_class -> teacher = $request -> teacher;
         $single_class -> email = $request -> email;
@@ -44,6 +46,11 @@ class Single_classController extends Controller
         // return Redirect::to('/');
     }
 
+    public function view($id){
+      $single_class = Single_class::find($id);
+      return view('application.view_single',["single_class"=>$single_class]);
+    }
+    
     public function edit($id){
       $single_class = Single_class::find($id);
       return view('application.edit_single',["single_class"=>$single_class]);
@@ -56,7 +63,9 @@ class Single_classController extends Controller
       $single_class -> name = $request -> name;
       $single_class -> field = $request -> field;
       $single_class -> location = $request -> location;
-      $single_class -> time = $request -> time;
+      $single_class -> date = $request -> date;
+      $single_class -> start = $request -> start;
+      $single_class -> end = $request -> end;
       $single_class -> limit = $request -> limit;
       $single_class -> teacher = $request -> teacher;
       $single_class -> email = $request -> email;

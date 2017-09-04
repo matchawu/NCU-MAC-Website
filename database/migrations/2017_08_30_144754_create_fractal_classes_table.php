@@ -22,7 +22,14 @@ class CreateFractalClassesTable extends Migration
             $table->string('field')->nullable();
             $table->string('unit')->nullable();
             $table->string('location')->nullable();
-            $table->string('time')->nullable();
+            $table->string('start')->nullable();
+            $table->string('end')->nullable();
+            $table->string('date1')->nullable();
+            $table->string('date2')->nullable();
+            $table->string('date3')->nullable();
+            $table->string('date4')->nullable();
+            $table->string('date5')->nullable();
+            $table->string('date6')->nullable();
             $table->string('limit')->nullable();
             $table->string('teacher')->nullable();
             $table->string('email')->nullable();
@@ -30,6 +37,8 @@ class CreateFractalClassesTable extends Migration
             $table->string('class_hr')->nullable();
             $table->string('auth_hr')->nullable();
             $table->string('class_intro')->nullable();
+            $table->string('comment')->nullable();
+            $table->string('dateNum')->nullable();
             $table->string('account')->nullable();
 
         });

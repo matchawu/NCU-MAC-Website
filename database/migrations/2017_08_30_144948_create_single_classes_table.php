@@ -20,7 +20,9 @@ class CreateSingleClassesTable extends Migration
             $table->string('name')->nullable();
             $table->string('field')->nullable();
             $table->string('location')->nullable();
-            $table->string('time')->nullable();
+            $table->string('date')->nullable();
+            $table->string('start')->nullable();
+            $table->string('end')->nullable();
             $table->string('limit')->nullable();
             $table->string('teacher')->nullable();
             $table->string('email')->nullable();

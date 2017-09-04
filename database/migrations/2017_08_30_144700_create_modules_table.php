@@ -17,11 +17,13 @@ class CreateModulesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('date')->nullable();
-            $table->string('time')->nullable();
+            $table->string('start')->nullable();
+            $table->string('end')->nullable();
             $table->string('teacher')->nullable();
             $table->string('unit')->nullable();
             $table->string('detail')->nullable();
             $table->string('comment')->nullable();
+            $table->string('class_id')->nullable();
         });
     }
 

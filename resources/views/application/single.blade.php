@@ -64,13 +64,35 @@
         </div>
       </div>
 
-      <!-- text req time-->
+      <!-- text req date-->
       <div class="form-group">
-        <label class="col-md-4 control-label">上課時間</label>
+        <label class="col-md-4 control-label">上課日期</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input name="date" class="form-control"  type="date" >
+          </div>
+        </div>
+      </div>
+
+      <!-- text req start-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">起始時間</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="time" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="text" >
+        <input name="start" class="form-control"  type="time" >
+          </div>
+        </div>
+      </div>
+
+      <!-- text req end-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">結束時間</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+        <input name="end" class="form-control"  type="time" >
           </div>
         </div>
       </div>

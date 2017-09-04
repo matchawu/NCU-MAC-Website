@@ -22,7 +22,14 @@ class Fractal_classController extends Controller
         $fractal_class -> field = $request -> field;
         $fractal_class -> unit = $request -> unit;
         $fractal_class -> location = $request -> location;
-        $fractal_class -> time = $request -> time;
+        $fractal_class -> start = $request -> start;
+        $fractal_class -> end = $request -> end;
+        $fractal_class -> date1 = $request -> date1;
+        $fractal_class -> date2 = $request -> date2;
+        $fractal_class -> date3 = $request -> date3;
+        $fractal_class -> date4 = $request -> date4;
+        $fractal_class -> date5 = $request -> date5;
+        $fractal_class -> date6 = $request -> date6;
         $fractal_class -> limit = $request -> limit;
         $fractal_class -> teacher = $request -> teacher;
         $fractal_class -> email = $request -> email;
@@ -30,6 +37,8 @@ class Fractal_classController extends Controller
         $fractal_class -> class_hr = $request -> class_hr;
         $fractal_class -> auth_hr = $request -> auth_hr;
         $fractal_class -> class_intro = $request -> class_intro;
+        $fractal_class -> comment = $request -> comment;
+        $fractal_class -> dateNum = $request -> dateNum;
 
         $fractal_class -> account = $request->session()->get('account');
 
@@ -45,6 +54,10 @@ class Fractal_classController extends Controller
         // return Redirect::to('/');
     }
 
+    public function view($id){
+      $fractal_class = Fractal_class::find($id);
+      return view('application.view_fractal',["fractal_class"=>$fractal_class]);
+    }
     public function edit($id){
       $fractal_class = Fractal_class::find($id);
       return view('application.edit_fractal',["fractal_class"=>$fractal_class]);
@@ -59,7 +72,14 @@ class Fractal_classController extends Controller
       $fractal_class -> field = $request -> field;
       $fractal_class -> unit = $request -> unit;
       $fractal_class -> location = $request -> location;
-      $fractal_class -> time = $request -> time;
+      $fractal_class -> start = $request -> start;
+      $fractal_class -> end = $request -> end;
+      $fractal_class -> date1 = $request -> date1;
+      $fractal_class -> date2 = $request -> date2;
+      $fractal_class -> date3 = $request -> date3;
+      $fractal_class -> date4 = $request -> date4;
+      $fractal_class -> date5 = $request -> date5;
+      $fractal_class -> date6 = $request -> date6;
       $fractal_class -> limit = $request -> limit;
       $fractal_class -> teacher = $request -> teacher;
       $fractal_class -> email = $request -> email;
@@ -67,6 +87,8 @@ class Fractal_classController extends Controller
       $fractal_class -> class_hr = $request -> class_hr;
       $fractal_class -> auth_hr = $request -> auth_hr;
       $fractal_class -> class_intro = $request -> class_intro;
+      $fractal_class -> comment = $request -> comment;
+      $fractal_class -> dateNum = $request -> dateNum;
 
       $fractal_class -> account = $request->session()->get('account');
 

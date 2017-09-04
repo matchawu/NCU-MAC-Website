@@ -18,7 +18,7 @@ class AppUserController extends Controller
      */
     public function index(Request $req)
     {
-      
+      // $req->session()->flush();
       $sessionChk = $req->session()->get('account');
       if(isset($sessionChk)){
         $loginUser = appUser::where('account',$sessionChk)->first();
@@ -43,7 +43,7 @@ class AppUserController extends Controller
 
         $loginUser = appUser::where('account',$req->account)->first();
         if(!isset($loginUser)){
-          return view('application.index',["loginhint"=>"無恥帳號!"]);
+          return view('application.index',["loginhint"=>"無此帳號 ! 請先向教學發展中心申請開課單位帳號。"]);
         }
         if(md5($req->password)==$loginUser->password){
           $single_classes =
