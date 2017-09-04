@@ -109,67 +109,77 @@
       </div>
 
       <!-- text date1 time-->
-      <div class="form-group">
+      <div class="form-group" id="date1">
         <label class="col-md-4 control-label">第一堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date1" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date1" class="form-control"  type="date" id="datein1">
+            <div class="input-group-btn">
+              <button class="btn btn-info" id="add_date" type="button">
+                <i class="glyphicon glyphicon-plus"></i>
+              </button>
+            </div>
+            <div class="input-group-btn">
+              <button class="btn btn-danger" id="min_date" type="button">
+                <i class="glyphicon glyphicon-minus"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- text date2 time-->
-      <div class="form-group">
+      <div class="form-group" id="date2">
         <label class="col-md-4 control-label">第二堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date2" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date2" class="form-control"  type="date" id="datein2">
           </div>
         </div>
       </div>
 
       <!-- text date3 time-->
-      <div class="form-group">
+      <div class="form-group" id="date3">
         <label class="col-md-4 control-label">第三堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date3" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date3" class="form-control"  type="date" id="datein3">
           </div>
         </div>
       </div>
 
       <!-- text date4 time-->
-      <div class="form-group">
+      <div class="form-group" id="date4">
         <label class="col-md-4 control-label">第四堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date4" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date4" class="form-control"  type="date" id="datein4">
           </div>
         </div>
       </div>
 
       <!-- text date5 time-->
-      <div class="form-group">
+      <div class="form-group" id="date5">
         <label class="col-md-4 control-label">第五堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date5" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date5" class="form-control"  type="date" id="datein5">
           </div>
         </div>
       </div>
 
       <!-- text date6 time-->
-      <div class="form-group">
+      <div class="form-group" id="date6">
         <label class="col-md-4 control-label">第六堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date6" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date6" class="form-control"  type="date" id="datein6">
           </div>
         </div>
       </div>
@@ -266,6 +276,7 @@
       <div class="form-group">
         <center>
           {{ csrf_field() }}
+          <input type="hidden" name="dateNum" id="dateNum" value="1">
           <button type="submit" class="btn btn-success"> 完成開課 <span class="glyphicon glyphicon-ok"></span></button>
         </center>
       </div>
@@ -279,10 +290,33 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+#date2,#date3,#date4,#date5,#date6 {
+  display:none;
+}
+</style>
 @endsection
 
 @section('js')
 <script>
+var i=1;
+$(document).ready(function(){
+    $("#add_date").click(function(){
+    	if(i<7){
+          i++;
+        	$("#date"+i).css("display", "block");
+          $("#dateNum").attr("value",i);
 
+        }
+    });
+    $("#min_date").click(function(){
+    	if(i>1){
+        	$("#date"+i).css("display", "none");
+          $("#datein"+i).val("");
+          i--;
+          $("#dateNum").attr("value",i);
+        }
+    });
+});
 </script>
 @endsection

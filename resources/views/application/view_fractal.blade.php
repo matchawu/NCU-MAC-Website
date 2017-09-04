@@ -108,7 +108,7 @@
       </div>
 
       <!-- Text date1 req-->
-      <div class="form-group">
+      <div class="form-group" id="date1">
         <label class="col-md-4 control-label">第一堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
@@ -119,7 +119,7 @@
       </div>
 
       <!-- Text date2 req-->
-      <div class="form-group">
+      <div class="form-group" id="date2">
         <label class="col-md-4 control-label">第二堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
@@ -130,7 +130,7 @@
       </div>
 
       <!-- Text date3 req-->
-      <div class="form-group">
+      <div class="form-group" id="date3">
         <label class="col-md-4 control-label">第三堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
@@ -141,7 +141,7 @@
       </div>
 
       <!-- Text date4 req-->
-      <div class="form-group">
+      <div class="form-group" id="date4">
         <label class="col-md-4 control-label">第四堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
@@ -152,7 +152,7 @@
       </div>
 
       <!-- Text date5 req-->
-      <div class="form-group">
+      <div class="form-group" id="date5">
         <label class="col-md-4 control-label">第五堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
@@ -163,7 +163,7 @@
       </div>
 
       <!-- Text date6 req-->
-      <div class="form-group">
+      <div class="form-group" id="date6">
         <label class="col-md-4 control-label">第六堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
@@ -256,7 +256,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
-                <textarea class="form-control full" name="comment" placeholder="單一課程注意事項或是變動" disabled> {{$fractal_class->comments}}</textarea>
+                <textarea class="form-control full" name="comment" placeholder="單一課程注意事項或是變動" disabled> {{$fractal_class->comment}}</textarea>
         </div>
         </div>
       </div>
@@ -264,6 +264,7 @@
       <!-- Button submit-->
       <div class="form-group">
         <center>
+          <input type="hidden" name="dateNum" id="dateNum" value="{{$fractal_class->dateNum}}">
           <a href="{{ url('/application') }}">
             <button type="button" class="btn btn-info">返回 <span class="glyphicon glyphicon-log-out"></span></button>
           </a>
@@ -280,13 +281,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-
-</script>
+<style>
+#date1,#date2,#date3,#date4,#date5,#date6 {
+  display:none;
+}
+</style>
 @endsection
 
 @section('js')
 <script>
-
+var i = $("#dateNum").attr("value");
+$(document).ready(function(){
+    for(j=1; j<=i; j++){
+      $("#date"+j).css("display","block");
+    }
+});
 </script>
 @endsection

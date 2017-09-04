@@ -108,67 +108,77 @@
       </div>
 
       <!-- Text date1 req-->
-      <div class="form-group">
+      <div class="form-group" id="date1">
         <label class="col-md-4 control-label">第一堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date1" value="{{$fractal_class->date1}}" class="form-control"  type="date">
+              <input name="date1" value="{{$fractal_class->date1}}" class="form-control"  type="date" id="datein1">
+              <div class="input-group-btn">
+                <button class="btn btn-info" id="add_date" type="button">
+                  <i class="glyphicon glyphicon-plus"></i>
+                </button>
+              </div>
+              <div class="input-group-btn">
+                <button class="btn btn-danger" id="min_date" type="button">
+                  <i class="glyphicon glyphicon-minus"></i>
+                </button>
+              </div>
           </div>
         </div>
       </div>
 
       <!-- Text date2 req-->
-      <div class="form-group">
+      <div class="form-group" id="date2">
         <label class="col-md-4 control-label">第二堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date2" value="{{$fractal_class->date2}}" class="form-control"  type="date">
+              <input name="date2" value="{{$fractal_class->date2}}" class="form-control"  type="date" id="datein2">
           </div>
         </div>
       </div>
 
       <!-- Text date3 req-->
-      <div class="form-group">
+      <div class="form-group" id="date3">
         <label class="col-md-4 control-label">第三堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date3" value="{{$fractal_class->date3}}" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date3" value="{{$fractal_class->date3}}" class="form-control"  type="date" id="datein3">
           </div>
         </div>
       </div>
 
       <!-- Text date4 req-->
-      <div class="form-group">
+      <div class="form-group" id="date4">
         <label class="col-md-4 control-label">第四堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date4" value="{{$fractal_class->date4}}" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date4" value="{{$fractal_class->date4}}" class="form-control"  type="date" id="datein4">
           </div>
         </div>
       </div>
 
       <!-- Text date5 req-->
-      <div class="form-group">
+      <div class="form-group" id="date5">
         <label class="col-md-4 control-label">第五堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date5" value="{{$fractal_class->date5}}" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date5" value="{{$fractal_class->date5}}" class="form-control"  type="date" id="datein5">
           </div>
         </div>
       </div>
 
       <!-- Text date6 req-->
-      <div class="form-group">
+      <div class="form-group" id="date6">
         <label class="col-md-4 control-label">第六堂課</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date6" value="{{$fractal_class->date6}}" class="form-control"  type="date">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input name="date6" value="{{$fractal_class->date6}}" class="form-control"  type="date" id="datein6">
           </div>
         </div>
       </div>
@@ -256,7 +266,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
-                <textarea class="form-control full" name="comment" placeholder="單一課程注意事項或是變動"> {{$fractal_class->comments}}</textarea>
+                <textarea class="form-control full" name="comment" placeholder="單一課程注意事項或是變動"> {{$fractal_class->comment}}</textarea>
         </div>
         </div>
       </div>
@@ -264,10 +274,9 @@
       <!-- Button submit-->
       <div class="form-group">
         <center>
-          <!-- 確認更改以後將資料回傳到login上面 顯示 -->
-            {{ csrf_field() }}
-            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 確認更改 </button>
-
+          {{ csrf_field() }}
+          <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 確認更改 </button>
+          <input type="hidden" name="dateNum" id="dateNum" value="{{$fractal_class->dateNum}}">
           <a href="{{ url('/application') }}">
             <button type="button" class="btn btn-info">返回 <span class="glyphicon glyphicon-log-out"></span></button>
           </a>
@@ -284,13 +293,36 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-
-</script>
+<style>
+#date1,#date2,#date3,#date4,#date5,#date6 {
+  display:none;
+}
+</style>
 @endsection
 
 @section('js')
 <script>
+var i = $("#dateNum").attr("value");
+$(document).ready(function(){
+    for(j=1; j<=i; j++){
+      $("#date"+j).css("display","block");
+    }
 
+    $("#add_date").click(function(){
+    	if(i<7){
+          i++;
+        	$("#date"+i).css("display", "block");
+          $("#dateNum").attr("value",i);
+        }
+    });
+    $("#min_date").click(function(){
+    	if(i>1){
+        	$("#date"+i).css("display", "none");
+          $("#datein"+i).val("");
+          i--;
+          $("#dateNum").attr("value",i);
+        }
+    });
+});
 </script>
 @endsection

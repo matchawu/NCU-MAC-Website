@@ -38,6 +38,7 @@ class Fractal_classController extends Controller
         $fractal_class -> auth_hr = $request -> auth_hr;
         $fractal_class -> class_intro = $request -> class_intro;
         $fractal_class -> comment = $request -> comment;
+        $fractal_class -> dateNum = $request -> dateNum;
 
         $fractal_class -> account = $request->session()->get('account');
 
@@ -87,6 +88,7 @@ class Fractal_classController extends Controller
       $fractal_class -> auth_hr = $request -> auth_hr;
       $fractal_class -> class_intro = $request -> class_intro;
       $fractal_class -> comment = $request -> comment;
+      $fractal_class -> dateNum = $request -> dateNum;
 
       $fractal_class -> account = $request->session()->get('account');
 
