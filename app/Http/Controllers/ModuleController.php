@@ -23,7 +23,7 @@ class ModuleController extends Controller
         $module -> detail = $request -> detail;
         $module -> comment = $request -> comment;
         $module -> class_id = $request -> class_id;
-
+        $module -> weekday = date('N',strtotime($request->date));
         $module->save();
 
 
@@ -54,6 +54,7 @@ class ModuleController extends Controller
       $module -> unit = $request -> unit;
       $module -> detail = $request -> detail;
       $module -> comment = $request -> comment;
+      $module -> weekday = date('N',strtotime($request->date));
 
       $module->save();
 

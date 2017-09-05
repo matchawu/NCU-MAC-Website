@@ -52,13 +52,18 @@
         </div>
       </div>
 
-      <!-- Text field req-->
+      <!-- text req field-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程領域</label>
         <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="field" placeholder="人文藝術、" value="{{$fractal_class->field}}" class="form-control"  type="text">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="field" name="field" value="{{$fractal_class->field}}">
+              <option value="人文藝術" id="field1">人文藝術</option>
+              <option value="自然科學" id="field2">自然科學</option>
+              <option value="社會思潮" id="field3">社會思潮</option>
+              <option value="應用科學" id="field4">應用科學</option>
+            </select>
           </div>
         </div>
       </div>
@@ -303,7 +308,14 @@
 @section('js')
 <script>
 var i = $("#dateNum").attr("value");
+var x = $("#field").attr("value");
 $(document).ready(function(){
+  for(y=1;y<=4;y++){
+    if(x== $("#field"+y).attr("value")){
+      $("#field"+y).attr('selected','selected');
+    }
+   }
+
     for(j=1; j<=i; j++){
       $("#date"+j).css("display","block");
     }

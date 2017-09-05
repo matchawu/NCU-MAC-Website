@@ -42,12 +42,28 @@
       </div>
 
       <!-- Text field req-->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label class="col-md-4 control-label">課程領域</label>
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
         <input  name="field" value="{{$module_class->field}}" placeholder="人文藝術、" class="form-control"  type="text">
+          </div>
+        </div>
+      </div> -->
+
+      <!-- text req field-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">課程領域</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="field" name="field" value="{{$module_class->field}}">
+              <option value="人文藝術" id="field1">人文藝術</option>
+              <option value="自然科學" id="field2">自然科學</option>
+              <option value="社會思潮" id="field3">社會思潮</option>
+              <option value="應用科學" id="field4">應用科學</option>
+            </select>
           </div>
         </div>
       </div>
@@ -581,6 +597,13 @@
 
 @section('js')
 <script>
-
+var x = $("#field").attr("value");
+$(document).ready(function(){
+  for(y=1;y<=4;y++){
+    if(x== $("#field"+y).attr("value")){
+      $("#field"+y).attr('selected','selected');
+    }
+  }
+});
 </script>
 @endsection

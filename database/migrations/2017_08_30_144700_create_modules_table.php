@@ -24,6 +24,8 @@ class CreateModulesTable extends Migration
             $table->string('detail')->nullable();
             $table->string('comment')->nullable();
             $table->string('class_id')->nullable();
+            $table->string('weekday')->nullable();
+
         });
     }
 
