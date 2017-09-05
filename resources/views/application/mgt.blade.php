@@ -238,6 +238,9 @@
           <a href="{{ url('/application/logout') }}">
             <button type="button" class="btn btn-primary">登出 <span class="glyphicon glyphicon-new-window"></span></button>
           </a>
+          <a href="{{ url('/application/edit_pwd') }}">
+            <button type="button" class="btn btn-basic"><span class="glyphicon glyphicon-pencil"></span> 編輯密碼 </button>
+          </a>
         </center>
       </div>
 

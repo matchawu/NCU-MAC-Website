@@ -75,6 +75,9 @@ Route::get('/application/logout', 'AppUserController@logout');
 Route::post('/application', 'AppUserController@login');
 Route::post('/application/addappUser', 'AppUserController@register'
 );
+//edit password
+Route::get('/application/edit_pwd', 'AppUserController@edit_goto');
+Route::post('/application/edit_pwd', 'AppUserController@edit_pwd');
 //manage
 Route::get('/application/mgt', function () {
     return view('application.mgt');
