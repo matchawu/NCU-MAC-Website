@@ -25,7 +25,7 @@
         <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
-            <input  name="term" value="{{$module_class->term}}" placeholder="ex. 106-1" class="form-control"  type="text">
+            <input  name="term" value="{{$module_class->term}}" placeholder="ex. 106-1" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -36,21 +36,10 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" value="{{$module_class->name}}" placeholder="課程中文名稱" class="form-control"  type="text">
+        <input  name="name" value="{{$module_class->name}}" placeholder="課程中文名稱" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
-
-      <!-- Text field req-->
-      <!-- <div class="form-group">
-        <label class="col-md-4 control-label">課程領域</label>
-        <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="field" value="{{$module_class->field}}" placeholder="人文藝術、" class="form-control"  type="text">
-          </div>
-        </div>
-      </div> -->
 
       <!-- text req field-->
       <div class="form-group">
@@ -74,21 +63,10 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input name="location" value="{{$module_class->location}}" placeholder="請輸入上課地點" class="form-control"  type="text">
+        <input name="location" value="{{$module_class->location}}" placeholder="請輸入上課地點" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
-
-      <!-- Text time req-->
-      <!-- <div class="form-group">
-        <label class="col-md-4 control-label">上課時間</label>
-          <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="time" value="{{$module_class->time}}" placeholder="ex. 星期二 9:00-12:00" class="form-control"  type="text">
-          </div>
-        </div>
-      </div> -->
 
       <!-- Text limit req-->
       <div class="form-group">
@@ -96,7 +74,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-        <input name="limit" value="{{$module_class->limit}}" placeholder="ex. 50" class="form-control"  type="text">
+        <input name="limit" value="{{$module_class->limit}}" placeholder="ex. 50" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -107,7 +85,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="teacher" value="{{$module_class->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text">
+        <input name="teacher" value="{{$module_class->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -118,7 +96,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input name="email" value="{{$module_class->email}}" placeholder="請填入電子郵件" class="form-control" type="text">
+        <input name="email" value="{{$module_class->email}}" placeholder="請填入電子郵件" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -140,7 +118,7 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-              <input name="class_hr" value="{{$module_class->class_hr}}" placeholder="本課程上課總時數(hr)" class="form-control" type="text">
+              <input name="class_hr" value="{{$module_class->class_hr}}" placeholder="本課程上課總時數(hr)" class="form-control" type="text" required>
             </div>
           </div>
         </div>
@@ -151,7 +129,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-        <input name="auth_hr" value="{{$module_class->auth_hr}}" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text">
+        <input name="auth_hr" value="{{$module_class->auth_hr}}" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -272,7 +250,7 @@
                   </div>
                   <div class="modal-footer">
                     <center>
-                      <a href="{{asset('/application/deleteModule')}}/{{$module->id}}">
+                      <a href="{{asset('/application/deleteSmallModule')}}/{{$module->id}}">
                         <button type="button" class="btn btn-danger">
                           <span class="glyphicon glyphicon-trash"></span> 確認刪除
                         </button>

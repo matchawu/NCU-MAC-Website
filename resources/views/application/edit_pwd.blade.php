@@ -72,34 +72,16 @@
     <div class="form-group">
       <center>
         {{ csrf_field() }}
-        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> 確認更改</button>
+        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 確認更改</button>
         <a href="{{ url('/application') }}">
           <button type="button" class="btn btn-info">返回 <span class="glyphicon glyphicon-log-out"></span></button>
         </a>
       </center>
     </div>
 
-    <!-- forget pwd tips-->
-    <center>
-      <h6><span class="glyphicon glyphicon-question-sign"></span> 忘記密碼請逕向教學發展中心聯繫</h6>
-    </center>
-
     </fieldset>
   </form>
 </div>
-
-<!-- @if (isset($hint))
-  <div class="alert alert-warning">
-    <span class="glyphicon glyphicon-exclamation-sign"></span>
-    <strong>{{$hint}}</strong>
-  </div>
-@endif
-<form class="" action="{{asset('/application/addappUser')}}" method="post">
-  {{ csrf_field() }}
-  account<input type="text" name="account" value="">
-  password<input type="password" name="password" value="">
-  <button type="submit" name="button">confirm</button>
-</form> -->
 @endsection
 
 @section('css')

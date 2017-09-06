@@ -127,7 +127,7 @@ Route::post('/application/add_module','ModuleController@store');
 //edit small module
 Route::post('/application/edit_smallmodule/{id}','ModuleController@edit_fin');
 //delete module
-Route::get('/application/deleteModule/{id}','ModuleController@delete');
+Route::get('/application/deleteSmallModule/{id}','ModuleController@delete');
 
 //new fractal class
 Route::get('/application/fractal','Fractal_classController@index');

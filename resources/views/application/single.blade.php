@@ -26,7 +26,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
-        <input  name="term" placeholder="ex. 106-1" class="form-control"  type="text" >
+        <input  name="term" placeholder="ex. 106-1" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" placeholder="課程中文名稱" class="form-control"  type="text" >
+        <input  name="name" placeholder="課程中文名稱" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input name="location" placeholder="請輸入上課地點" class="form-control"  type="text" >
+        <input name="location" placeholder="請輸入上課地點" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date" class="form-control"  type="date" >
+        <input name="date" class="form-control"  type="date" required>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="start" class="form-control"  type="time" >
+        <input name="start" class="form-control"  type="time" required>
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="end" class="form-control"  type="time" >
+        <input name="end" class="form-control"  type="time" required>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-        <input name="limit" placeholder="ex. 50" class="form-control"  type="text" >
+        <input name="limit" placeholder="ex. 50" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="teacher" placeholder="請輸入授課講師中文名字" class="form-control" type="text" >
+        <input name="teacher" placeholder="請輸入授課講師中文名字" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -130,7 +130,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input name="email" placeholder="請填入電子郵件" class="form-control" type="text" >
+        <input name="email" placeholder="請填入電子郵件" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-        <input name="class_hr" placeholder="本課程上課總時數(hr)" class="form-control" type="text" >
+        <input name="class_hr" placeholder="本課程上課總時數(hr)" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-        <input name="auth_hr" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text" >
+        <input name="auth_hr" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text" required>
           </div>
         </div>
       </div>
