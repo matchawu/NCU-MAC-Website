@@ -60,11 +60,26 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
             <select class="form-control" id="field" name="field">
-              <option value="人文藝術">人文藝術</option>
+              <option value="人文與思想">人文與思想</option>
               <option value="自然科學">自然科學</option>
-              <option value="社會思潮">社會思潮</option>
               <option value="應用科學">應用科學</option>
+              <option value="社會思潮與現象">社會思潮與現象</option>
+              <option value="跨域整合">跨域整合</option>
+              <option value="社會實踐">社會實踐</option>
+              <option value="創意創業">創意創業</option>
+              <option value="其他">其他</option>
             </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- text no_req other_field-->
+      <div class="form-group" id="other_field">
+        <label class="col-md-4 control-label">輸入分類</label>
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
+        <input  name="other_field" placeholder="請輸入其他分類名稱" class="form-control"  type="text">
           </div>
         </div>
       </div>
@@ -277,6 +292,17 @@
         </div>
       </div>
 
+      <!-- text no_req keyword-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">關鍵字</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+        <input name="keyword" placeholder="關鍵字請以空格隔開" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+
       <!-- Button submit -->
       <div class="form-group">
         <center>
@@ -298,6 +324,9 @@
 <style>
 #date2,#date3,#date4,#date5,#date6 {
   display:none;
+}
+#other_field{
+  display: none;
 }
 </style>
 @endsection
@@ -322,6 +351,16 @@ $(document).ready(function(){
           $("#dateNum").attr("value",i);
         }
     });
+});
+</script>
+<script>
+$('select').change(function(){
+  if($('select option:selected').text() == "其他"){
+    $('#other_field').show();
+  }
+  else{
+    $('#other_field').hide();
+  }
 });
 </script>
 @endsection

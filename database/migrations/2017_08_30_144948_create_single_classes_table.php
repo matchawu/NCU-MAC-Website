@@ -19,6 +19,7 @@ class CreateSingleClassesTable extends Migration
             $table->string('term')->nullable();
             $table->string('name')->nullable();
             $table->string('field')->nullable();
+            $table->string('other_field')->nullable();
             $table->string('location')->nullable();
             $table->string('date')->nullable();
             $table->string('start')->nullable();
@@ -31,6 +32,7 @@ class CreateSingleClassesTable extends Migration
             $table->string('auth_hr')->nullable();
             $table->string('class_intro')->nullable();
             $table->string('weekday')->nullable();
+            $table->string('keyword')->nullable();
             $table->string('account')->nullable();
         });
     }
