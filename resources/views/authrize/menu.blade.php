@@ -32,7 +32,7 @@
           <strong>{{$hint}}</strong>
       </div>
       @endif
-      <form class="" action="{{asset('/application/addappUser')}}" method="post" onsubmit="return chk();">
+      <form action="{{asset('/application/addappUser')}}" method="post">
       {{ csrf_field() }}
         <td><input type="text"  class="form-control" name ="unitname" placeholder="開課單位"></td>
         <td><input type="text" class="form-control" name ="account" placeholder="帳號"></td>
@@ -43,13 +43,14 @@
         <td><input type="text" class="form-control" name ="name" placeholder="申請人姓名"></td>
                 <!-- create -->
                 <td>
-                    <button type="submit" class="btn btn-primary btn-sm"><input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                    <button type="submit" class="btn btn-primary btn-sm">
                       <span class="glyphicon glyphicon-plus"></span> 新增
                     </button>
                 </td>
       </form>
+
       </tr>
-      
+
     </tbody>
   </table>
 
@@ -133,7 +134,7 @@
 
         .function{
           border-style:outset;
-          height: 190px; 
+          height: 190px;
           text-align: center;
         }
     </style>

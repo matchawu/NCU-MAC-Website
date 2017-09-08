@@ -41,6 +41,7 @@ class CreateFractalClassesTable extends Migration
             $table->string('comment')->nullable();
             $table->string('dateNum')->nullable();
             $table->string('keyword')->nullable();
+            $table->string('video')->nullable();
             $table->string('account')->nullable();
 
         });
