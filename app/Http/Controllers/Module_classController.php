@@ -24,8 +24,8 @@ class Module_classController extends Controller
         $module_class -> term = $request -> term;
         $module_class -> name = $request -> name;
         $module_class -> field = $request -> field;
+        $module_class -> other_field = $request -> other_field;
         $module_class -> location = $request -> location;
-        //$module_class -> time = $request -> time;
         $module_class -> limit = $request -> limit;
         $module_class -> teacher = $request -> teacher;
         $module_class -> email = $request -> email;
@@ -36,6 +36,7 @@ class Module_classController extends Controller
         $module_class -> goal = $request -> goal;
         $module_class -> claim = $request -> claim;
         $module_class -> other = $request -> other;
+        $module_class -> keyword = $request -> keyword;
 
         $module_class -> account = $request->session()->get('account');
 
@@ -70,8 +71,8 @@ class Module_classController extends Controller
       $module_class -> term = $request -> term;
       $module_class -> name = $request -> name;
       $module_class -> field = $request -> field;
+      $module_class -> other_field = $request -> other_field;
       $module_class -> location = $request -> location;
-      //$module_class -> time = $request -> time;
       $module_class -> limit = $request -> limit;
       $module_class -> teacher = $request -> teacher;
       $module_class -> email = $request -> email;
@@ -82,6 +83,7 @@ class Module_classController extends Controller
       $module_class -> goal = $request -> goal;
       $module_class -> claim = $request -> claim;
       $module_class -> other = $request -> other;
+      $module_class -> keyword = $request -> keyword;
 
       $module_class -> account = $request->session()->get('account');
 

@@ -20,6 +20,7 @@ class Fractal_classController extends Controller
         $fractal_class -> name = $request -> name;
         $fractal_class -> code = $request -> code;
         $fractal_class -> field = $request -> field;
+        $fractal_class -> other_field = $request -> other_field;
         $fractal_class -> unit = $request -> unit;
         $fractal_class -> location = $request -> location;
         $fractal_class -> start = $request -> start;
@@ -39,6 +40,7 @@ class Fractal_classController extends Controller
         $fractal_class -> class_intro = $request -> class_intro;
         $fractal_class -> comment = $request -> comment;
         $fractal_class -> dateNum = $request -> dateNum;
+        $fractal_class -> keyword = $request -> keyword;
 
         $fractal_class -> account = $request->session()->get('account');
 
@@ -70,6 +72,7 @@ class Fractal_classController extends Controller
       $fractal_class -> name = $request -> name;
       $fractal_class -> code = $request -> code;
       $fractal_class -> field = $request -> field;
+      $fractal_class -> other_field = $request -> other_field;
       $fractal_class -> unit = $request -> unit;
       $fractal_class -> location = $request -> location;
       $fractal_class -> start = $request -> start;
@@ -89,6 +92,7 @@ class Fractal_classController extends Controller
       $fractal_class -> class_intro = $request -> class_intro;
       $fractal_class -> comment = $request -> comment;
       $fractal_class -> dateNum = $request -> dateNum;
+      $fractal_class -> keyword = $request -> keyword;
 
       $fractal_class -> account = $request->session()->get('account');
 

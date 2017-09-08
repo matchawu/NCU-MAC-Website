@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '管理申請')
+@section('title', '管理已開設課程')
 
 @section('content')
 <div class="container">
@@ -26,7 +26,9 @@
     <fieldset>
 
       <!-- title -->
-      <legend><b>已開設課程</b></legend>
+      <legend>
+        <b>管理已開設課程</b>
+      </legend>
 
       <!-- course table -->
       <div class="table-responsive">
@@ -38,9 +40,21 @@
               <th>上課時數</th>
               <th>認證時數</th>
               <th>申請時間</th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th>
+                <a href="{{ url('/application/edit_pwd') }}">
+                  <button type="button" class="btn btn-basic btn-sm" id="edit_pwd"><span class="glyphicon glyphicon-cog"></span> 編輯密碼 </button>
+                </a>
+              </th>
+              <th>
+                <a href="{{ url('/application/logout') }}">
+                  <button type="button" class="btn btn-primary btn-sm" id="logout"><span class="glyphicon glyphicon-off"></span> 登出</button>
+                </a>
+              </th>
+              <th>
+                <a href="{{ url('/application/choose') }}">
+                  <button type="button" class="btn btn-success btn-sm" id="new_class"><span class="glyphicon glyphicon-plus"></span> 新增</button>
+                </a>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -230,16 +244,19 @@
       </div>
 
       <!-- Button 新增課程-->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <center>
           <a href="{{ url('/application/choose') }}">
-            <button type="button" class="btn btn-success">新增課程 <span class="glyphicon glyphicon-new-window"></span></button>
+            <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 新增課程</button>
           </a>
           <a href="{{ url('/application/logout') }}">
-            <button type="button" class="btn btn-primary">登出 <span class="glyphicon glyphicon-new-window"></span></button>
+            <button type="button" class="btn btn-primary btn-sm" id="logout"><span class="glyphicon glyphicon-off"></span> 登出</button>
+          </a>
+          <a href="{{ url('/application/edit_pwd') }}">
+            <button type="button" class="btn btn-basic btn-sm" id="edit_pwd"><span class="glyphicon glyphicon-cog"></span> 編輯密碼 </button>
           </a>
         </center>
-      </div>
+      </div> -->
 
     </fieldset>
   </div>
@@ -251,9 +268,47 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-
-</script>
+<style>
+#new_class {
+  /*float: right;*/
+  /*background-color:#33cccc;*/
+  /*border-color: #33cccc;*/
+  /*transition-duration: 0.4s;*/
+}
+#new_class:hover {
+  /*float: right;*/
+  /*color:#ffffff;*/
+  /*background-color:#248f8f;*/
+  /*border-color: #248f8f;*/
+}
+#logout {
+  /*float: right;*/
+  background-color:#33cccc;
+  border-color: #33cccc;
+  transition-duration: 0.4s;
+}
+#logout:hover {
+  /*float: right;*/
+  color:#ffffff;
+  background-color:#248f8f;
+  border-color: #248f8f;
+}
+#edit_pwd{
+  /*float: right;*/
+  background-color: #808080;
+  border-color: #808080;
+  color: #ffffff;
+}
+#edit_pwd:hover{
+  /*float: right;*/
+  background-color:#737373;
+  border-color: #595959;
+  color: #ffffff;
+}
+#act{
+  float:right;
+}
+</style>
 @endsection
 
 @section('js')

@@ -58,7 +58,18 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="field" placeholder="人文藝術、" value="{{$fractal_class->field}}" class="form-control"  type="text" disabled>
+        <input id="field" name="field" value="{{$fractal_class->field}}" class="form-control"  type="text" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- text no_req other_field-->
+      <div class="form-group" id="other_field">
+        <label class="col-md-4 control-label">其他分類</label>
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
+        <input  name="other_field" placeholder="請輸入其他分類名稱" class="form-control"  type="text" value="{{$fractal_class->other_field}}" disabled>
           </div>
         </div>
       </div>
@@ -261,6 +272,17 @@
         </div>
       </div>
 
+      <!-- text no_req keyword-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">關鍵字</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+        <input name="keyword" placeholder="關鍵字請以空格隔開" class="form-control" type="text" value="{{$fractal_class->keyword}}" disabled>
+          </div>
+        </div>
+      </div>
+
       <!-- Button submit-->
       <div class="form-group">
         <center>
@@ -286,6 +308,11 @@
   display:none;
 }
 </style>
+<style>
+#other_field{
+  display: none;
+}
+</style>
 @endsection
 
 @section('js')
@@ -295,6 +322,13 @@ $(document).ready(function(){
     for(j=1; j<=i; j++){
       $("#date"+j).css("display","block");
     }
+});
+</script>
+<script>
+$(document).ready(function(){
+  if($("#field").val() === "其他"){
+    $("#other_field").show();
+  }
 });
 </script>
 @endsection

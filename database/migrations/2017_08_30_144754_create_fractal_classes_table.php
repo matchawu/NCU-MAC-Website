@@ -20,6 +20,7 @@ class CreateFractalClassesTable extends Migration
             $table->string('name')->nullable();
             $table->string('code')->nullable();
             $table->string('field')->nullable();
+            $table->string('other_field')->nullable();
             $table->string('unit')->nullable();
             $table->string('location')->nullable();
             $table->string('start')->nullable();
@@ -39,6 +40,7 @@ class CreateFractalClassesTable extends Migration
             $table->string('class_intro')->nullable();
             $table->string('comment')->nullable();
             $table->string('dateNum')->nullable();
+            $table->string('keyword')->nullable();
             $table->string('account')->nullable();
 
         });

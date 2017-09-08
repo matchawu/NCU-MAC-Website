@@ -25,7 +25,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
-        <input  name="term" placeholder="ex. 106-1" value="{{$fractal_class->term}}" class="form-control"  type="text">
+        <input  name="term" placeholder="ex. 106-1" value="{{$fractal_class->term}}" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" placeholder="課程中文名稱" value="{{$fractal_class->name}}" class="form-control"  type="text">
+        <input  name="name" placeholder="課程中文名稱" value="{{$fractal_class->name}}" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -47,18 +47,38 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
-        <input  name="code" placeholder="課程代碼" value="{{$fractal_class->code}}" class="form-control"  type="text">
+        <input  name="code" placeholder="課程代碼" value="{{$fractal_class->code}}" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
 
-      <!-- Text field req-->
+      <!-- text req field-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程領域</label>
         <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="field" name="field" value="{{$fractal_class->field}}">
+              <option value="人文與思想" id="field1">人文與思想</option>
+              <option value="自然科學" id="field2">自然科學</option>
+              <option value="應用科學" id="field3">應用科學</option>
+              <option value="社會思潮與現象" id="field4">社會思潮與現象</option>
+              <option value="跨域整合" id="field5">跨域整合</option>
+              <option value="社會實踐" id="field6">社會實踐</option>
+              <option value="創意創業" id="field7">創意創業</option>
+              <option value="其他" id="field8">其他</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- text no_req other_field-->
+      <div class="form-group" id="other_field">
+        <label class="col-md-4 control-label">輸入分類</label>
+        <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="field" placeholder="人文藝術、" value="{{$fractal_class->field}}" class="form-control"  type="text">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
+        <input  name="other_field" placeholder="請輸入其他分類名稱" class="form-control"  type="text" value="{{$fractal_class->other_field}}">
           </div>
         </div>
       </div>
@@ -69,7 +89,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-        <input  name="unit" placeholder="開放授課之單元或類別" value="{{$fractal_class->unit}}" class="form-control"  type="text">
+        <input  name="unit" placeholder="開放授課之單元或類別" value="{{$fractal_class->unit}}" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -80,7 +100,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input name="location" placeholder="請輸入上課地點" value="{{$fractal_class->location}}" class="form-control"  type="text">
+        <input name="location" placeholder="請輸入上課地點" value="{{$fractal_class->location}}" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -91,7 +111,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="start" value="{{$fractal_class->start}}" class="form-control"  type="time">
+        <input name="start" value="{{$fractal_class->start}}" class="form-control"  type="time" required>
           </div>
         </div>
       </div>
@@ -102,7 +122,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="end" value="{{$fractal_class->end}}" class="form-control"  type="time">
+        <input name="end" value="{{$fractal_class->end}}" class="form-control"  type="time" required>
           </div>
         </div>
       </div>
@@ -113,7 +133,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-              <input name="date1" value="{{$fractal_class->date1}}" class="form-control"  type="date" id="datein1">
+              <input name="date1" value="{{$fractal_class->date1}}" class="form-control"  type="date" id="datein1" required>
               <div class="input-group-btn">
                 <button class="btn btn-info" id="add_date" type="button">
                   <i class="glyphicon glyphicon-plus"></i>
@@ -189,7 +209,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-        <input name="limit" placeholder="ex. 50" value="{{$fractal_class->limit}}" class="form-control"  type="text">
+        <input name="limit" placeholder="ex. 50" value="{{$fractal_class->limit}}" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -200,7 +220,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="teacher" placeholder="請輸入授課講師中文名字" value="{{$fractal_class->teacher}}" class="form-control" type="text">
+        <input name="teacher" placeholder="請輸入授課講師中文名字" value="{{$fractal_class->teacher}}" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -211,7 +231,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input name="email" placeholder="請填入Email或手機號碼" value="{{$fractal_class->email}}" class="form-control" type="text">
+        <input name="email" placeholder="請填入Email或手機號碼" value="{{$fractal_class->email}}" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -233,7 +253,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-        <input name="class_hr" placeholder="本課程上課總時數(hr)" value="{{$fractal_class->class_hr}}" class="form-control" type="text">
+        <input name="class_hr" placeholder="本課程上課總時數(hr)" value="{{$fractal_class->class_hr}}" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -244,7 +264,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-        <input name="auth_hr" placeholder="修完本課程學生獲得認證時數(hr)" value="{{$fractal_class->auth_hr}}" class="form-control" type="text">
+        <input name="auth_hr" placeholder="修完本課程學生獲得認證時數(hr)" value="{{$fractal_class->auth_hr}}" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -268,6 +288,17 @@
               <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
                 <textarea class="form-control full" name="comment" placeholder="單一課程注意事項或是變動"> {{$fractal_class->comment}}</textarea>
         </div>
+        </div>
+      </div>
+
+      <!-- text no_req keyword-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">關鍵字</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+        <input name="keyword" placeholder="關鍵字請以空格隔開" class="form-control" type="text" value="{{$fractal_class->keyword}}">
+          </div>
         </div>
       </div>
 
@@ -303,7 +334,14 @@
 @section('js')
 <script>
 var i = $("#dateNum").attr("value");
+var x = $("#field").attr("value");
 $(document).ready(function(){
+  for(y=1;y<=8;y++){
+    if(x== $("#field"+y).attr("value")){
+      $("#field"+y).attr('selected','selected');
+    }
+   }
+
     for(j=1; j<=i; j++){
       $("#date"+j).css("display","block");
     }
@@ -323,6 +361,18 @@ $(document).ready(function(){
           $("#dateNum").attr("value",i);
         }
     });
+    $('select').change(function(){
+      if($('select option:selected').text() === "其他"){
+        $('#other_field').show();
+      }
+      else{
+        $('#other_field').hide();
+      }
+    });
+
+    if($("#field").val() === "其他"){
+      $("#other_field").css("display","block");
+    }
 });
 </script>
 @endsection

@@ -28,13 +28,13 @@
   <div class="col-md-4"> -->
   <center>
     <a href="{{ url('/application/single') }}" data-toggle="tooltip" title="獨立開授之課程，一次性課程">
-    <button type="button" class="btn btn-success btn-md">個別課程 <span class="glyphicon glyphicon-log-in"></span></button>
+    <button type="button" class="btn btn-success btn-md">個別課程 <span class="glyphicon glyphicon-tint"></span></button>
     </a>
     <a href="{{ url('/application/module') }}" data-toggle="tooltip" title="一整套的課程，需安排各次上課進度及內容">
-    <button type="button" class="btn btn-info btn-md">模組課程 <span class="glyphicon glyphicon-log-in"></span></button>
+    <button type="button" class="btn btn-info btn-md">模組課程 <span class="glyphicon glyphicon-tint"></span></button>
     </a>
     <a href="{{ url('/application/fractal') }}" data-toggle="tooltip" title="學校已有的課程，其中幾堂特別公開授課">
-    <button type="button" class="btn btn-warning btn-md">碎形課程 <span class="glyphicon glyphicon-log-in"></span></button>
+    <button type="button" class="btn btn-warning btn-md">碎形課程 <span class="glyphicon glyphicon-tint"></span></button>
     </a>
   </center>
   <!-- </div> -->

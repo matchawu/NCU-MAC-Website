@@ -80,6 +80,27 @@ class AppUserController extends Controller
       }
 
     }
+    public function edit_goto(){
+      return view('application.edit_pwd');
+    }
+    public function edit_pwd(Request $req){
+      $sessionChk = $req->session()->get('account');
+      $loginUser = appUser::where('account',$sessionChk)->first();
+      if(!(md5($req->password)==$loginUser->password)){
+        return view('application.edit_pwd',["wrongPwd"=>"密碼錯誤，請再試一次。"]);
+      }else if(!($req->passwordNew == $req->passwordChk)){
+        return view('application.edit_pwd',["wrongPwd"=>"兩次輸入的密碼不同"]);
+      }else{
+        $loginUser->password = md5($req->passwordNew);
+        $loginUser->save();
+        return view('application.edit_pwd',["successPwd"=>"更改成功"]);
+      }
+
+      // return view('application.edit_pwd',[
+      //   "user"=>$loginUser
+      // ]);
+      return $loginUser;
+    }
 
     /**
      * Show the form for creating a new resource.

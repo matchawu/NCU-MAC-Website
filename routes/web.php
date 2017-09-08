@@ -75,6 +75,9 @@ Route::get('/application/logout', 'AppUserController@logout');
 Route::post('/application', 'AppUserController@login');
 Route::post('/application/addappUser', 'AppUserController@register'
 );
+//edit password
+Route::get('/application/edit_pwd', 'AppUserController@edit_goto');
+Route::post('/application/edit_pwd', 'AppUserController@edit_pwd');
 //manage
 Route::get('/application/mgt', function () {
     return view('application.mgt');
@@ -124,7 +127,7 @@ Route::post('/application/add_module','ModuleController@store');
 //edit small module
 Route::post('/application/edit_smallmodule/{id}','ModuleController@edit_fin');
 //delete module
-Route::get('/application/deleteModule/{id}','ModuleController@delete');
+Route::get('/application/deleteSmallModule/{id}','ModuleController@delete');
 
 //new fractal class
 Route::get('/application/fractal','Fractal_classController@index');

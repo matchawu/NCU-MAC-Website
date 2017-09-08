@@ -17,7 +17,7 @@
     <fieldset>
 
     <!-- Form Name -->
-    <legend><b>開課單位登入</b></legend>
+    <legend><center><b>開課單位登入</b></center></legend>
 
     <!-- alert -->
     <div class="alert alert-info alert-dismissable  fade in">

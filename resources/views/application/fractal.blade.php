@@ -26,7 +26,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
-        <input  name="term" placeholder="ex. 106-1" class="form-control"  type="text" >
+        <input  name="term" placeholder="ex. 106-1" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" placeholder="課程中文名稱" class="form-control"  type="text" >
+        <input  name="name" placeholder="課程中文名稱" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
-        <input  name="code" placeholder="課程代碼" class="form-control"  type="text" >
+        <input  name="code" placeholder="課程代碼" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -57,9 +57,29 @@
       <div class="form-group">
         <label class="col-md-4 control-label">課程領域</label>
         <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="field" name="field">
+              <option value="人文與思想">人文與思想</option>
+              <option value="自然科學">自然科學</option>
+              <option value="應用科學">應用科學</option>
+              <option value="社會思潮與現象">社會思潮與現象</option>
+              <option value="跨域整合">跨域整合</option>
+              <option value="社會實踐">社會實踐</option>
+              <option value="創意創業">創意創業</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- text no_req other_field-->
+      <div class="form-group" id="other_field">
+        <label class="col-md-4 control-label">輸入分類</label>
+        <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="field" placeholder="人文藝術、" class="form-control"  type="text" >
+        <span class="input-group-addon"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
+        <input  name="other_field" placeholder="請輸入其他分類名稱" class="form-control"  type="text">
           </div>
         </div>
       </div>
@@ -70,7 +90,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-        <input  name="unit" placeholder="開放授課之單元或類別" class="form-control"  type="text" >
+        <input  name="unit" placeholder="開放授課之單元或類別" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -81,7 +101,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input name="location" placeholder="請輸入上課地點" class="form-control"  type="text" >
+        <input name="location" placeholder="請輸入上課地點" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -92,7 +112,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="start" class="form-control"  type="time">
+        <input name="start" class="form-control"  type="time" required>
           </div>
         </div>
       </div>
@@ -103,7 +123,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="end" class="form-control"  type="time">
+        <input name="end" class="form-control"  type="time" required>
           </div>
         </div>
       </div>
@@ -114,7 +134,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-            <input name="date1" class="form-control"  type="date" id="datein1">
+            <input name="date1" class="form-control"  type="date" id="datein1" required>
             <div class="input-group-btn">
               <button class="btn btn-info" id="add_date" type="button">
                 <i class="glyphicon glyphicon-plus"></i>
@@ -190,7 +210,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-        <input name="limit" placeholder="ex. 50" class="form-control"  type="text" >
+        <input name="limit" placeholder="ex. 50" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -201,7 +221,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="teacher" placeholder="請輸入授課講師中文名字" class="form-control" type="text" >
+        <input name="teacher" placeholder="請輸入授課講師中文名字" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -212,7 +232,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input name="email" placeholder="請填入電子郵件" class="form-control" type="text" >
+        <input name="email" placeholder="請填入電子郵件" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -234,7 +254,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-        <input name="class_hr" placeholder="本課程上課總時數(hr)" class="form-control" type="text" >
+        <input name="class_hr" placeholder="本課程上課總時數(hr)" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -245,7 +265,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-        <input name="auth_hr" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text" >
+        <input name="auth_hr" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -272,6 +292,17 @@
         </div>
       </div>
 
+      <!-- text no_req keyword-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">關鍵字</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+        <input name="keyword" placeholder="關鍵字請以空格隔開" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+
       <!-- Button submit -->
       <div class="form-group">
         <center>
@@ -293,6 +324,9 @@
 <style>
 #date2,#date3,#date4,#date5,#date6 {
   display:none;
+}
+#other_field{
+  display: none;
 }
 </style>
 @endsection
@@ -317,6 +351,16 @@ $(document).ready(function(){
           $("#dateNum").attr("value",i);
         }
     });
+});
+</script>
+<script>
+$('select').change(function(){
+  if($('select option:selected').text() == "其他"){
+    $('#other_field').show();
+  }
+  else{
+    $('#other_field').hide();
+  }
 });
 </script>
 @endsection

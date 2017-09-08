@@ -25,7 +25,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
-        <input  name="term" value="{{$single_class->term}}" placeholder="ex. 106-1" class="form-control"  type="text">
+        <input  name="term" value="{{$single_class->term}}" placeholder="ex. 106-1" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -36,18 +36,38 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" value="{{$single_class->name}}" placeholder="課程中文名稱" class="form-control"  type="text">
+        <input  name="name" value="{{$single_class->name}}" placeholder="課程中文名稱" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
 
-      <!-- Text field req-->
+      <!-- text req field-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程領域</label>
         <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="field" name="field" value="{{$single_class->field}}">
+              <option value="人文與思想" id="field1">人文與思想</option>
+              <option value="自然科學" id="field2">自然科學</option>
+              <option value="應用科學" id="field3">應用科學</option>
+              <option value="社會思潮與現象" id="field4">社會思潮與現象</option>
+              <option value="跨域整合" id="field5">跨域整合</option>
+              <option value="社會實踐" id="field6">社會實踐</option>
+              <option value="創意創業" id="field7">創意創業</option>
+              <option value="其他" id="field8">其他</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- text no_req other_field-->
+      <div class="form-group" id="other_field">
+        <label class="col-md-4 control-label">輸入分類</label>
+        <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  name="field" value="{{$single_class->field}}" placeholder="人文藝術、" class="form-control"  type="text">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
+        <input  name="other_field" placeholder="請輸入其他分類名稱" class="form-control"  type="text" value="{{$single_class->other_field}}">
           </div>
         </div>
       </div>
@@ -58,7 +78,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input name="location" value="{{$single_class->location}}" placeholder="請輸入上課地點" class="form-control"  type="text">
+        <input name="location" value="{{$single_class->location}}" placeholder="請輸入上課地點" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -69,7 +89,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <input name="date" class="form-control" value="{{$single_class->date}}" type="date">
+        <input name="date" class="form-control" value="{{$single_class->date}}" type="date" required>
           </div>
         </div>
       </div>
@@ -80,7 +100,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="start" value="{{$single_class->start}}" class="form-control"  type="time">
+        <input name="start" value="{{$single_class->start}}" class="form-control"  type="time" required>
           </div>
         </div>
       </div>
@@ -91,7 +111,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        <input name="end" value="{{$single_class->end}}"  class="form-control"  type="time">
+        <input name="end" value="{{$single_class->end}}"  class="form-control"  type="time" required>
           </div>
         </div>
       </div>
@@ -102,7 +122,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
-        <input name="limit" value="{{$single_class->limit}}" placeholder="ex. 50" class="form-control"  type="text">
+        <input name="limit" value="{{$single_class->limit}}" placeholder="ex. 50" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -113,7 +133,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="teacher" value="{{$single_class->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text">
+        <input name="teacher" value="{{$single_class->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -124,7 +144,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input name="email" value="{{$single_class->email}}" placeholder="請填入Email或手機號碼" class="form-control" type="text">
+        <input name="email" value="{{$single_class->email}}" placeholder="請填入Email或手機號碼" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -146,7 +166,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-        <input name="class_hr" value="{{$single_class->class_hr}}" placeholder="本課程上課總時數(hr)" class="form-control" type="text">
+        <input name="class_hr" value="{{$single_class->class_hr}}" placeholder="本課程上課總時數(hr)" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -157,7 +177,7 @@
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-        <input name="auth_hr" value="{{$single_class->auth_hr}}" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text">
+        <input name="auth_hr" value="{{$single_class->auth_hr}}" placeholder="修完本課程學生獲得認證時數(hr)" class="form-control" type="text" required>
           </div>
         </div>
       </div>
@@ -170,6 +190,17 @@
               <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
                 <textarea class="form-control full" name="class_intro" placeholder="課程介紹">{{$single_class->class_intro}}</textarea>
         </div>
+        </div>
+      </div>
+
+      <!-- text no_req keyword-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">關鍵字</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+        <input name="keyword" placeholder="關鍵字請以空格隔開" class="form-control" type="text" value="{{$single_class->keyword}}">
+          </div>
         </div>
       </div>
 
@@ -197,13 +228,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-
-</script>
+<style>
+#other_field{
+  display: none;
+}
+</style>
 @endsection
 
 @section('js')
 <script>
+$(document).ready(function(){
+  var x = $("#field").attr("value");
+  for(y=1;y<=8;y++){
+    if(x== $("#field"+y).attr("value")){
+      $("#field"+y).attr('selected','selected');
+    }
+  }
+  
+  $('select').change(function(){
+    if($('select option:selected').text() === "其他"){
+      $('#other_field').show();
+    }
+    else{
+      $('#other_field').hide();
+    }
+  });
+
+  if($("#field").val() === "其他"){
+    $("#other_field").css("display","block");
+  }
+});
+
 
 </script>
 @endsection
