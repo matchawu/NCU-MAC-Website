@@ -13,9 +13,9 @@
 </div>
 
 <div class="container col-sm-8">
-  <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+  <form class="well form-horizontal" role="form" method="POST" action="{{ route('login') }}" id="contact_form">
     <fieldset>
-    
+    {{ csrf_field() }}
     <!-- Form Name -->
     <legend><b>管理員登入</b></legend>
 
@@ -24,34 +24,51 @@
       <strong>初次使用? </strong> 申請流程請參照 <a href="{{ url('/introduce') }}" class="alert-link">微學分課程開課資格申請流程。</a>
     </div> -->
 
-    <!-- 此處input name尚未更改 -->
+    @if ($errors->has('email'))
+                <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+                </span>
+    @endif
+      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+        <label for="email" class="col-md-4 control-label">管理者信箱</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                
+              </div>
+            </div>
+      </div>
     <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label">管理者帳號</label>
+    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+        <label for="password" class="col-md-4 control-label">管理者密碼</label>
       <div class="col-md-4 inputGroupContainer">
-      <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input  name="first_name" placeholder="ID" class="form-control"  type="text">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="password" type="password" class="form-control" name="password" required>
+          @if ($errors->has('password'))
+          <span class="help-block">
+          <strong>{{ $errors->first('password') }}</strong>
+           </span>
+          @endif
         </div>
       </div>
     </div>
-
-    <!-- Text input-->
+    
     <div class="form-group">
-      <label class="col-md-4 control-label">管理者密碼</label>
-      <div class="col-md-4 inputGroupContainer">
-      <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input  name="first_name" placeholder="password" class="form-control"  type="password">
-        </div>
-      </div>
-    </div>
-
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
     <!-- Button log in -->
     <div class="form-group">
       <center>
         <a href="{{ url('/authrize/menu') }}">
-          <button type="button" class="btn btn-primary">登入 <span class="glyphicon glyphicon-log-in"></span></button>
+          <button type="submit" class="btn btn-primary">登入 <span class="glyphicon glyphicon-log-in"></span></button>
         </a>
       </center>
     </div>
