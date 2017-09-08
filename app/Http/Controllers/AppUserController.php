@@ -18,7 +18,7 @@ class AppUserController extends Controller
      */
     public function index(Request $req)
     {
-      // $req->session()->flush();
+      //$req->session()->flush();
       $sessionChk = $req->session()->get('account');
       if(isset($sessionChk)){
         $loginUser = appUser::where('account',$sessionChk)->first();
@@ -38,6 +38,24 @@ class AppUserController extends Controller
         return view('application.index');
       }
     }
+
+    public function addApplicant(Request $req)
+    {
+      //$req->session()->flush();
+      // $sessionChk = $req->session()->get('account');
+      //if(isset($sessionChk)){
+        //$loginUser = appUser::where('account',$sessionChk)->first();
+        $applicants =
+        appUser::all();
+        
+        return view('authrize.menu',[
+          "applicants"=>$applicants,
+        ]);
+      //}else{
+      //  return view('authrize.menu');
+      //}
+    }
+
     public function login(Request $req)
     {
 
@@ -71,12 +89,27 @@ class AppUserController extends Controller
       $loginUser = appUser::where('account',$req->account)->first();
       if($loginUser==null){
         $newUser = new appUser;
+        $newUser -> unitname = $req -> unitname;
         $newUser -> account = $req -> account;
         $newUser -> password = md5($req->password);
+        $newUser -> mail = $req -> mail;
+        $newUser -> name = $req -> name;
+        $newUser -> phone = $req -> phone;
         $newUser->save();
-        return view('application.index',["hint"=>"註冊成功"]);
+
+        $applicants = appUser::all();
+
+        return view('authrize.menu',[
+          "hint"=>"輸入成功",
+          "applicants"=>$applicants,
+          ]);
+
       }else{
-        return view('application.index',["hint"=>"帳號已被註冊"]);
+        $applicants = appUser::all();
+        return view('authrize.menu',[
+          "hint"=>"帳號已被註冊",
+          "applicants"=>$applicants,
+          ]);
       }
 
     }
@@ -145,5 +178,13 @@ class AppUserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delete($id)
+    {
+      $applicant = appUser::find($id);
+      $applicant->delete();
+
+      return redirect('/authrize/menu');
     }
 }

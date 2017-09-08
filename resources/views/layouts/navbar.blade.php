@@ -1,5 +1,5 @@
 <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom" style="background-color:#fdf5e6")>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom" style="background-color:#fdf5e6">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -33,12 +33,25 @@
                     <!-- <li class="page-scroll">
                         <a href="{{ url('/form') }}">表單下載</a>
                     </li> -->
-                    <li class="page-scroll navbtn ">
+                    
+                     @if (Auth::guest())
+                     <li class="page-scroll navbtn ">
                         <a href="{{ url('/authrize') }}">管理員登入</a>
                     </li>
-                    <li>
-                    
-                    </li>
+                    @else
+                        <li>
+                            <a href="{{ url('/logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                登出
+                            </a>
+                            
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    @endif
+
                 </ul>
             </div>
 

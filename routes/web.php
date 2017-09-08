@@ -22,9 +22,9 @@ Route::get('Homepage', function () {
 Route::get('/authrize', function () {
     return view('authrize.login');
 });
-Route::get('/authrize/menu', function () {
-    return view('authrize.menu');
-});
+Route::get('/authrize/menu','AppUserController@addApplicant');
+Route::get('/authrize/deleteapplicants/{id}','AppUserController@delete');
+
 Route::get('authrize', function () {
     return view('authrize.login');
 });
