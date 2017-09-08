@@ -149,6 +149,11 @@ Route::get('/application/finish', function () {
 Route::get('record', function () {
     return view('record.index');
 });
+Route::get('record/singleclass',function () {
+    return view('record.single_class');
+});
+Route::get('search', 'SearchController@index');
+Route::post('search', 'SearchController@search');
 
 
 Auth::routes();

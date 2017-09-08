@@ -9,14 +9,17 @@
 			<center>課程探索</center>
 		</div>
 		<div class="inline">
-			<div class="col-xs-8">
 				<button type="button" class="btn basic"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;全部</button>
-				<a href="{{ url('/record/singleclass') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;個別課程</button></a>
-				<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;模組課程</button>
-				<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;碎形課程</button>
+				<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;人文與思想</button>
+				<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;自然科學</button>
+				<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;應用科學</button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;社會思潮與現象</button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;跨域整合</button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;社會實踐</button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;創意創業</button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;其他</button>
         <a href="{{ url('/search') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;詳細搜尋</button></a>
-			</div>
-		</div><br><br>
+		</div><br>
 		<div class="panel-body">
 			<table class="table table-hover" >
 			<thead style="background-color:#da8b8b;color:#fff">
