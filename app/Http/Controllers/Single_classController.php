@@ -33,6 +33,7 @@ class Single_classController extends Controller
         $single_class -> auth_hr = $request -> auth_hr;
         $single_class -> class_intro = $request -> class_intro;
         $single_class -> keyword = $request -> keyword;
+        $single_class -> video = $request -> video;
         $single_class -> weekday = date('N',strtotime($request->date));
         $single_class -> account = $request->session()->get('account');
 
@@ -77,6 +78,7 @@ class Single_classController extends Controller
       $single_class -> auth_hr = $request -> auth_hr;
       $single_class -> class_intro = $request -> class_intro;
       $single_class -> keyword = $request -> keyword;
+      $single_class -> video = $request -> video;
       $single_class -> weekday = date('N',strtotime($request->date));
 
 

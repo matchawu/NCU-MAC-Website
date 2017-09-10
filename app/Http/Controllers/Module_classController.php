@@ -37,6 +37,7 @@ class Module_classController extends Controller
         $module_class -> claim = $request -> claim;
         $module_class -> other = $request -> other;
         $module_class -> keyword = $request -> keyword;
+        $module_class -> video = $request -> video;
 
         $module_class -> account = $request->session()->get('account');
 
@@ -84,6 +85,7 @@ class Module_classController extends Controller
       $module_class -> claim = $request -> claim;
       $module_class -> other = $request -> other;
       $module_class -> keyword = $request -> keyword;
+      $module_class -> video = $request -> video;
 
       $module_class -> account = $request->session()->get('account');
 

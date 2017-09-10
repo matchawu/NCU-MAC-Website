@@ -33,6 +33,7 @@ class CreateSingleClassesTable extends Migration
             $table->string('class_intro')->nullable();
             $table->string('weekday')->nullable();
             $table->string('keyword')->nullable();
+            $table->string('video')->nullable();
             $table->string('account')->nullable();
         });
     }

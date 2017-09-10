@@ -205,6 +205,17 @@
         </div>
       </div>
 
+      <!-- text no_req video-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">影音連結</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-film"></i></span>
+            <input name="video" placeholder="請輸入課程影音網址" class="form-control" type="text" value="{{$module_class->video}}">
+          </div>
+        </div>
+      </div>
+
       <br>
 
       <!-- Button submit-->

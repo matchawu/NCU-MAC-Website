@@ -41,6 +41,7 @@ class Fractal_classController extends Controller
         $fractal_class -> comment = $request -> comment;
         $fractal_class -> dateNum = $request -> dateNum;
         $fractal_class -> keyword = $request -> keyword;
+        $fractal_class -> video = $request -> video;
 
         $fractal_class -> account = $request->session()->get('account');
 
@@ -93,6 +94,7 @@ class Fractal_classController extends Controller
       $fractal_class -> comment = $request -> comment;
       $fractal_class -> dateNum = $request -> dateNum;
       $fractal_class -> keyword = $request -> keyword;
+      $fractal_class -> video = $request -> video;
 
       $fractal_class -> account = $request->session()->get('account');
 

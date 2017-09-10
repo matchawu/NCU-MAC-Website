@@ -21,7 +21,6 @@ class CreateModuleClassesTable extends Migration
             $table->string('field')->nullable();
             $table->string('other_field')->nullable();
             $table->string('location')->nullable();
-            //$table->string('time')->nullable();
             $table->string('limit')->nullable();
             $table->string('teacher')->nullable();
             $table->string('email')->nullable();
@@ -33,6 +32,7 @@ class CreateModuleClassesTable extends Migration
             $table->string('claim')->nullable();
             $table->string('other')->nullable();
             $table->string('keyword')->nullable();
+            $table->string('video')->nullable();
             $table->string('account')->nullable();
         });
     }

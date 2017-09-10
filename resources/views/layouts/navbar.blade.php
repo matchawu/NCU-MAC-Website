@@ -7,7 +7,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span>
                 </button>
             </div>
 
@@ -33,7 +33,7 @@
                     <!-- <li class="page-scroll">
                         <a href="{{ url('/form') }}">表單下載</a>
                     </li> -->
-                    
+
                      @if (Auth::guest())
                      <li class="page-scroll navbtn ">
                         <a href="{{ url('/authrize') }}">管理員登入</a>
@@ -42,11 +42,11 @@
                         <li>
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
+                                         document.getElementById('logout-formm').submit();">
                                 登出
                             </a>
-                            
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+
+                            <form id="logout-formm" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
                         </li>
@@ -67,4 +67,3 @@
         border-radius:25%;
     }
 </style>
-
