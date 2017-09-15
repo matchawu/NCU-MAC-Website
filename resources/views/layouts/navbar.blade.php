@@ -15,6 +15,9 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right ">
                     <li class="page-scroll navbtn">
+                        <a href="{{ url('/Homepage') }}">最新公告</a>
+                    </li>
+                    <li class="page-scroll navbtn">
                         <a href="{{ url('/introduce') }}">簡介</a>
                     </li>
                     <!-- <li class="page-scroll">

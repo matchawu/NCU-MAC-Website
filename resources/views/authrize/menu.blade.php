@@ -23,6 +23,7 @@
                     <h5><strong>新增</strong></h5>
                 </div>
             </div>
+  <form action="{{asset('/application/addappUser')}}" method="post">          
   <table class="table">
     <tbody>
       <tr>
@@ -32,28 +33,27 @@
           <strong>{{$hint}}</strong>
       </div>
       @endif
-      <form action="{{asset('/application/addappUser')}}" method="post">
       {{ csrf_field() }}
-        <td><input type="text"  class="form-control" name ="unitname" placeholder="開課單位"></td>
-        <td><input type="text" class="form-control" name ="account" placeholder="帳號"></td>
-        <td><input type="password" class="form-control" name ="password" placeholder="密碼"></td>
-        <td><input type="password" class="form-control" placeholder="確認密碼"></td>
-        <td><input type="email" class="form-control" name ="mail" placeholder="聯絡信箱"></td>
-        <td><input type="text" class="form-control" name="phone" placeholder="申請人電話"></td>
-        <td><input type="text" class="form-control" name ="name" placeholder="申請人姓名"></td>
+        <td><input type="text"  class="form-control" name ="unitname" placeholder="開課單位" required></td>
+        <td><input type="text" class="form-control" name ="account" placeholder="帳號" required></td>
+        <td><input type="password" class="form-control" name ="password" placeholder="密碼" required></td>
+        <td><input type="password" class="form-control" placeholder="確認密碼" required></td>
+        <td><input type="email" class="form-control" name ="mail" placeholder="聯絡信箱" required></td>
+        <td><input type="text" class="form-control" name="phone" placeholder="申請人電話" required></td>
+        <td><input type="text" class="form-control" name ="name" placeholder="申請人姓名" required></td>
                 <!-- create -->
                 <td>
                     <button type="submit" class="btn btn-primary btn-sm">
                       <span class="glyphicon glyphicon-plus"></span> 新增
                     </button>
                 </td>
-      </form>
+      
 
       </tr>
 
     </tbody>
   </table>
-
+  </form>
   <table class="table table-bordered table-hover">
     <thead>
       <tr>

@@ -145,6 +145,11 @@ class AppUserController extends Controller
         //
     }
 
+    public function refreshhomepage()
+    {
+
+      
+    }
     /**
      * Store a newly created resource in storage.
      *
