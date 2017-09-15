@@ -147,8 +147,14 @@ class AppUserController extends Controller
 
     public function refreshhomepage()
     {
-
-      
+          $single_classes =  Single_class::all();
+          $module_classes =  Module_class::all();
+          $fractal_classes = Fractal_class::all();
+          return view('Homepage.homepage',[
+            "single_classes"=>$single_classes,
+            "module_classes"=>$module_classes,
+            "fractal_classes"=>$fractal_classes,
+          ]);
     }
     /**
      * Store a newly created resource in storage.

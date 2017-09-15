@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 //首頁
-Route::get('/Homepage','HomeController@addApplicant');
+Route::get('/Homepage','AppUserController@refreshhomepage');
 //管理員登入
 Route::get('/authrize', function () {
     return view('authrize.login');

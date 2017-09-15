@@ -24,7 +24,7 @@
             </div>
 
             <ul class="nav nav-tabs">
-                 <li class="active"><a data-toggle="tab" href="#tab1">最新公告</a></li>
+                 <li class="active"><a data-toggle="tab" href="#tab1">最新課程</a></li>
                  <!-- <li><a data-toggle="tab" href="#tab2">課程公告</a></li>
                  <li><a data-toggle="tab" href="#tab3">審查結果</a></li>
                  <li><a data-toggle="tab" href="#tab4">優異結果</a></li> -->
@@ -33,7 +33,83 @@
             <div class="tab-content">
 
                 <div class="panel panel-default tab-pane active " id="tab1">
-                    <div class="panel-body"  style="height:500px; background-color:#b0e0e6; border-style:inset;">
+                    <div class="panel-body"  style="height:500px; background-color:#b0e0e6; border-style:inset; overflow-x: hidden;overflow-y: scroll;">
+                    <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>課程名稱</th>
+              <th>課程屬性</th>
+              <th>認證時數</th>
+              <th>任課老師</th>
+              <th>申請時間</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($single_classes as $single_class)
+              <tr class="success" style="height:50px;">
+                <td>{{$single_class->name}}</td>
+                <td>個別課程</td>
+                <td>{{$single_class->auth_hr}}</td>
+                <td>{{$single_class->teacher}}</td>
+                <?php
+                  $timestamp = strtotime($single_class->created_at) + 8*60*60;
+                  $time = date('Y-m-d H:i', $timestamp);
+                ?>
+                <td>{{$time}}</td>
+                <!-- view -->
+                <!-- <td>
+                  <a href="{{ url('/application/view_single') }}/{{$single_class->id}}">
+                    <button type="button" class="btn btn-default btn-sm">
+                      <span class="glyphicon glyphicon-eye-open"></span> 查看詳情
+                    </button>
+                  </a>
+                </td> -->
+              </tr>
+            @endforeach
+            @foreach ($module_classes as $module_class)
+            <tr class="info" style="height:50px;">
+              <td>{{$module_class->name}}</td>
+              <td>模組課程</td>
+              <td>{{$module_class->auth_hr}}</td>
+              <td>{{$single_class->teacher}}</td>
+              <?php
+                $timestamp = strtotime($module_class->created_at) + 8*60*60;
+                $time = date('Y-m-d H:i', $timestamp);
+              ?>
+              <td>{{$time}}</td>
+              <!-- view -->
+              <!-- <td>
+                <a href="{{ url('/application/view_module') }}/{{$module_class->id}}">
+                  <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-eye-open"></span> 查看詳情
+                  </button>
+                </a>
+              </td> -->
+            </tr>
+            @endforeach
+            @foreach ($fractal_classes as $fractal_class)
+            <tr class="warning" style="height:50px;">
+              <td>{{$fractal_class->name}}</td>
+              <td>碎形課程</td>
+              <td>{{$fractal_class->auth_hr}}</td>
+              <td>{{$single_class->teacher}}</td>
+              <?php
+                $timestamp = strtotime($fractal_class->created_at) + 8*60*60;
+                $time = date('Y-m-d H:i', $timestamp);
+              ?>
+              <td>{{$time}}</td>
+              <!-- view -->
+              <!-- <td>
+                <a href="{{ url('/application/view_fractal') }}/{{$fractal_class->id}}">
+                  <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-eye-open"></span> 查看詳情
+                  </button>
+                </a>
+              </td> -->
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
                     </div>
                 </div>
 
