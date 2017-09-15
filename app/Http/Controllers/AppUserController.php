@@ -47,7 +47,7 @@ class AppUserController extends Controller
         //$loginUser = appUser::where('account',$sessionChk)->first();
         $applicants =
         appUser::all();
-        
+
         return view('authrize.menu',[
           "applicants"=>$applicants,
         ]);

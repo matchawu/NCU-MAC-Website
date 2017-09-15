@@ -144,14 +144,45 @@ Route::get('/application/finish', function () {
 });
 
 //歷年紀錄
-Route::get('record', function () {
-    return view('record.index');
-});
-Route::get('record/singleclass',function () {
-    return view('record.single_class');
-});
+Route::get('record','SearchController@indexall');
+
+Route::get('record/view_single/{id}','ViewClassController@view_single');
+Route::get('record/view_module/{id}','ViewClassController@view_module');
+Route::get('record/view_fractal/{id}','ViewClassController@view_fractal');
+
+Route::get('record/個別課程','SearchController@all');
+Route::get('record/個別課程/人文與思想','SearchController@humanities');
+Route::get('record/個別課程/自然科學','SearchController@nscience');
+Route::get('record/個別課程/應用科學','SearchController@ascience');
+Route::get('record/個別課程/社會思潮與現象','SearchController@trend');
+Route::get('record/個別課程/跨域整合','SearchController@interdisciplinary');
+Route::get('record/個別課程/社會實踐','SearchController@social');
+Route::get('record/個別課程/創意創業','SearchController@creative');
+Route::get('record/個別課程/其他','SearchController@others');
+
+Route::get('record/模組課程','SearchController@all2');
+Route::get('record/模組課程/人文與思想','SearchController@humanities2');
+Route::get('record/模組課程/自然科學','SearchController@nscience2');
+Route::get('record/模組課程/應用科學','SearchController@ascience2');
+Route::get('record/模組課程/社會思潮與現象','SearchController@trend2');
+Route::get('record/模組課程/跨域整合','SearchController@interdisciplinary2');
+Route::get('record/模組課程/社會實踐','SearchController@social2');
+Route::get('record/模組課程/創意創業','SearchController@creative2');
+Route::get('record/模組課程/其他','SearchController@others2');
+
+Route::get('record/碎形課程','SearchController@all3');
+Route::get('record/碎形課程/人文與思想','SearchController@humanities3');
+Route::get('record/碎形課程/自然科學','SearchController@nscience3');
+Route::get('record/碎形課程/應用科學','SearchController@ascience3');
+Route::get('record/碎形課程/社會思潮與現象','SearchController@trend3');
+Route::get('record/碎形課程/跨域整合','SearchController@interdisciplinary3');
+Route::get('record/碎形課程/社會實踐','SearchController@social3');
+Route::get('record/碎形課程/創意創業','SearchController@creative3');
+Route::get('record/碎形課程/其他','SearchController@others3');
+
 Route::get('search', 'SearchController@index');
 Route::post('search', 'SearchController@search');
+Route::post('search2', 'SearchController@search2');
 
 
 Auth::routes();
