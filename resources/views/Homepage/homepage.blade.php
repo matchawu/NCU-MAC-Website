@@ -71,7 +71,7 @@
               <td>{{$module_class->name}}</td>
               <td>模組課程</td>
               <td>{{$module_class->auth_hr}}</td>
-              <td>{{$single_class->teacher}}</td>
+              <td>{{$module_class->teacher}}</td>
               <?php
                 $timestamp = strtotime($module_class->created_at) + 8*60*60;
                 $time = date('Y-m-d H:i', $timestamp);
@@ -92,7 +92,7 @@
               <td>{{$fractal_class->name}}</td>
               <td>碎形課程</td>
               <td>{{$fractal_class->auth_hr}}</td>
-              <td>{{$single_class->teacher}}</td>
+              <td>{{$fractal_class->teacher}}</td>
               <?php
                 $timestamp = strtotime($fractal_class->created_at) + 8*60*60;
                 $time = date('Y-m-d H:i', $timestamp);
