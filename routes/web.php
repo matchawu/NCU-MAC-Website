@@ -84,16 +84,6 @@ Route::get('/application/mgt', function () {
 Route::get('/application/class', function () {
     return view('application.class');
 });
-// //edit
-// Route::get('/application/edit_single', function () {
-//     return view('application.edit_single');
-// });
-// Route::get('/application/edit_module', function () {
-//     return view('application.edit_module');
-// });
-// Route::get('/application/edit_fractal', function () {
-//     return view('application.edit_fractal');
-// });
 Route::get('/application/choose', function () {
     return view('application.choose');
 });
@@ -184,5 +174,7 @@ Route::get('search', 'SearchController@index');
 Route::post('search', 'SearchController@search');
 Route::post('search2', 'SearchController@search2');
 
+//課程影音
+Route::get('/video', 'VideoController@index');
 
 Auth::routes();

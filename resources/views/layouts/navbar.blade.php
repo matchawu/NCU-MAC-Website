@@ -20,22 +20,15 @@
                     <li class="page-scroll navbtn">
                         <a href="{{ url('/introduce') }}">簡介</a>
                     </li>
-                    <!-- <li class="page-scroll">
-                        <a href="{{url('/check')}}">審核單位入口</a>
-                    </li> -->
-                    </li>
-                    <!-- <li class="page-scroll">
-                        <a href="{{ url('/openclass') }}">開課單位入口</a>
-                    </li> -->
-                    <li class="page-scroll navbtn">
-                        <a href="{{ url('/application') }}">開課單位登入</a>
-                    </li>
                     <li class="page-scrol navbtn">
                         <a href="{{ url('/record') }}">課程探索</a>
                     </li>
-                    <!-- <li class="page-scroll">
-                        <a href="{{ url('/form') }}">表單下載</a>
-                    </li> -->
+                    <li class="page-scrol navbtn">
+                        <a href="{{ url('/video') }}">課程影音</a>
+                    </li>
+                    <li class="page-scroll navbtn">
+                        <a href="{{ url('/application') }}">開課單位登入</a>
+                    </li>
 
                      @if (Auth::guest())
                      <li class="page-scroll navbtn ">
