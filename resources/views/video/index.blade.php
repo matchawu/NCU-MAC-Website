@@ -18,19 +18,19 @@
       <div class="list-group">
         @foreach ($single_classes as $single_class)
         @if( $single_class->video!=NULL )
-        <a href="{{$single_class->video}}" class="list-group-item">{{$single_class->name}}</a>
+        <a href="{{$single_class->video}}" class="list-group-item" target="_blank">{{$single_class->name}}</a>
         @endif
         @endforeach
 
         @foreach ($module_classes as $module_class)
         @if( $module_class->video!=NULL )
-        <a href="{{$module_class->video}}" class="list-group-item">{{$module_class->name}}</a>
+        <a href="{{$module_class->video}}" class="list-group-item" target="_blank">{{$module_class->name}}</a>
         @endif
         @endforeach
-      
+
         @foreach ($fractal_classes as $fractal_class)
         @if( $fractal_class->video!=NULL )
-        <a href="{{$fractal_class->video}}" class="list-group-item">{{$fractal_class->name}}</a>
+        <a href="{{$fractal_class->video}}" class="list-group-item" target="_blank">{{$fractal_class->name}}</a>
         @endif
         @endforeach
       </div>
@@ -40,7 +40,7 @@
       <div class="list-group">
         @foreach ($single_classes as $single_class)
         @if( $single_class->video!=NULL )
-        <a href="{{$single_class->video}}" class="list-group-item">{{$single_class->name}}</a>
+        <a href="{{$single_class->video}}" class="list-group-item" target="_blank">{{$single_class->name}}</a>
         @endif
         @endforeach
       </div>
@@ -50,7 +50,7 @@
       <div class="list-group">
         @foreach ($module_classes as $module_class)
         @if( $module_class->video!=NULL )
-        <a href="{{$module_class->video}}" class="list-group-item">{{$module_class->name}}</a>
+        <a href="{{$module_class->video}}" class="list-group-item" target="_blank">{{$module_class->name}}</a>
         @endif
         @endforeach
       </div>
@@ -60,7 +60,7 @@
       <div class="list-group">
         @foreach ($fractal_classes as $fractal_class)
         @if( $fractal_class->video!=NULL )
-        <a href="{{$fractal_class->video}}" class="list-group-item">{{$fractal_class->name}}</a>
+        <a href="{{$fractal_class->video}}" class="list-group-item" target="_blank">{{$fractal_class->name}}</a>
         @endif
         @endforeach
       </div>
