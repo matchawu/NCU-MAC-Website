@@ -67,6 +67,8 @@
     <!-- forget pwd tips-->
     <center>
       <h6><span class="glyphicon glyphicon-question-sign"></span> 忘記密碼請逕向教學發展中心聯繫</h6>
+      <h6>教發處 李碧華小姐 0972-137-000</h6>
+      <h6> lee57928@cc.ncu.edu.tw</h6>
     </center>
 
     </fieldset>
