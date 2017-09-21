@@ -21,7 +21,7 @@
                         <a href="{{ url('/introduce') }}">簡介</a>
                     </li>
                     <li class="page-scrol navbtn">
-                        <a href="{{ url('/record') }}">課程探索</a>
+                        <a href="{{ url('/record') }}">課程搜尋</a>
                     </li>
                     <li class="page-scrol navbtn">
                         <a href="{{ url('/video') }}">課程影音</a>
