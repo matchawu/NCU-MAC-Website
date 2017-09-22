@@ -9,7 +9,7 @@
     <li class="active"><a id="pill1" class="btn-primary btn" data-toggle="pill" href="#all">全部</a></li>
     <li><a id="pill2" class="btn-success btn" data-toggle="pill" href="#single">個別課程</a></li>
     <li><a id="pill3" class="btn-info btn" data-toggle="pill" href="#module">模組課程</a></li>
-    <li><a id="pill4" class="btn-warning btn" data-toggle="pill" href="#fractal">碎形課程</a></li>
+    <!-- <li><a id="pill4" class="btn-warning btn" data-toggle="pill" href="#fractal">碎形課程</a></li> -->
   </ul>
 
   <div class="tab-content">

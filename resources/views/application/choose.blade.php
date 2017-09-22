@@ -33,9 +33,9 @@
     <a href="{{ url('/application/module') }}" data-toggle="tooltip" title="一整套的課程，需安排各次上課進度及內容">
     <button type="button" class="btn btn-info btn-md">模組課程 <span class="glyphicon glyphicon-tint"></span></button>
     </a>
-    <a href="{{ url('/application/fractal') }}" data-toggle="tooltip" title="學校已有的課程，其中幾堂特別公開授課">
+    <!-- <a href="{{ url('/application/fractal') }}" data-toggle="tooltip" title="學校已有的課程，其中幾堂特別公開授課">
     <button type="button" class="btn btn-warning btn-md">碎形課程 <span class="glyphicon glyphicon-tint"></span></button>
-    </a>
+    </a> -->
   </center>
   <!-- </div> -->
 </div>

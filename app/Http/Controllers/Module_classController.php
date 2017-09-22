@@ -22,6 +22,7 @@ class Module_classController extends Controller
         $module_class = new Module_class;
 
         $module_class -> term = $request -> term;
+        $module_class -> way = $request -> way;
         $module_class -> name = $request -> name;
         $module_class -> field = $request -> field;
         $module_class -> other_field = $request -> other_field;
@@ -70,6 +71,7 @@ class Module_classController extends Controller
       $module_class = Module_class::find($id);
 
       $module_class -> term = $request -> term;
+      $module_class -> way = $request -> way;
       $module_class -> name = $request -> name;
       $module_class -> field = $request -> field;
       $module_class -> other_field = $request -> other_field;
