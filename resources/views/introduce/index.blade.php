@@ -5,33 +5,29 @@
 @section('content')
 		<!--標題-->
 			<div class="page-header">
-				<img src="{{asset('/img/Introduce-title.jpg')}}" class="title">
+				<center>微學分簡介</center>
 			</div>
 		<!--中間三個Button-->
 			<div class="row" style="margin-top: 15%;">
 				<!--button-->
 				<div class="col-sm-3">
-					<button type="button" class="btn button-bgcolor" data-toggle="modal" data-target="#myModal1">
-						<img src="{{asset('/img/Introduce1.jpg')}}" class="img-responsive " style="width:600px;height:300px;">
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal1" style="margin-left: 22%; height: 150px; width: 200px;">開課類型
 					</button>
 				</div>
 				<div class="col-sm-3">
-					<button type="button" class="btn button-bgcolor" data-toggle="modal" data-target="#myModal2">
-						<img src="{{asset('/img/Introduce2.jpg')}}" class="img-responsive " style="width:600px;height:300px">
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2" style="margin-left: 22%; height: 150px; width: 200px;">開課流程
 					</button>
 				</div>
 				<div class="col-sm-3">
-					<button type="button" class="btn button-bgcolor" data-toggle="modal" data-target="#myModal3">
-						<img src="{{asset('/img/Introduce3.jpg')}}" class="img-responsive img-hover" style="width:600px;height:300px">
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal3" style="margin-left: 22%; height: 150px; width: 200px;">常見問題
 					</button>
 				</div>
 				<div class="col-sm-3">
-					<button type="button" class="btn button-bgcolor" data-toggle="modal" data-target="#myModal4">
-						<img src="{{asset('/img/Introduce3.jpg')}}" class="img-responsive img-hover" style="width:600px;height:300px">
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal4" style="margin-left: 22%; height: 150px; width: 200px;">相關法規與表格
 					</button>
-				</div>		
+				</div>	
 				<!--modal-->
-					<div class="modal fade" id="myModal1" role="dialog">
+					<!-- <div class="modal fade" id="myModal1" role="dialog">
 					    <div class="modal-dialog modal-lg">
 					      <div class="modal-content">
 					        <div class="modal-header">
@@ -96,101 +92,220 @@
 					        </div>
 					      </div>
 					    </div>
+					</div> -->
+					<!-- 開課型態 -->
+					<div class="modal fade" id="myModal1" role="dialog">
+					    <div class="modal-dialog modal-lg">
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 class="modal-title">開課類型</h4>
+					        </div>
+					        <div class="modal-body">
+					        	<ul style="list-style-type: none;">
+					        		@foreach($introduce_classtypes as $introduce_classtype)
+					        			{{$introduce_classtype->title}}
+					        		@endforeach
+								  <!-- <li>
+								  	<p>1.模組化微學分</p>
+								  	<p style="margin-left: 10px;">-創設學習課程(開設單位開滿16小時，並引導學生成果創作)</p>	
+								  </li>
+								  <br>
+								  <li>
+								  	<p>2.課程碎型微學分</p>
+								  	<p style="margin-left: 10px;">-碎形微型模組課程(將正式課程碎形成單元模組並開放修習)</p>	
+								  </li>
+								  <br>
+								  <li>
+								  <p>3.自由組合微學分</p>
+								  <p style="margin-left: 10px;">-主動創設學習課程(由學生自行尋求研習課程並取得研習證明)</p>	
+								  </li>
+								  <br>
+								  <li>
+								  	<p>4.導師共學微學分</p>
+								  	<p style="margin-left: 10px;">-導師核可且具學習歷程檔案之多元學習內容(由導生共同研定)</p>	
+								  </li> -->
+								</ul>
+					        </div>
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+					        </div>
+					      </div>
+					    </div>
 					</div>
+					<!-- 如何開課 -->
 					<div class="modal fade" id="myModal2" role="dialog">
 					    <div class="modal-dialog modal-lg">
 					      <div class="modal-content">
 					        <div class="modal-header">
 					          <button type="button" class="close" data-dismiss="modal">&times;</button>
-					          <h3 class="modal-title">如何開課</h3>
+					          <h4>如何開課</h4>
 					        </div>
 					        <div class="modal-body">
-					      	  <div class="content-title">
+					      	  <!-- <div class="content-title">
 					      	  	<strong style="color: #fff; font-size: 15px;">開課流程</strong>
-					      	  </div>
+					      	  </div> -->
 					          <div>
-						          <p class="step-title">第一步</p>
-						          <p style="color: #434343;">前往表單下載的頁面
-						          </p>
-						          <img src="{{asset('img/introduce/open1.png')}}" class="img-thumbnail open-img">
-						          <br><br>
-						          <p style="color: #434343;">將開課單位帳號申請的表單下載下來，印出成書面，填寫上面所需要的資料，再交到教務處領取開課單位帳號
-						          </p>
-						          <img src="{{asset('img/introduce/open2.png')}}" class="img-thumbnail open-img">
+						          <h5 style="color: #434343;">1.登入申請的帳號、密碼
+						          </h5>
+						          <img src="{{asset('img/introduce/introduce1.png')}}" class="img-thumbnail open-img" style="height: 200px;">
 						      </div>
 						      <hr width="95%">
 						      <div>
-						          <p class="step-title">第二步</p>
-						          <p style="color: #434343;">點選開課單位入口</p>
-						          <img src="{{asset('img/introduce/open3.png')}}" class="img-thumbnail open-img">
-						          <br><br>
-						          <p style="color: #434343;">輸入帳號密碼後，點選我要申請</p>
-						          <img src="{{asset('img/introduce/open5.png')}}" style="width: 20%; height: 20%;" class="img-thumbnail">
+						          <p style="color: #434343;">2.點選新增課程開課
+						          </p>
+						          <img src="{{asset('img/introduce/introduce2.png')}}" class="img-thumbnail open-img" style="height: 200px;">
 						      </div>
 						      <hr width="95%">
 						      <div>
-						          <p class="step-title">第三步</p>
-						          <p style="color: #434343;">將表單上面所需要的資料填寫完，送出後交給微學分審查委員會審查，即完成申請
-						          </p>
-						          <img src="{{asset('img/introduce/open6.png')}}" class="img-thumbnail open-img">
+						          <p style="color: #434343;">3.點選所要開課的課程類型</p>
+						          <img src="{{asset('img/introduce/introduce3.png')}}" class="img-thumbnail open-img">
 						      </div>
-					        
+						      <hr width="95%">
+						      <div>
+						          <p style="color: #434343;">4.填完資料即成功開設課程</p>
+						          <img src="{{asset('img/introduce/introduce5.png')}}" class="img-thumbnail open-img">
+						      </div>
 					        </div>
 					        <div class="modal-footer">
-					          <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+					          <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
 					        </div>
 					      </div>
 					    </div>
 					  </div>
 			    	</div>
+			    	<!-- Q&A -->
 					<div class="modal fade" id="myModal3" role="dialog">
 					    <div class="modal-dialog modal-lg">
 					      <div class="modal-content">
 					        <div class="modal-header">
 					          <button type="button" class="close" data-dismiss="modal">&times;</button>
-					          <h3 class="modal-title">Q & A</h3>
+					          <h4 class="modal-title">常見問題</h4>
 					        </div>
 					        <div class="modal-body">
-					          
+								<!-- <div class="panel-group" id="accordion">
+									@foreach($introduce_questions as $introduce_question)
+										<div class="panel panel-default">
+	     									<div class="panel-heading">
+	        									<h4 class="panel-title">
+	          										<a data-toggle="collapse" data-parent="#accordion" href="#{{$introduce_question->id}}">{{$introduce_question->question}}</a>
+	        									</h4>
+	      									</div>
+	      									<div id="{{$introduce_question->id}}" class="panel-collapse collapse">
+	        									<div class="panel-body">{{$introduce_question->answer}}</div>
+	      									</div>
+	    								</div>
+									@endforeach
+								</div> -->
+								@foreach($introduce_questions as $introduce_question)
+									<ul>
+										<div class="row">
+											<div class="col-sm-10">
+												<li style="margin-left: 5%;">
+													<p style="font-size: 18px;">Question : {{$introduce_question->question}}</p>
+													<br><br>
+													<div id="{{$introduce_question->id}}" class="collapse">
+										    			Answer : {{$introduce_question->answer}}
+										  			</div>
+												</li>
+											</div>
+											<div class="col-sm-2">
+												<button type="buttom" class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#{{$introduce_question->id}}">
+                									<span class="glyphicon glyphicon-chevron-down"></span> 查看詳情
+              									</button>
+											</div>
+										</div>
+										  	<hr>
+										
+									</ul>
+								@endforeach	
 					        </div>
 					        <div class="modal-footer">
-					          <a href="{{ url('/introduce/edit') }}">
-					          	<button type="button" class="btn btn-default">編輯</button>
-					          </a>
-					          <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+					        	<a href="{{ url('/introduce/edit') }}" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-pencil"></span>&nbsp;新增與編輯</a>
+					          	<button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
 					        </div>
 					      </div>
 					    </div>
 					</div>
+					<!-- 相關法規與表格 -->
 					<div class="modal fade" id="myModal4" role="dialog">
 					    <div class="modal-dialog ">
 					      <div class="modal-content">
 					        <div class="modal-header">
 					          <button type="button" class="close" data-dismiss="modal">&times;</button>
-					          <h3 class="modal-title">相關法規</h3>
+					          <h4 class="modal-title">相關表格與法規</h4>
 					        </div>
 					        <div class="modal-body">
-					          <ul>
-					          	<li><a target="_blank" href="{{asset('pdf/rules.pdf')}}">個人資料保護法</a></li>
-					          	<li><a target="_blank" href="{{asset('pdf/rules.pdf')}}">網路資料保護法</a></li>
-					          	<li><a target="_blank" href="{{asset('pdf/rules.pdf')}}">微學分申請辦法</a></li>
-					          	<li><a target="_blank" href="{{asset('pdf/rules.pdf')}}">微學分開課辦法</a></li>
-					          	<li><a target="_blank" href="{{asset('pdf/rules.pdf')}}">微學分成果辦法</a></li>
-					          </ul>
+								<!-- <ul>
+								  <li>
+								  	<p>Q:開課帳號如何取得?</p>
+								  	<p>A:將申請表下載，填寫完交至教務處申請</p>
+								  </li>
+								</ul>
+								<br>
+								<ul>
+								  <li>
+								  	<p>Q:一個單位只能申請一個帳號嗎?</p>
+								  	<p>A:一個單位可以申請很多不同帳號</p>
+								  </li>
+								</ul>
+								<br>
+								<ul>
+								  <li>
+								  	<p>Q:開課的申請單要去哪裡找?</p>
+								  	<p>A:在這裡</p>
+								  </li>
+								</ul>
+								<br>
+								<ul>
+								  <li>
+								  	<p>相關法規</p>
+								  	<p>
+								  		<a target="_blank" href="{{asset('img/introduce/rules.pdf')}}">微學分採認課程申請_開課單位</a>
+								  		<a target="_blank" href="{{asset('img/introduce/rules.pdf')}}">微學分開課辦法</a>
+								  	</p>
+								  </li>
+								</ul> -->
+								  <div class="panel-group">
+								    <div class="panel panel-default">
+								      <div class="panel-heading">表格下載</div>
+								      <div class="panel-body">
+								      	<ul>
+								      		<li><a target="_blank" href="{{asset('document/openclass.docx')}}">微學分採認課程申請_開課單位</a></li><br>
+								      		<li><a target="_blank" href="{{asset('document/ClassAccount.doc')}}">開課單位帳號權限申請表</a></li><br>
+								      		<li><a target="_blank" href="{{asset('document/result.docx')}}">成果發表申請表_學生</a></li><br>
+								      		<li><a target="_blank" href="{{asset('document/teacher.docx')}}">導師獎勵工作簡述表</a></li>
+								      	</ul>
+								      </div>
+								    </div>
+								    <div class="panel panel-default">
+								      <div class="panel-heading">相關法規</div>
+								      <div class="panel-body">
+								      	<ul>
+								      		<li><a target="_blank" href="{{asset('document/rules.pdf')}}">國立中央大學微學分實施要點v32</a></li>
+								      	</ul>
+								      </div>
+								    </div>
+								  </div>
 					        </div>
 					        <div class="modal-footer">
-					          <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+					          <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
 					        </div>
 					      </div>
 					    </div>
 					</div>
-			    </div>
-				</div>
+			</div>
+		</div>
 	</div>
 @endsection
 
 @section('css')
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<style type="text/css">
+		h4{
+			font-weight: bold;
+			text-align: center;
+		}
 		/*標題*/
 		.title{
 			width: 750px;
@@ -199,7 +314,8 @@
 		}
 
 		.page-header{
-			height:30px;
+			font-size: 35px;
+			margin-top: 80px;
 		}
 
 		.button-bgcolor{
@@ -221,12 +337,6 @@
 			-webkit-filter: grayscale(0);
 			filter: grayscale(0);
 		}
-
-		.modal-title{
-			color: #257372;
-			font-weight: bold;
-		}
-
 		.content-title{
 			background-color: #3d9ba3;
 			width: 100%; 
@@ -237,17 +347,11 @@
 		.step-title{
 			font-size: 15px; 
 			font-weight: bold; 
-			color: #367680;
 		}
 
 		.open-img{
 			width: 70%;
 		}
-
-		li{
-			margin: 10px 0;
-		}
-
 	</style>
 @endsection
 

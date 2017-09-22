@@ -52,6 +52,11 @@ Route::get('/introduce', function () {
 Route::get('/introduce/edit', function () {
     return view('introduce.edit');
 });
+Route::get('/introduce', 'IntroduceController@IntroduceQuestion');
+Route::get('/introduce/edit', 'IntroduceEditController@IntroduceQuestion');
+Route::post('/introduce/edit', 'IntroduceEditController@Questionstore');
+Route::delete('/introduce/edit/{introduce_question}', 'IntroduceEditController@destroy');
+Route::post('/introduce/edit/{introduce_question}', 'IntroduceEditController@update');
 // //審核單位入口
 // Route::get('/check',function() {
 //   return view('check.index');
