@@ -17,6 +17,7 @@ class CreateModuleClassesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('term')->nullable();
+            $table->string('way')->nullable();
             $table->string('name')->nullable();
             $table->string('field')->nullable();
             $table->string('other_field')->nullable();

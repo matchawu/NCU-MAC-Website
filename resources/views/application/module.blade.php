@@ -31,6 +31,21 @@
         </div>
       </div>
 
+      <!-- text req way-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">開課模式</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="way" name="way">
+              <option value="單位創課">單位創課</option>
+              <option value="學生募課">學生募課</option>
+              <option value="企業捐課">企業捐課</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       <!-- text req name-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程名稱</label>
