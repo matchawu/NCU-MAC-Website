@@ -48,7 +48,7 @@ class AppUserController extends Controller
         $applicants =
         appUser::all();
 
-        return view('authrize.menu',[
+        return view('authrize.addClient',[
           "applicants"=>$applicants,
         ]);
       //}else{
@@ -85,6 +85,7 @@ class AppUserController extends Controller
       $req->session()->flush();
       return redirect('/application');
     }
+
     public function register(Request $req){
       $loginUser = appUser::where('account',$req->account)->first();
       if($loginUser==null){
@@ -113,6 +114,43 @@ class AppUserController extends Controller
       }
 
     }
+/*gather_name','gather_grade','gather_email','gather_phone','member1_name','member1_place','member1_email','member1_phone','member2_name','member2_place','member2_email','member2_phone','result_topic','result_intro','result_achievement','result_difficulty','keyword','accociate'
+    */
+     public function storeachievement(Request $request){
+
+        $achievement = new Achievement;
+
+        $achievement -> gather_name = $request -> gather_name;
+        $achievement -> gather_grade = $request -> gather_grade;
+        $achievement -> gather_email = $request -> gather_email;
+        $achievement -> gather_phone = $request -> gather_phone;
+        $achievement -> member1_name = $request -> member1_name;
+        $achievement -> member1_place = $request -> member1_place;
+        $achievement -> member1_email = $request -> member1_email;
+        $achievement -> member1_phone = $request -> member1_phone;
+        $achievement -> member2_name = $request -> member2_name;
+        $achievement -> member2_place = $request -> member2_place;
+        $achievement -> member2_email = $request -> member2_email;
+        $achievement -> member2_phone = $request -> member2_phone;
+        $achievement -> result_topic = $request -> result_topic;
+        $achievement -> result_intro = $request -> result_intro;
+        $achievement -> result_achievement = $request -> result_achievement;
+        $achievement -> result_difficulty = $request -> result_difficulty;
+        $achievement -> keyword = $request -> keyword;
+        $achievement -> accociate = $request -> accociate;
+
+        $achievement->save();
+
+
+        return redirect('/authrize/uploadachievement');
+  //    $input = Input::all();
+  //    $post = new Post;
+  //    $post->title = $input['title'];//方法一
+  //    $post->content = Input::get('content');//方法二
+  //    $post->save();
+        // return Redirect::to('/');
+    }
+
     public function edit_goto(){
       return view('application.edit_pwd');
     }
