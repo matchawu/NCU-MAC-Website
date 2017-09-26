@@ -21,7 +21,7 @@
                         <a href="{{ url('/introduce') }}">簡介</a>
                     </li>
                     <li class="page-scrol navbtn">
-                        <a href="{{ url('/record') }}">課程探索</a>
+                        <a href="{{ url('/record') }}">課程查詢</a>
                     </li>
                     <li class="page-scrol navbtn">
                         <a href="#">優異成果展示</a>
