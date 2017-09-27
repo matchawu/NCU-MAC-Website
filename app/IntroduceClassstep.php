@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class IntroduceClassstep extends Model
 {
-    protected $fillable = ['title','body','picture'];
+    protected $fillable = ['body'];
 }

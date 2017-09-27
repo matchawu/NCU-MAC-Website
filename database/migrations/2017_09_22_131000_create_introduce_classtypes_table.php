@@ -15,9 +15,7 @@ class CreateIntroduceClasstypesTable extends Migration
     {
         Schema::create('introduce_classtypes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable();
             $table->string('body')->nullable();
-            $table->string('picture')->nullable();
             $table->timestamps();
         });
     }

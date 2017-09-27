@@ -104,8 +104,29 @@
 					        <div class="modal-body">
 					        	<ul style="list-style-type: none;">
 					        		@foreach($introduce_classtypes as $introduce_classtype)
-					        			{{$introduce_classtype->title}}
+										
+										<?php
+											$str = $introduce_classtype['body'];
+											echo $str;
+										?>	
+										<br>
+										<form action="{{ asset('/introduce/'.$introduce_classtype->id) }}" method="post">
+							        	{{ csrf_field() }}							        	
+							        	<textarea name="editor1" class="form-control">{{ $introduce_classtype -> body }}</textarea>
+							        	<!-- <input type="text" name="body"> -->
+							        	<br>
+							        	<center>
+							          		<button type="submit" class="btn btn-info btn-sm">
+							            		<span class="glyphicon glyphicon-ok"></span> 送出新增
+							          		</button>
+							        	</center>
+							      		</form> 
 					        		@endforeach
+
+
+
+					        		 
+									
 								  <!-- <li>
 								  	<p>1.模組化微學分</p>
 								  	<p style="margin-left: 10px;">-創設學習課程(開設單位開滿16小時，並引導學生成果創作)</p>	
@@ -125,6 +146,7 @@
 								  	<p>4.導師共學微學分</p>
 								  	<p style="margin-left: 10px;">-導師核可且具學習歷程檔案之多元學習內容(由導生共同研定)</p>	
 								  </li> -->
+
 								</ul>
 					        </div>
 					        <div class="modal-footer">
@@ -139,33 +161,34 @@
 					      <div class="modal-content">
 					        <div class="modal-header">
 					          <button type="button" class="close" data-dismiss="modal">&times;</button>
-					          <h4>如何開課</h4>
+					          <h4>開課流程</h4>
 					        </div>
 					        <div class="modal-body">
 					      	  <!-- <div class="content-title">
 					      	  	<strong style="color: #fff; font-size: 15px;">開課流程</strong>
 					      	  </div> -->
-					          <div>
-						          <h5 style="color: #434343;">1.登入申請的帳號、密碼
-						          </h5>
-						          <img src="{{asset('img/introduce/introduce1.png')}}" class="img-thumbnail open-img" style="height: 200px;">
-						      </div>
-						      <hr width="95%">
-						      <div>
-						          <p style="color: #434343;">2.點選新增課程開課
-						          </p>
-						          <img src="{{asset('img/introduce/introduce2.png')}}" class="img-thumbnail open-img" style="height: 200px;">
-						      </div>
-						      <hr width="95%">
-						      <div>
-						          <p style="color: #434343;">3.點選所要開課的課程類型</p>
-						          <img src="{{asset('img/introduce/introduce3.png')}}" class="img-thumbnail open-img">
-						      </div>
-						      <hr width="95%">
-						      <div>
-						          <p style="color: #434343;">4.填完資料即成功開設課程</p>
-						          <img src="{{asset('img/introduce/introduce5.png')}}" class="img-thumbnail open-img">
-						      </div>
+					      	  
+					      	  @foreach($introduce_classsteps as $introduce_classstep)
+										
+										<?php
+											$str1 = $introduce_classstep['body'];
+											echo $str1;
+										?>	
+										<br>
+										<form action="{{ asset('/introduce/step'.$introduce_classstep->id) }}" method="post">
+							        	{{ csrf_field() }}							        	
+							        	<textarea name="editor2" class="form-control">{{ $introduce_classstep -> body }}</textarea>
+							        	<!-- <input type="text" name="body"> -->
+							        	<br>
+							        	<center>
+							          		<button type="submit" class="btn btn-info btn-sm">
+							            		<span class="glyphicon glyphicon-ok"></span> 送出新增
+							          		</button>
+							        	</center>
+							      		</form> 
+					          @endforeach
+
+					          
 					        </div>
 					        <div class="modal-footer">
 					          <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
@@ -202,8 +225,8 @@
 										<div class="row">
 											<div class="col-sm-10">
 												<li style="margin-left: 5%;">
-													<p style="font-size: 18px;">Question : {{$introduce_question->question}}</p>
-													<br><br>
+													<p style="font-size: 15px;">Question : {{$introduce_question->question}}</p>
+													<br>
 													<div id="{{$introduce_question->id}}" class="collapse">
 										    			Answer : {{$introduce_question->answer}}
 										  			</div>
@@ -356,6 +379,12 @@
 @endsection
 
 @section('js')
+	<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace( 'editor1' );
+		CKEDITOR.replace( 'editor2' );
+	</script>
+@endsection
 
 
 
