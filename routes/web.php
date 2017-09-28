@@ -52,6 +52,10 @@ Route::get('/introduce', function () {
 Route::get('/introduce/edit', function () {
     return view('introduce.edit');
 });
+Route::post('/introduce/index', 'IntroduceController@store');
+Route::post('/introduce/step{introduce_classsteps}', 'IntroduceController@update1');
+Route::post('/introduce/{introduce_classtypes}', 'IntroduceController@update');
+
 Route::get('/introduce', 'IntroduceController@IntroduceQuestion');
 Route::get('/introduce/edit', 'IntroduceEditController@IntroduceQuestion');
 Route::post('/introduce/edit', 'IntroduceEditController@Questionstore');

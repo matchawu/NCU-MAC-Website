@@ -15,9 +15,7 @@ class CreateIntroduceClassstepsTable extends Migration
     {
         Schema::create('introduce_classsteps', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable();
             $table->string('body')->nullable();
-            $table->string('picture')->nullable();
             $table->timestamps();
         });
     }
