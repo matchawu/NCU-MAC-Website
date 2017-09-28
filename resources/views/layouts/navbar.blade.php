@@ -21,7 +21,10 @@
                         <a href="{{ url('/introduce') }}">簡介</a>
                     </li>
                     <li class="page-scrol navbtn">
-                        <a href="{{ url('/record') }}">課程搜尋</a>
+                        <a href="{{ url('/record') }}">課程查詢</a>
+                    </li>
+                    <li class="page-scrol navbtn">
+                        <a href="#">優異成果展示</a>
                     </li>
                     <li class="page-scrol navbtn">
                         <a href="{{ url('/video') }}">課程影音</a>
@@ -30,22 +33,23 @@
                         <a href="{{ url('/application') }}">開課單位登入</a>
                     </li>
 
-                     @if (Auth::guest())
-                     <li class="page-scroll navbtn ">
+                    @if (Auth::guest())
+                    <li class="page-scroll navbtn ">
                         <a href="{{ url('/authrize') }}">管理員登入</a>
                     </li>
                     @else
-                        <li>
-                            <a href="{{ url('/logout') }}"
+                    <li class="page-scroll navbtn">
+                                <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault();
                                          document.getElementById('logout-formm').submit();">
                                 登出
-                            </a>
+                                </a>
+
 
                             <form id="logout-formm" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-                        </li>
+                    </li>
                     @endif
 
                 </ul>

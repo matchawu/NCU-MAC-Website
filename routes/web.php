@@ -16,11 +16,30 @@ Route::get('/', function () {
 });
 //首頁
 Route::get('/Homepage','AppUserController@refreshhomepage');
+
 //管理員登入
 Route::get('/authrize', function () {
     return view('authrize.login');
 });
-Route::get('/authrize/menu','AppUserController@addApplicant');
+
+Route::get('authrize/menu', function () {
+    return view('authrize.menu');
+})->middleware('auth');
+
+Route::get('/authrize/menu/addClient','AppUserController@addApplicant')->middleware('auth');
+
+Route::get('authrize/menu/uploadAchievement', function () {
+    return view('authrize.uploadachievement');
+})->middleware('auth');
+
+Route::get('/authrize/achievement','AppUserController@storeachievement');
+Route::post('/authrize/achievement','AppUserController@storeachievement');
+
+Route::get('authrize', function () {
+    return view('authrize.login');
+});
+
+
 Route::get('/authrize/deleteapplicants/{id}','AppUserController@delete');
 
 Route::get('authrize', function () {
@@ -33,6 +52,15 @@ Route::get('/introduce', function () {
 Route::get('/introduce/edit', function () {
     return view('introduce.edit');
 });
+Route::post('/introduce/index', 'IntroduceController@store');
+Route::post('/introduce/step{introduce_classsteps}', 'IntroduceController@update1');
+Route::post('/introduce/{introduce_classtypes}', 'IntroduceController@update');
+
+Route::get('/introduce', 'IntroduceController@IntroduceQuestion');
+Route::get('/introduce/edit', 'IntroduceEditController@IntroduceQuestion');
+Route::post('/introduce/edit', 'IntroduceEditController@Questionstore');
+Route::delete('/introduce/edit/{introduce_question}', 'IntroduceEditController@destroy');
+Route::post('/introduce/edit/{introduce_question}', 'IntroduceEditController@update');
 // //審核單位入口
 // Route::get('/check',function() {
 //   return view('check.index');

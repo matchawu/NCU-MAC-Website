@@ -30,6 +30,17 @@
         </div>
       </div>
 
+      <!-- Text way req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">開課模式</label>
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+        <input  id="way" name="field" value="{{$module_class->way}}" class="form-control"  type="text" disabled>
+          </div>
+        </div>
+      </div>
+
       <!-- Text name req-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程名稱</label>
@@ -256,9 +267,9 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
 <style>
   table{

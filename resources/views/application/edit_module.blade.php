@@ -30,6 +30,21 @@
         </div>
       </div>
 
+      <!-- text req way-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">開課模式</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="way" name="way" value="{{$module_class->way}}">
+              <option value="單位創課" id="way1">單位創課</option>
+              <option value="學生募課" id="way2">學生募課</option>
+              <option value="企業捐課" id="way3">企業捐課</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       <!-- Text name req-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程名稱</label>
@@ -298,165 +313,169 @@
               </div>
             </div>
 
-            <!-- edit course modal-->
-            <div class="modal fade" id="editmodule{{$module->id}}" role="dialog">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">編輯課程</h4>
-                  </div>
-                  <div class="modal-body">
-                    <form class=" form-horizontal" action="{{asset('/application/edit_smallmodule')}}/{{$module->id}}" method="post"  id="edit_form">
-                      <fieldset>
-                        <!-- 此處input name更改 -->
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <div class="col-md-3">
-                          </div>
-                          <label class="col-md-2 control-label">上課日期</label>
-                          <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                              <input  name="date" value="{{$module->date}}" placeholder="課程日期 ex.9/18" class="form-control"  type="date">
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                          </div>
-                        </div>
 
-                        <br>
-                        <br>
-
-                        <!-- Text start-->
-                        <div class="form-group">
-                          <div class="col-md-3">
-                          </div>
-                          <label class="col-md-2 control-label">起始時間</label>
-                          <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                                <input name="start"  value="{{$module->start}}" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="time">
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                          </div>
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <!-- Text end-->
-                        <div class="form-group">
-                          <div class="col-md-3">
-                          </div>
-                          <label class="col-md-2 control-label">結束時間</label>
-                            <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                          <input name="end"  value="{{$module->end}}" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="time">
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                          </div>
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <div class="col-md-3">
-                          </div>
-                          <label class="col-md-2 control-label">授課講師</label>
-                            <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                          <input name="teacher"  value="{{$module->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text">
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                          </div>
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <div class="col-md-3">
-                          </div>
-                          <label class="col-md-2 control-label">授課主題</label>
-                            <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-                          <input name="unit"  value="{{$module->unit}}" placeholder="本堂上課主題或單元" class="form-control" type="text">
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                          </div>
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <!-- Text area -->
-                        <div class="form-group">
-                          <div class="col-md-3">
-                          </div>
-                          <label class="col-md-2 control-label">授課內容</label>
-                            <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-                                  <textarea class="form-control full" name="detail"  placeholder="本堂授課內容">{{$module->detail}}</textarea>
-                          </div>
-                          </div>
-                          <div class="col-md-3">
-                          </div>
-                        </div>
-
-                        <br>
-                        <br>
-                        <br>
-
-                        <!-- Text area -->
-                        <div class="form-group">
-                          <div class="col-md-3">
-                          </div>
-                          <label class="col-md-2 control-label">課程備註</label>
-                            <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
-                                  <textarea class="form-control full" name="comment" placeholder="本堂課備註或注意事項 ex.更換授課地點或時間或人數限制更動"> {{$module->comment}}</textarea>
-                          </div>
-                          </div>
-                          <div class="col-md-3">
-                          </div>
-                        </div>
-
-                        <br>
-                        <br>
-
-                      </fieldset>
-                  </div>
-
-                  <div class="modal-footer">
-                    <center>
-                      <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                      <button type="submit" class="btn btn-warning">
-                        <span class="glyphicon glyphicon-ok"></span> 確認更改
-                      </button>
-                    </center>
-                  </div>
-                </form>
-
-                </div>
-              </div>
-            </div>
             @endforeach
 
           </tbody>
         </table>
+
+        @foreach ($modules as $module)
+        <!-- edit course modal-->
+        <div class="modal fade" id="editmodule{{$module->id}}" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">編輯課程</h4>
+              </div>
+              <div class="modal-body">
+                <form class=" form-horizontal" action="{{asset('/application/edit_smallmodule')}}/{{$module->id}}" method="post"  id="edit_form">
+                  <fieldset>
+                    <!-- 此處input name更改 -->
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-3">
+                      </div>
+                      <label class="col-md-2 control-label">上課日期</label>
+                      <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                          <input  name="date" value="{{$module->date}}" placeholder="課程日期 ex.9/18" class="form-control"  type="date">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                      </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <!-- Text start-->
+                    <div class="form-group">
+                      <div class="col-md-3">
+                      </div>
+                      <label class="col-md-2 control-label">起始時間</label>
+                      <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                            <input name="start"  value="{{$module->start}}" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="time">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                      </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <!-- Text end-->
+                    <div class="form-group">
+                      <div class="col-md-3">
+                      </div>
+                      <label class="col-md-2 control-label">結束時間</label>
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input name="end"  value="{{$module->end}}" placeholder="ex. 9/17 9:00-12:00" class="form-control"  type="time">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                      </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-3">
+                      </div>
+                      <label class="col-md-2 control-label">授課講師</label>
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="teacher"  value="{{$module->teacher}}" placeholder="請輸入授課講師中文名字" class="form-control" type="text">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                      </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-3">
+                      </div>
+                      <label class="col-md-2 control-label">授課主題</label>
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
+                      <input name="unit"  value="{{$module->unit}}" placeholder="本堂上課主題或單元" class="form-control" type="text">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                      </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <!-- Text area -->
+                    <div class="form-group">
+                      <div class="col-md-3">
+                      </div>
+                      <label class="col-md-2 control-label">授課內容</label>
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
+                              <textarea class="form-control full" name="detail"  placeholder="本堂授課內容">{{$module->detail}}</textarea>
+                      </div>
+                      </div>
+                      <div class="col-md-3">
+                      </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <!-- Text area -->
+                    <div class="form-group">
+                      <div class="col-md-3">
+                      </div>
+                      <label class="col-md-2 control-label">課程備註</label>
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
+                              <textarea class="form-control full" name="comment" placeholder="本堂課備註或注意事項 ex.更換授課地點或時間或人數限制更動"> {{$module->comment}}</textarea>
+                      </div>
+                      </div>
+                      <div class="col-md-3">
+                      </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                  </fieldset>
+              <!-- </div>
+
+              <div class="modal-footer"> -->
+                <center>
+                  <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                  <button type="submit" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-ok"></span> 確認更改
+                  </button>
+                </center>
+              </div>
+            </form>
+
+            </div>
+          </div>
+        </div>
+        @endforeach
       </div>
 
       <br>
@@ -570,9 +589,9 @@
 
             </fieldset>
 
-        </div>
+        <!-- </div> -->
 
-        <div class="modal-footer">
+        <!-- <div class="modal-footer"> -->
           <center>
             <input type="hidden" name="class_id" value="{{$module_class->id}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
@@ -594,9 +613,9 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
 <style>
   table{
@@ -618,10 +637,16 @@
 @section('js')
 <script>
 var x = $("#field").attr("value");
+var b = $("#way").attr("value");
 $(document).ready(function(){
   for(y=1;y<=8;y++){
     if(x== $("#field"+y).attr("value")){
       $("#field"+y).attr('selected','selected');
+    }
+  }
+  for(a=1;a<=3;a++){
+    if(b== $("#way"+a).attr("value")){
+      $("#way"+a).attr('selected','selected');
     }
   }
 

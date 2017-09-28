@@ -31,6 +31,21 @@
         </div>
       </div>
 
+      <!-- text req way-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">開課模式</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="way" name="way">
+              <option value="單位創課">單位創課</option>
+              <option value="學生募課">學生募課</option>
+              <option value="企業捐課">企業捐課</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       <!-- text req name-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程名稱</label>
@@ -235,9 +250,9 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
 <style>
 #other_field{
