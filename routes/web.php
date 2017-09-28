@@ -77,6 +77,14 @@ Route::post('/introduce/edit/{introduce_question}', 'IntroduceEditController@upd
 // Route::get('/check/register',function() {
 //   return view('check.register');
 // });
+
+
+//成果展示
+Route::get('/achievement', 'AchievementController@index');
+//成果編輯
+Route::get('/achievement/edit/{id}', 'AchievementController@edit');
+Route::post('/achievement/edit/{id}', 'AchievementController@edit_fin');
+
 //開課單位入口
 Route::get('/openclass',function() {
   return view('openclass.index');
