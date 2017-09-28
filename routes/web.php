@@ -25,6 +25,7 @@ Route::get('/authrize', function () {
 Route::get('authrize/menu', function () {
     return view('authrize.menu');
 })->middleware('auth');
+Route::resource('authrize/menu/news','NewsController');
 
 Route::get('/authrize/menu/addClient','AppUserController@addApplicant')->middleware('auth');
 

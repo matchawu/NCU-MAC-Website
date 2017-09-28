@@ -10,15 +10,15 @@
 		</div>
 		<div class="inline">
 				<a href="{{ url('/record') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;全部</button></a>
-				<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;個別課程</button>
-				<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;模組課程</button>
-				<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;碎形課程</button>
-        <a href="{{ url('/search') }}"><button type="button" class="btn basic"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;詳細搜尋</button></a>
+				<a href="{{ url('/record/個別課程') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;個別課程</button></a>
+				<a href="{{ url('/record/模組課程') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;模組課程</button></a>
+				<!-- <a href="{{ url('/record/碎形課程') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;碎形課程</button></a> -->
+        <a href="{{ url('/search') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;詳細搜尋</button></a>
 		</div><br><br><br>
 		<center><div style="width:60%;">
 			<ul class="nav nav-tabs">
 				<li class="active"><a data-toggle="tab" href="#singleclass">個別課程</a></li>
-				<li><a data-toggle="tab" href="#menu1">模組課程/碎形課程</a></li>
+				<li><a data-toggle="tab" href="#menu1">模組課程</a></li>
 			</ul>
 
 			<div class="tab-content" style="border-left:#d9d9d9 solid 1px;border-right:#d9d9d9 solid 1px;border-bottom:#d9d9d9 solid 1px">
@@ -47,6 +47,11 @@
 							<option value ="13">13:00~14:00</option>
 							<option value ="14">14:00~15:00</option>
 							<option value="15">15:00~16:00</option>
+							<option value="16">16:00~17:00</option>
+							<option value="17">17:00~18:00</option>
+							<option value="18">18:00~19:00</option>
+							<option value="19">18:00~19:00</option>
+							<option value="20">20:00~21:00</option>
 						</select><hr>
 						課程名稱:
 						<input type="text" name="name" value="" placeholder="可不填ヽ(*´∀`)ﾉﾟ."><hr>
@@ -56,12 +61,12 @@
 				<div id="menu1" class="tab-pane fade">
 					<form  action=" {{ url('search2') }} " method="post">
 						{{ csrf_field() }}
-						<br>課程種類:
+						<!-- 課程種類:
 						<select name="type">
 							<option value ="1">模組課程</option>
 							<option value="2">碎形課程</option>
-						</select><hr>
-						課程名稱:
+						</select><hr> -->
+						<br>課程名稱:
 						<input type="text" name="name" value=""><hr>
 						<button type="submit" class="btn btn-warning">查詢</button><br><br>
 					</form>
