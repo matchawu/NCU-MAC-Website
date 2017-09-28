@@ -23,6 +23,7 @@ class CreateUploadAchievement extends Migration
             $table->string('gather_grade')->nullable();
             $table->string('gather_email')->nullable();
             $table->string('gather_phone')->nullable();
+            $table->string('field')->nullable();
             $table->string('member1_name')->nullable();
             $table->string('member1_place')->nullable();
             $table->string('member1_email')->nullable();

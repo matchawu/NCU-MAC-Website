@@ -25,7 +25,7 @@
                         <a href="{{ url('/record') }}">課程查詢</a>
                     </li>
                     <li class="page-scrol navbtn">
-                        <a href="#">優異成果展示</a>
+                        <a href="{{ url('/achievement') }}">優異成果展示</a>
                     </li>
                     <li class="page-scrol navbtn">
                         <a href="{{ url('/video') }}">課程影音</a>
