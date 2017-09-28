@@ -16,7 +16,7 @@ class CreateUploadAchievement extends Migration
     */
     public function up()
     {
-        Schema::create('achievement', function (Blueprint $table) {
+        Schema::create('achievements', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('gather_name')->nullable();
@@ -47,6 +47,6 @@ class CreateUploadAchievement extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('achievement');
+        Schema::dropIfExists('achievements');
     }
 }

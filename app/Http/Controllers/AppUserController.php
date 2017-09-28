@@ -7,6 +7,7 @@ use App\appUser;
 use App\Module_class;
 use App\Single_class;
 use App\Fractal_class;
+use App\Achievement;
 
 
 class AppUserController extends Controller
@@ -142,7 +143,7 @@ class AppUserController extends Controller
         $achievement->save();
 
 
-        return redirect('/authrize/uploadachievement');
+        return redirect('/authrize');
   //    $input = Input::all();
   //    $post = new Post;
   //    $post->title = $input['title'];//方法一

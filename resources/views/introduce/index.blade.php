@@ -25,7 +25,7 @@
 				<div class="col-sm-3">
 					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal4" style="margin-left: 22%; height: 150px; width: 200px;">相關法規與表格
 					</button>
-				</div>	
+				</div>
 				<!--modal-->
 					<!-- <div class="modal fade" id="myModal1" role="dialog">
 					    <div class="modal-dialog modal-lg">
@@ -129,22 +129,22 @@
 									
 								  <!-- <li>
 								  	<p>1.模組化微學分</p>
-								  	<p style="margin-left: 10px;">-創設學習課程(開設單位開滿16小時，並引導學生成果創作)</p>	
+								  	<p style="margin-left: 10px;">-創設學習課程(開設單位開滿16小時，並引導學生成果創作)</p>
 								  </li>
 								  <br>
 								  <li>
 								  	<p>2.課程碎型微學分</p>
-								  	<p style="margin-left: 10px;">-碎形微型模組課程(將正式課程碎形成單元模組並開放修習)</p>	
+								  	<p style="margin-left: 10px;">-碎形微型模組課程(將正式課程碎形成單元模組並開放修習)</p>
 								  </li>
 								  <br>
 								  <li>
 								  <p>3.自由組合微學分</p>
-								  <p style="margin-left: 10px;">-主動創設學習課程(由學生自行尋求研習課程並取得研習證明)</p>	
+								  <p style="margin-left: 10px;">-主動創設學習課程(由學生自行尋求研習課程並取得研習證明)</p>
 								  </li>
 								  <br>
 								  <li>
 								  	<p>4.導師共學微學分</p>
-								  	<p style="margin-left: 10px;">-導師核可且具學習歷程檔案之多元學習內容(由導生共同研定)</p>	
+								  	<p style="margin-left: 10px;">-導師核可且具學習歷程檔案之多元學習內容(由導生共同研定)</p>
 								  </li> -->
 
 								</ul>
@@ -239,13 +239,17 @@
 											</div>
 										</div>
 										  	<hr>
-										
+
 									</ul>
-								@endforeach	
+								@endforeach
 					        </div>
 					        <div class="modal-footer">
-					        	<a href="{{ url('/introduce/edit') }}" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-pencil"></span>&nbsp;新增與編輯</a>
-					          	<button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+										@if (Auth::guest())
+					        	<button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+											@else
+											<a href="{{ url('/introduce/edit') }}" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-pencil"></span>&nbsp;新增與編輯</a>
+						          	<button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+												@endif
 					        </div>
 					      </div>
 					    </div>
@@ -362,14 +366,14 @@
 		}
 		.content-title{
 			background-color: #3d9ba3;
-			width: 100%; 
-			height: 33px;     
+			width: 100%;
+			height: 33px;
 			padding: 5px 0 5px 15px;
 		}
 
 		.step-title{
-			font-size: 15px; 
-			font-weight: bold; 
+			font-size: 15px;
+			font-weight: bold;
 		}
 
 		.open-img{
