@@ -26,7 +26,7 @@ picture
             <div class="feature">
               <a href="{{ url('/authrize/menu/uploadAchievement') }}">
               <i class="glyphicon glyphicon-cloud-upload"></i>
-              <h3>優異成果上傳</h3>  
+              <h3>優異成果上傳</h3>
               </a>
               <p>能夠把優異的成果上傳到網站伺服器中儲存。</p>
             </div>
@@ -36,9 +36,11 @@ picture
               <p>額外功能擴充預留空間</p>
             </div>
             <div class="feature">
-              <i class="glyphicon glyphicon-hourglass"></i>
-              <h3>功能未定</h3>
-              <p>額外功能擴充預留空間</p>
+              <a href="{{ url('/authrize/menu/news') }}">
+                <i class="glyphicon glyphicon-hourglass"></i>
+                <h3>最新公告管理</h3>
+              </a>
+              <p>在此新增最新公告</p>
             </div>
             <div class="feature">
               <i class="glyphicon glyphicon-hourglass"></i>
@@ -61,7 +63,7 @@ picture
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style type="text/css">
-  
+
 @import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Raleway:300,700");
 
