@@ -35,6 +35,9 @@ Route::get('authrize/menu/uploadAchievement', function () {
 Route::get('/authrize/achievement','AppUserController@storeachievement');
 Route::post('/authrize/achievement','AppUserController@storeachievement');
 
+
+// Route::post('/authrize/sentMailTo','AppUserController@sentMailTo');
+
 Route::get('authrize', function () {
     return view('authrize.login');
 });

@@ -17,6 +17,7 @@
                     <li class="page-scroll navbtn">
                         <a href="{{ url('/Homepage') }}">最新公告</a>
                     </li>
+
                     <li class="page-scroll navbtn">
                         <a href="{{ url('/introduce') }}">簡介</a>
                     </li>
@@ -38,7 +39,18 @@
                         <a href="{{ url('/authrize') }}">管理員登入</a>
                     </li>
                     @else
-                    <li class="page-scroll navbtn">
+                    <ul class="nav navbar-nav navbar-right">
+        
+
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false" >
+                            管理員 您好<span class="caret"></span>  <small class="tips"></small>
+                            </a>
+                        <ul class="dropdown-menu">
+                                <li><a href="{{ url('/authrize/menu') }}" class=" waves-effect waves-light"><i class="fa fa-user" aria-hidden="true"> </i>功能主頁</a>
+                                </li>
+                          
+                            <li class="page-scroll navbtn">
                                 <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault();
                                          document.getElementById('logout-formm').submit();">
@@ -46,10 +58,22 @@
                                 </a>
 
 
-                            <form id="logout-formm" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                    </li>
+                                <form id="logout-formm" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                        </li>
+
+        
+                    </ul>
+<ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
                     @endif
 
                 </ul>

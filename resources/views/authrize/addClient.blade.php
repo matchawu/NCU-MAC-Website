@@ -74,20 +74,21 @@
         <td>{{$applicants->phone}}</td>
         <td>{{$applicants->name}}</td>
         <td>
-                  <a href="{{ url('/application/edit_single') }}/{{$applicants->id}}">
-                    <button type="button" class="btn btn-warning btn-sm">
-                      <span class="glyphicon glyphicon-pencil"></span> 編輯
-                    </button>
-                  </a>
-                </td>
+          <form action="{{asset('/authrize/sentMailTo')}}" method="post">
+              <button type="submit" class="btn btn-warning btn-sm">
+              <span class="glyphicon glyphicon-pencil"></span> 寄出密碼重置信件
+              </button>
+              {{ csrf_field() }}
+          </form>
+        </td>
                 <!-- del -->
-                <td>
-                  <a href="#" data-toggle="modal" data-target="#deletesingle{{$applicants->id}}">
-                    <button type="button" class="btn btn-danger btn-sm">
-                      <span class="glyphicon glyphicon-trash"></span> 刪除
-                    </button>
-                  </a>
-                </td>
+        <td>
+          <a href="#" data-toggle="modal" data-target="#deletesingle{{$applicants->id}}">
+            <button type="button" class="btn btn-danger btn-sm">
+              <span class="glyphicon glyphicon-trash"></span> 刪除
+            </button>
+          </a>
+        </td>
       </tr>
       <div class="modal fade" id="deletesingle{{$applicants->id}}" role="dialog">
 
@@ -112,6 +113,7 @@
                     </div>
                   </div>
                 </div>
+
       @endforeach
     </tbody>
   </table>
@@ -123,9 +125,7 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 <script>
 

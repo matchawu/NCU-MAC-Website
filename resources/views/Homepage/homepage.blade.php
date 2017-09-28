@@ -24,15 +24,17 @@
             </div>
 
             <ul class="nav nav-tabs">
-                 <li class="active"><a data-toggle="tab" href="#tab1">最新課程</a></li>
+                 <li class="active"><a data-toggle="tab" href="#tab1">最新公告</a></li>
+                 <li><a data-toggle="tab" href="#tab2">最新課程</a></li>
                  <!-- <li><a data-toggle="tab" href="#tab2">課程公告</a></li>
                  <li><a data-toggle="tab" href="#tab3">審查結果</a></li>
                  <li><a data-toggle="tab" href="#tab4">優異結果</a></li> -->
             </ul>
 
+
             <div class="tab-content">
 
-                <div class="panel panel-default tab-pane active " id="tab1">
+                <div class="panel panel-default tab-pane active " id="tab2">
                     <div class="panel-body"  style="height:500px; background-color:#b0e0e6; border-style:inset; overflow-x: hidden;overflow-y: scroll;">
                     <table class="table table-striped">
           <thead>
@@ -113,13 +115,13 @@
                     </div>
                 </div>
 
-                <!-- <div class="panel panel-default tab-pane  " id="tab2">
-                    <div class="panel-body"   style="height:350px;">
+                <div class="panel panel-default tab-pane  " id="tab1">
+                    <div class="panel-body"  style="height:500px; background-color:#b0e0e6; border-style:inset; overflow-x: hidden;overflow-y: scroll;">
                         Basic panel example2
                     </div>
                 </div>
 
-                <div class="panel panel-default tab-pane  " id="tab3">
+                <!-- <div class="panel panel-default tab-pane  " id="tab3">
                     <div class="panel-body"  style="height:350px;">
                         Basic panel example3
                     </div>
@@ -234,7 +236,9 @@
 @endsection
 
 @section('css')
+
   <style>
+
       /*body{
         background-color: #202024;
       }*/
@@ -472,6 +476,7 @@
 
   }
     </style>
+
 @endsection
 
 @section('js')

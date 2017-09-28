@@ -8,6 +8,7 @@ use App\Module_class;
 use App\Single_class;
 use App\Fractal_class;
 use App\Achievement;
+use Mail;
 
 
 class AppUserController extends Controller
@@ -151,6 +152,21 @@ class AppUserController extends Controller
   //    $post->save();
         // return Redirect::to('/');
     }
+
+    // public function sentMailTo(Request $request){
+    //   $from = new SendGrid\Email("Example User", "samuel0928426@gmail.com");
+    //   $subject = "Sending with SendGrid is Fun";
+    //   $to = new SendGrid\Email("Example User", "steve5301400@gmail.com");
+    //   $content = new SendGrid\Content("text/plain", "and easy to do anywhere, even with PHP");
+    //   $mail = new SendGrid\Mail($from, $subject, $to, $content);
+    //   $apiKey = getenv('SENDGRID_API_KEY');
+    //   $sg = new \SendGrid($apiKey);
+    //   $response = $sg->client->mail()->send()->post($mail);
+    //   // echo $response->statusCode();
+    //   // print_r($response->headers());
+    //   return $response->body();
+    // }
+
 
     public function edit_goto(){
       return view('application.edit_pwd');
