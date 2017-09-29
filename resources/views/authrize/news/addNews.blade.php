@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '開設個別課程')
+@section('title', '新增公告')
 
 @section('content')
 <div class="container">
@@ -30,8 +30,7 @@
         <input type="text" class="form-control" >
       </div>
     </div>
-
-
+    {{ csrf_field() }}
      <button type="submit" class="btn btn-primary">確認送出</button>
   </form>
 </div>

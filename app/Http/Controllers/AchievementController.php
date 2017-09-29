@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\achievement;
+use App\Achievement;
 
 class AchievementController extends Controller
 {
      public function index(){
 
-        $achievements=achievement::all();
+        $achievements=Achievement::all();
         return view('achievement.index',["achievements"=>$achievements]);
     }
 

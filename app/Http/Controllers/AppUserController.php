@@ -90,26 +90,38 @@ class AppUserController extends Controller
 
     public function register(Request $req){
       $loginUser = appUser::where('account',$req->account)->first();
+      $loginMail = appUser::where('mail',$req->mail)->first();
+
       if($loginUser==null){
-        $newUser = new appUser;
-        $newUser -> unitname = $req -> unitname;
-        $newUser -> account = $req -> account;
-        $newUser -> password = md5($req->password);
-        $newUser -> mail = $req -> mail;
-        $newUser -> name = $req -> name;
-        $newUser -> phone = $req -> phone;
-        $newUser->save();
+        if($loginMail==null){
+          $newUser = new appUser;
+          $newUser -> unitname = $req -> unitname;
+          $newUser -> account = $req -> account;
+          $newUser -> password = md5($req->password);
+          $newUser -> mail = $req -> mail;
+          $newUser -> name = $req -> name;
+          $newUser -> phone = $req -> phone;
+          $newUser->save();
 
-        $applicants = appUser::all();
+          $applicants = appUser::all();
 
-        return view('authrize.menu',[
-          "hint"=>"輸入成功",
-          "applicants"=>$applicants,
-          ]);
+          return view('authrize.addClient',[
+            "hint"=>"輸入成功",
+            "applicants"=>$applicants,
+            ]);
+        }
+        else{
+          $applicants = appUser::all();
+          return view('authrize.addClient',[
+            "hint"=>"Email已被註冊!",
+            "applicants"=>$applicants,
+            ]);
+        }
+
 
       }else{
         $applicants = appUser::all();
-        return view('authrize.menu',[
+        return view('authrize.addClient',[
           "hint"=>"帳號已被註冊",
           "applicants"=>$applicants,
           ]);
@@ -145,7 +157,7 @@ class AppUserController extends Controller
         $achievement->save();
 
 
-        return redirect('/authrize');
+        return redirect('/authrize/menu');
   //    $input = Input::all();
   //    $post = new Post;
   //    $post->title = $input['title'];//方法一
@@ -159,11 +171,11 @@ class AppUserController extends Controller
        $id = '';
        $word = 'abcdefghijkmnpqrstuvwxyz23456789';//字典檔 你可以將 數字 0 1 及字母 O L 排除
        $len = strlen($word);//取得字典檔長度
-    
+
        for($i = 0; $i < $id_len; $i++){ //總共取 幾次
            $id .= $word[rand() % $len];//隨機取得一個字元
        }
-       
+
        $appNeedChg = appUser::find($request-> id);
        $appNeedChg-> password = md5($id);
        $appNeedChg->save();
