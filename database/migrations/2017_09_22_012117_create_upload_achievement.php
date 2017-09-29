@@ -19,6 +19,7 @@ class CreateUploadAchievement extends Migration
         Schema::create('achievements', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('term')->nullable();
             $table->string('gather_name')->nullable();
             $table->string('gather_grade')->nullable();
             $table->string('gather_email')->nullable();

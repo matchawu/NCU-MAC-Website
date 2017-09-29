@@ -91,6 +91,9 @@ Route::get('/achievement', 'AchievementController@index');
 //成果編輯
 Route::get('/achievement/edit/{id}', 'AchievementController@edit');
 Route::post('/achievement/edit/{id}', 'AchievementController@edit_fin');
+//成果查詢
+// Route::get('achievement/search', 'AchievementController@search');
+Route::post('achievement/search', 'AchievementController@search');
 
 //開課單位入口
 Route::get('/openclass',function() {
