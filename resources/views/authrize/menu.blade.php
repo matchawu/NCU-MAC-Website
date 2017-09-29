@@ -1,6 +1,6 @@
 @extends('layouts.app')
 picture
-@section('title', '管理員登入')
+@section('title', '管理者功能頁')
 
 @section('content')
 <div class="container">

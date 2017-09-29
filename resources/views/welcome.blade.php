@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>中央大學微學分系統</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -66,7 +66,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-        
+
 
             <div class="content">
                 <a href="{{ url('/Homepage') }}">

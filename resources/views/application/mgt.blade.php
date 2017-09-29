@@ -18,7 +18,7 @@
   <div class="alert alert-info alert-dismissable  fade in">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <span class="glyphicon glyphicon-user"></span>
-    <strong> {{$user->account}} </strong>
+    <strong> {{$user->unitname}} </strong>
     您好 ! 歡迎登入微學分系統 !
   </div>
 
