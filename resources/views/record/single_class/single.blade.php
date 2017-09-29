@@ -18,7 +18,7 @@
         <a href="{{url('record/個別課程/社會實踐')}}"><button type="button" class="@if($type==6)btn basic @else btn btn-default @endif"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;社會實踐</button></a>
         <a href="{{url('record/個別課程/創意創業')}}"><button type="button" class="@if($type==7)btn basic @else btn btn-default @endif"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;創意創業</button></a>
         <a href="{{url('record/個別課程/其他')}}"><button type="button" class="@if($type==8)btn basic @else btn btn-default @endif"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;其他</button></a>
-        <a href="{{ url('/search') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;詳細搜尋</button></a>
+        <!-- <a href="{{ url('/search') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;詳細搜尋</button></a> -->
 		</div><br>
 		<div class="panel-body">
 			<table class="table table-hover" >
@@ -70,7 +70,9 @@
 
 	<style type="text/css">
 
-
+	.btn, .btn.inverse:hover{color:#fff; background-color:#669999; border-color:#669999;}
+	.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
+	*, *::before, *::after{transition:all .28s ease-in-out;}
 		.page-header{
 			font-size: 35px;
 			margin-top: 100px;
