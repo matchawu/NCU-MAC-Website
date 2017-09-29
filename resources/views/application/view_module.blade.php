@@ -36,7 +36,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  id="way" name="field" value="{{$module_class->way}}" class="form-control"  type="text" disabled>
+        <input  id="way" name="way" value="{{$module_class->way}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>

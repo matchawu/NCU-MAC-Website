@@ -73,6 +73,7 @@
         @endforeach
       </div>
     </div>
+    
     <div id="search" class="tab-pane fade in ">
       <h3>成果查詢</h3>
       <form>
