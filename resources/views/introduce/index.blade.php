@@ -104,29 +104,33 @@
 					        <div class="modal-body">
 					        	<ul style="list-style-type: none;">
 					        		@foreach($introduce_classtypes as $introduce_classtype)
-										
+
 										<?php
 											$str = $introduce_classtype['body'];
 											echo $str;
-										?>	
+										?>
 										<br>
 										<form action="{{ asset('/introduce/'.$introduce_classtype->id) }}" method="post">
-							        	{{ csrf_field() }}							        	
-							        	<textarea name="editor1" class="form-control">{{ $introduce_classtype -> body }}</textarea>
-							        	<!-- <input type="text" name="body"> -->
+							        	{{ csrf_field() }}
+												<textarea id="ckeditor1" class="ckeditor" name="editor1">{{ $introduce_classtype -> body }}</textarea>
+								                <script type="text/javascript">
+
+								                  CKEDITOR.replace( 'ckeditor1' );
+
+								                </script>
 							        	<br>
 							        	<center>
 							          		<button type="submit" class="btn btn-info btn-sm">
 							            		<span class="glyphicon glyphicon-ok"></span> 送出新增
 							          		</button>
 							        	</center>
-							      		</form> 
+							      		</form>
 					        		@endforeach
 
 
 
-					        		 
-									
+
+
 								  <!-- <li>
 								  	<p>1.模組化微學分</p>
 								  	<p style="margin-left: 10px;">-創設學習課程(開設單位開滿16小時，並引導學生成果創作)</p>
@@ -167,17 +171,23 @@
 					      	  <!-- <div class="content-title">
 					      	  	<strong style="color: #fff; font-size: 15px;">開課流程</strong>
 					      	  </div> -->
-					      	  
+
 					      	  @foreach($introduce_classsteps as $introduce_classstep)
-										
+
 										<?php
 											$str1 = $introduce_classstep['body'];
 											echo $str1;
-										?>	
+										?>
 										<br>
 										<form action="{{ asset('/introduce/step'.$introduce_classstep->id) }}" method="post">
-							        	{{ csrf_field() }}							        	
-							        	<textarea name="editor2" class="form-control">{{ $introduce_classstep -> body }}</textarea>
+							        	{{ csrf_field() }}
+												<textarea id="ckeditor2" class="ckeditor" name="editor2">{{ $introduce_classstep -> body }}</textarea>
+								                <script type="text/javascript">
+
+								                  CKEDITOR.replace( 'ckeditor2' );
+
+								                </script>
+
 							        	<!-- <input type="text" name="body"> -->
 							        	<br>
 							        	<center>
@@ -185,10 +195,10 @@
 							            		<span class="glyphicon glyphicon-ok"></span> 送出新增
 							          		</button>
 							        	</center>
-							      		</form> 
+							      		</form>
 					          @endforeach
 
-					          
+
 					        </div>
 					        <div class="modal-footer">
 					          <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
@@ -383,12 +393,5 @@
 @endsection
 
 @section('js')
-	<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
-	<script>
-		CKEDITOR.replace( 'editor1' );
-		CKEDITOR.replace( 'editor2' );
-	</script>
+	<script src="{{asset('/ckeditor/ckeditor/ckeditor.js')}}"></script>
 @endsection
-
-
-

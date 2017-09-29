@@ -14,20 +14,34 @@
 </div>
 
 <div class="container col-sm-10">
+  @if (count($errors) > 0)
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
   <form class="well form-horizontal" action="{{asset('authrize/menu/news')}}" method="post"  >
     <legend><b>新增公告</b></legend>
     <div style="padding:10px">
       <div class="form-group ">
         <label >公告標題:</label>
-        <input type="text" class="form-control" >
+        <input type="text" class="form-control" name="title" value="{{old('title')}}">
       </div>
       <div class="form-group">
         <label >公告小標:</label>
-        <input type="text" class="form-control" >
+        <input type="text" class="form-control" name="subtitle" value="{{old('subtitle')}}">
       </div>
       <div class="form-group">
         <label >內容:</label>
-        <input type="text" class="form-control" >
+        <textarea id="ckeditor" class="ckeditor" name="content">{{old('content')}}</textarea>
+                <script type="text/javascript">
+
+                  CKEDITOR.replace( 'ckeditor' );
+
+                </script>
       </div>
     </div>
     {{ csrf_field() }}
@@ -41,4 +55,6 @@
 @endsection
 
 @section('js')
+<script src="{{asset('/ckeditor/ckeditor/ckeditor.js')}}"></script>
+
 @endsection
