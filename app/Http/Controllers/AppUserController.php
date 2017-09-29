@@ -154,19 +154,34 @@ class AppUserController extends Controller
         // return Redirect::to('/');
     }
 
-    // public function sentMailTo(Request $request){
-    //   $from = new SendGrid\Email("Example User", "samuel0928426@gmail.com");
-    //   $subject = "Sending with SendGrid is Fun";
-    //   $to = new SendGrid\Email("Example User", "steve5301400@gmail.com");
-    //   $content = new SendGrid\Content("text/plain", "and easy to do anywhere, even with PHP");
-    //   $mail = new SendGrid\Mail($from, $subject, $to, $content);
-    //   $apiKey = getenv('SENDGRID_API_KEY');
-    //   $sg = new \SendGrid($apiKey);
-    //   $response = $sg->client->mail()->send()->post($mail);
-    //   // echo $response->statusCode();
-    //   // print_r($response->headers());
-    //   return $response->body();
-    // }
+    public function sentMailTo(Request $request){
+       $id_len = 6;//字串長度
+       $id = '';
+       $word = 'abcdefghijkmnpqrstuvwxyz23456789';//字典檔 你可以將 數字 0 1 及字母 O L 排除
+       $len = strlen($word);//取得字典檔長度
+    
+       for($i = 0; $i < $id_len; $i++){ //總共取 幾次
+           $id .= $word[rand() % $len];//隨機取得一個字元
+       }
+       
+       $appNeedChg = appUser::find($request-> id);
+       $appNeedChg-> password = md5($id);
+       $appNeedChg->save();
+       $data = [
+        'name' => 'Test',
+        'password' => $id
+      ];
+    $data2 = array('email' => $request -> mail);
+
+        Mail::send('email.welcome', $data, function($message) use ($data2){
+        $message->to( $data2['email'])->subject('微學分郵件');
+        });
+
+        $applicants = appUser::all();
+        return view('authrize.addClient',[
+          "applicants"=>$applicants,
+        ]);
+    }
 
 
     public function edit_goto(){

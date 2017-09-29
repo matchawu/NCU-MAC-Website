@@ -74,7 +74,9 @@
         <td>{{$applicants->phone}}</td>
         <td>{{$applicants->name}}</td>
         <td>
-          <form action="{{asset('/authrize/sentMailTo')}}" method="post">
+          <form action="{{asset('/authrize/menu/addClient/sendmail')}}" method="post">
+            <input type="hidden" value="{{$applicants->mail}}" name="mail">
+            <input type="hidden" value="{{$applicants->id}}" name="id">
               <button type="submit" class="btn btn-warning btn-sm">
               <span class="glyphicon glyphicon-pencil"></span> 寄出密碼重置信件
               </button>

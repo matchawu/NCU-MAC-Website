@@ -36,6 +36,9 @@ Route::get('authrize/menu/uploadAchievement', function () {
 Route::get('/authrize/achievement','AppUserController@storeachievement');
 Route::post('/authrize/achievement','AppUserController@storeachievement');
 
+//寄信用
+Route::post('/authrize/menu/addClient/sendmail','AppUserController@sentMailTo');
+
 
 // Route::post('/authrize/sentMailTo','AppUserController@sentMailTo');
 
@@ -216,5 +219,6 @@ Route::post('search2', 'SearchController@search2');
 
 //課程影音
 Route::get('/video', 'VideoController@index');
+
 
 Auth::routes();

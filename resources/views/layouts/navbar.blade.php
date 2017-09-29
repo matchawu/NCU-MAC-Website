@@ -90,4 +90,5 @@
         border-right-style:solid;
         border-radius:25%;
     }
+    
 </style>
