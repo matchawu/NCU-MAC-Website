@@ -16,7 +16,7 @@
   <form class="well form-horizontal" action="{{asset('/application/view_module')}}/{{$module_class->id}}" method="post"  id="contact_form">
     <fieldset>
       <!-- Form Name -->
-      <legend><b>查看模組課程</b></legend>
+      <legend><b>{{$module_class->name}}</b></legend>
 
       <!-- 此處input name更改 -->
       <!-- Text term req-->

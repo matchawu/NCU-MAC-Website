@@ -91,7 +91,7 @@
 
       <!-- text req date-->
       <div class="form-group">
-        <label class="col-md-4 control-label">社群成員1</label>
+        <label class="col-md-4 control-label">社群成員2</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>

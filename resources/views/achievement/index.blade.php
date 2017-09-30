@@ -140,7 +140,25 @@
                 </div>
                 <div id="{{$search_achievement->id}}" class="panel-collapse collapse in">
                   <div class="panel-body">
+                    <p>發表學期 : {{$search_achievement->term}}</p>
                     <p>召集人: {{$search_achievement->gather_name}}</p>
+                    <p>召集人系級 : {{$search_achievement->gather_grade}}</p>
+                    <p>社群類別 : {{$search_achievement->field}}</p>
+                    <p>成員 : {{$search_achievement->member1_name}} 擔任 {{$search_achievement->member1_place}}</p>
+                    <p>成員 : {{$search_achievement->member2_name}} 擔任 {{$search_achievement->member2_place}}</p>
+                    <!-- <p>成果主題 : {{$search_achievement->result_topic}}</p> -->
+                    <p>成果介紹 : {{$search_achievement->result_intro}}</p>
+                    <p>學習反思與效益 : {{$search_achievement->result_achievement}}</p>
+                    <p>執行所遇之困難 : {{$search_achievement->result_difficulty}}</p>
+                    <p>關鍵字 : {{$search_achievement->keyword}}</p>
+                    <p>作品附件連結 :
+                      <a href="{{$search_achievement->accociate}}">
+                        {{$search_achievement->accociate}}
+                      </a>
+                    </p>
+                  </div>
+                  <div class="panel-footer">
+                    <h6>成果上傳時間 : {{$search_achievement->created_at}}</h6>
                   </div>
                 </div>
               </div>
