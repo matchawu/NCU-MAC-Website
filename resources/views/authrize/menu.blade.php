@@ -31,9 +31,11 @@ picture
               <p>能夠把優異的成果上傳到網站伺服器中儲存。</p>
             </div>
             <div class="feature">
-              <i class="glyphicon glyphicon-hourglass"></i>
-              <h3>功能未定</h3>
-              <p>額外功能擴充預留空間</p>
+              <a href="{{ url('/authrize/menu/introduce') }}">
+                <i class="glyphicon glyphicon-hourglass"></i>
+                <h3>簡介內容管理</h3>
+              </a>
+              <p>在此新增編輯簡介內容</p>
             </div>
             <div class="feature">
               <a href="{{ url('/authrize/menu/news') }}">

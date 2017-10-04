@@ -52,22 +52,32 @@ Route::get('/authrize/deleteapplicants/{id}','AppUserController@delete');
 Route::get('authrize', function () {
     return view('authrize.login');
 });
+
+//管理員編輯簡介
+Route::get('/authrize/menu/introduce', function () {
+    return view('authrize/introduce/index');
+});
+Route::get('/authrize/menu/introduce/edit', function () {
+    return view('authrize.introduce.edit');
+});
+Route::get('/authrize/menu/introduce', 'IntroduceController@show');
+Route::post('/authrize/menu/introduce/step{introduce_classsteps}', 'IntroduceController@update1');
+Route::post('/authrize/menu/introduce/{introduce_classtypes}', 'IntroduceController@update');
+
+Route::get('/authrize/menu/introduce/edit', 'IntroduceEditController@IntroduceQuestion');
+Route::delete('/introduce/edit/{introduce_question}', 'IntroduceEditController@destroy');
+Route::post('/introduce/edit/{introduce_question}', 'IntroduceEditController@update');
+
+
+
+
 //簡介
 Route::get('/introduce', function () {
     return view('introduce.index');
 });
-Route::get('/introduce/edit', function () {
-    return view('introduce.edit');
-});
-Route::post('/introduce/index', 'IntroduceController@store');
-Route::post('/introduce/step{introduce_classsteps}', 'IntroduceController@update1');
-Route::post('/introduce/{introduce_classtypes}', 'IntroduceController@update');
-
 Route::get('/introduce', 'IntroduceController@IntroduceQuestion');
-Route::get('/introduce/edit', 'IntroduceEditController@IntroduceQuestion');
 Route::post('/introduce/edit', 'IntroduceEditController@Questionstore');
-Route::delete('/introduce/edit/{introduce_question}', 'IntroduceEditController@destroy');
-Route::post('/introduce/edit/{introduce_question}', 'IntroduceEditController@update');
+
 // //審核單位入口
 // Route::get('/check',function() {
 //   return view('check.index');
