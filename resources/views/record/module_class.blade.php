@@ -34,7 +34,7 @@
 			<tbody style="background-color:">
         @foreach($module_class as $module_class)
             <tr>
-              <td>個別課程</td>
+              <td>模組課程</td>
               <td>{{$module_class->name}}</td>
               <td>{{ $module_class->class_hr }}
               </td>
