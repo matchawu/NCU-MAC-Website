@@ -10,7 +10,7 @@ class AchievementController extends Controller
      public function index(){
 
         $achievements=Achievement::all();
-        return view('achievement.index',["achievements"=>$achievements]);
+        return view('achievement.achievement',["achievements"=>$achievements]);
     }
 
     public function search(Request $request){

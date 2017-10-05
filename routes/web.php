@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//test
+Route::get('/entry', function () {
+    return view('entry');
+});
 //根目錄
 Route::get('/', function () {
     return view('welcome');
@@ -88,6 +92,7 @@ Route::post('/introduce/edit/{introduce_question}', 'IntroduceEditController@upd
 
 //成果展示
 Route::get('/achievement', 'AchievementController@index');
+Route::get('/achievement/achievement', 'AchievementController@index');
 //成果編輯
 Route::get('/achievement/edit/{id}', 'AchievementController@edit');
 Route::post('/achievement/edit/{id}', 'AchievementController@edit_fin');
@@ -222,6 +227,8 @@ Route::post('search2', 'SearchController@search2');
 
 //課程影音
 Route::get('/video', 'VideoController@index');
+Route::get('/video/video','VideoController@index');
+
 
 
 Auth::routes();

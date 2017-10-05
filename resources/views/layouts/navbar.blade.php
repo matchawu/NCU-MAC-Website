@@ -25,7 +25,7 @@
                         <a href="{{ url('/record') }}">課程查詢</a>
                     </li>
                     <li class="page-scrol navbtn">
-                        <a href="{{ url('/achievement') }}">優異成果展示</a>
+                        <a href="{{ url('/achievement') }}">成果展示</a>
                     </li>
                     <li class="page-scrol navbtn">
                         <a href="{{ url('/video') }}">課程影音</a>
@@ -40,40 +40,28 @@
                     </li>
                     @else
                     <ul class="nav navbar-nav navbar-right">
-        
-
-                        <li class="nav-item dropdown">
-                            <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false" >
-                            管理員 您好<span class="caret"></span>  <small class="tips"></small>
-                            </a>
+                      <li class="nav-item dropdown">
+                        <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false" >
+                          管理員 您好
+                          <span class="caret"></span>
+                          <small class="tips"></small>
+                        </a>
                         <ul class="dropdown-menu">
-                                <li><a href="{{ url('/authrize/menu') }}" class=" waves-effect waves-light"><i class="fa fa-user" aria-hidden="true"> </i>功能主頁</a>
-                                </li>
-                          
-                            <li class="page-scroll navbtn">
-                                <a href="{{ url('/logout') }}"
-                                onclick="event.preventDefault();
-                                         document.getElementById('logout-formm').submit();">
-                                登出
-                                </a>
-
-
-                                <form id="logout-formm" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
+                          <li>
+                            <a href="{{ url('/authrize/menu') }}" class=" waves-effect waves-light"><i class="fa fa-user" aria-hidden="true"> </i>功能主頁</a>
+                          </li>
+                          <li class="page-scroll navbtn">
+                            <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-formm').submit();">
+                              登出
+                            </a>
+                            <form id="logout-formm" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                              {{ csrf_field() }}
+                            </form>
+                          </li>
                         </ul>
-                        </li>
-
-        
+                      </li>
                     </ul>
-<ul class="dropdown-menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
+
                     @endif
 
                 </ul>
@@ -90,5 +78,5 @@
         border-right-style:solid;
         border-radius:25%;
     }
-    
+
 </style>
