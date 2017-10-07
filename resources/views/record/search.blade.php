@@ -26,6 +26,15 @@
 					<form  action=" {{ url('search') }} " method="post">
 						{{ csrf_field() }}
 						<br>星期:
+						<!-- <label class="radio-inline"><input type="radio" name="weekofday">全部</label>
+						<label class="radio-inline"><input type="radio" name="weekofday">一</label>
+						<label class="radio-inline"><input type="radio" name="weekofday">二</label>
+						<label class="radio-inline"><input type="radio" name="weekofday">三</label>
+						<label class="radio-inline"><input type="radio" name="weekofday">四</label>
+						<label class="radio-inline"><input type="radio" name="weekofday">五</label>
+						<label class="radio-inline"><input type="radio" name="weekofday">六</label>
+						<label class="radio-inline"><input type="radio" name="weekofday">日</label> -->
+
 						<select name="weekofday">
 							<option value ="0">全部</option>
 							<option value ="1">ㄧ</option>
@@ -35,7 +44,8 @@
 							<option value ="5">五</option>
 							<option value ="6">六</option>
 							<option value ="7">日</option>
-						</select><hr>
+						</select>
+						<hr>
 						開始時段:
 						<select name="time">
 							<option value ="1">全部</option>
@@ -55,6 +65,8 @@
 						</select><hr>
 						課程名稱:
 						<input type="text" name="name" value="" placeholder="可不填ヽ(*´∀`)ﾉﾟ."><hr>
+						查關鍵字:
+						<input type="text" name="tag" value="" placeholder="可不填ヽ(*´∀`)ﾉﾟ."><hr>
 						<button type="submit" class="btn btn-warning">查詢</button><br><br>
 					</form>
 				</div>
@@ -67,7 +79,9 @@
 							<option value="2">碎形課程</option>
 						</select><hr> -->
 						<br>課程名稱:
-						<input type="text" name="name" value=""><hr>
+						<input type="text" name="name" value="" placeholder="可不填ヽ(*´∀`)ﾉﾟ."><hr>
+						查關鍵字:
+						<input type="text" name="tag" value="" placeholder="可不填ヽ(*´∀`)ﾉﾟ."><hr>
 						<button type="submit" class="btn btn-warning">查詢</button><br><br>
 					</form>
 				</div>
@@ -207,7 +221,9 @@
 @section('css')
 
 	<style type="text/css">
-
+	.btn, .btn.inverse:hover{color:#fff; background-color:#669999; border-color:#669999;}
+	.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
+	*, *::before, *::after{transition:all .28s ease-in-out;}
 
 		.page-header{
 			font-size: 35px;

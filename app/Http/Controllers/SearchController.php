@@ -22,17 +22,49 @@ class SearchController extends Controller
       $name=$request->name;
       $day=$request->weekofday;
       $time=$request->time;
+      $tag=$request->tag;
         if($day==0){
-            $search_single=Single_class::where('name','like','%'.$name.'%')
+          if($tag==null){
+            if($name==null){
+              $search_single=Single_class::all();
+            }else{
+              $search_single=Single_class::where('name','like','%'.$name.'%')
+                                          ->get();
+
+                                        }
+          }else{
+            if($name==null){
+                $search_single=Single_class::where('keyword','like','%'.$tag.'%')
+                                          ->get();
+
+            }else{
+                $search_single=Single_class::where('name','like','%'.$name.'%')
+                                        ->where('keyword','like','%'.$tag.'%')
                                         ->get();
+            }
+          }
         }else{
           if($name==null){
-            $search_single=Single_class::where('weekday','=',$day)
-                                        ->get();
+            if($tag==null){
+              $search_single=Single_class::where('weekday','=',$day)
+                                          ->get();
+            }else{
+              $search_single=Single_class::where('weekday','=',$day)
+                                          ->where('keyword','like','%'.$tag.'%')
+                                          ->get();
+            }
+
           }else{
-            $search_single=Single_class::where('name','like','%'.$name.'%')
-                                        ->where('weekday','=',$day)
-                                        ->get();
+            if($tag==null){
+              $search_single=Single_class::where('name','like','%'.$name.'%')
+                                          ->where('weekday','=',$day)
+                                          ->get();
+            }else{
+              $search_single=Single_class::where('name','like','%'.$name.'%')
+                                          ->where('weekday','=',$day)
+                                          ->where('keyword','like','%'.$tag.'%')
+                                          ->get();
+            }
           }
         }
         return back()
@@ -41,6 +73,7 @@ class SearchController extends Controller
     }
     public function search2(Request $request){
       $name=$request->name;
+      $tag=$request->tag;
       $type=1;
         // if($type==1){
         //     $search_other=Module_class::where('name','like','%'.$name.'%')
@@ -49,8 +82,26 @@ class SearchController extends Controller
         //     $search_other=Fractal_class::where('name','like','%'.$name.'%')
         //                                 ->get();
         // }
-        $search_other=Module_class::where('name','like','%'.$name.'%')
-                                    ->get();
+        if($tag==null){
+          if($name==null){
+            $search_other=Module_class::all();
+          }else{
+            $search_other=Module_class::where('name','like','%'.$name.'%')
+                                        ->get();
+          }
+
+        }else{
+          if($name==null){
+            $search_other=Module_class::where('keyword','like','%'.$tag.'%')
+                                        ->get();
+          }else{
+            $search_other=Module_class::where('name','like','%'.$name.'%')
+                                        ->where('keyword','like','%'.$tag.'%')
+                                        ->get();
+          }
+
+        }
+
         return back()
           ->with('search_other',$search_other)->with('type',$type);
 
