@@ -10,7 +10,116 @@ class AchievementController extends Controller
      public function index(){
 
         $achievements=Achievement::all();
-        return view('achievement.index',["achievements"=>$achievements]);
+        return view('achievement.achievement',["achievements"=>$achievements]);
+    }
+
+    public function search(Request $request){
+      $term=$request->term;
+      $gather_name=$request->gather_name;
+      $field=$request->field;
+      $result_topic=$request->result_topic;
+      $keyword=$request->keyword;
+
+
+      if($term!=null){
+        if($gather_name!=null){
+          if($result_topic!==null){
+            if($keyword!=null){
+              $search_achievement=Achievement::where('field','=',$field)
+                                             ->where('keyword','like','%'.$keyword.'%')
+                                             ->where('result_topic','like','%'.$result_topic.'%')
+                                             ->where('gather_name','like','%'.$gather_name.'%')
+                                             ->where('term','=',$term)
+                                             ->get();
+            }else{
+              //有 term gather_name result_topic field 沒有keyword
+              $search_achievement=Achievement::where('field','=',$field)
+                                             ->where('result_topic','like','%'.$result_topic.'%')
+                                             ->where('gather_name','like','%'.$gather_name.'%')
+                                             ->where('term','=',$term)
+                                             ->get();
+            }
+          }else{
+            //有 term gather_name field 沒有result_topic 不確定有沒有 keyword
+            $search_achievement=Achievement::where('field','=',$field)
+                                           ->where('gather_name','like','%'.$gather_name.'%')
+                                           ->where('term','=',$term)
+                                           ->get();
+            if($keyword!=null){
+              //有keyword
+              $search_achievement=Achievement::where('keyword','like','%'.$keyword.'%')
+                                             ->get();
+            }
+          }
+        }else{
+          //沒有gather_name 有term field 不確定有沒有 result_topic keyword
+          $search_achievement=Achievement::where('term','=',$term)
+                                         ->where('field','=',$field)
+                                         ->get();
+          if($result_topic!=null){
+            //有result_topic
+            $search_achievement=Achievement::where('result_topic','like','%'.$result_topic.'%')
+                                           ->get();
+            if($keyword!=null){
+              //有result_topic 也有 keyword
+              $search_achievement=Achievement::where('keyword','like','%'.$keyword.'%')
+                                             ->get();
+            }else{
+              //有result_topic 沒有keyword
+            }
+          }else{
+            if($keyword!=null){
+              //沒有result_topic 有keyword
+              $search_achievement=Achievement::where('keyword','like','%'.$keyword.'%')
+                                             ->get();
+            }else{
+              //都沒有 keyword result_topic
+            }
+          }
+
+        }
+      }else{
+        //沒有 term 有field 不確定有沒有 result_topic keyword gather_name
+        $search_achievement=Achievement::where('field','=',$field)
+                                       ->get();
+        if($result_topic!=null){
+          //有 result_topic
+          $search_achievement=Achievement::where('result_topic','like','%'.$result_topic.'%')
+                                         ->get();
+
+        }else{
+          //沒有result_topic
+          if($keyword!=null){
+            //沒有result_topic 有keyword
+            $search_achievement=Achievement::where('keyword','like','%'.$keyword.'%')
+                                           ->get();
+            if($gather_name!=null){
+              //沒有result_topic 有keyword gather_name
+              $search_achievement=Achievement::where('gather_name','like','%'.$gather_name.'%')
+                                             ->get();
+            }else{
+              //沒有result_topic 有keyword沒有gather_name
+            }
+          }else{
+            //沒有result_topic 也沒有keyword
+            if($gather_name!=null){
+              //沒有result_topic keyword 但是有gaher_name
+              $search_achievement=Achievement::where('gather_name','like','%'.$gather_name.'%')
+                                             ->get();
+            }else{
+              //沒有 result_topic keyword gather_name
+            }
+          }
+        }
+            }
+
+      $achievements=Achievement::all();
+
+      // return $search_achievement;
+      return view('achievement.index',[
+        'search_achievements'=>$search_achievement,
+        'achievements'=>$achievements
+      ]);
     }
 
     public function edit($id){
@@ -21,6 +130,7 @@ class AchievementController extends Controller
     public function edit_fin($id,Request $request){
       $achievement = Achievement::find($id);
 
+      $achievement -> term = $request -> term;
       $achievement -> gather_name = $request -> gather_name;
       $achievement -> gather_grade = $request -> gather_grade;
       $achievement -> gather_email = $request -> gather_email;

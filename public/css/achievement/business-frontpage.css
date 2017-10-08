@@ -1,0 +1,76 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (http://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.business-header {
+    height: 50vh;
+    min-height: 300px;
+    background: url('http://4d4f0m31gq4npdzgk1jun891.wpengine.netdna-cdn.com/wp-content/uploads/2014/11/summer-homepage-hero-11-1920x400.jpg') center center no-repeat scroll;
+    /*http://placehold.it/1920x400*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.card {
+    height: 100%;
+}
+
+.navbar-brand{
+    color: #f05f40 !important;
+}
+
+.nav-link{
+    color: #f05f40 !important;
+}
+
+.bg-dark{
+    background-color: #ffffff !important;
+}
+
+.m-0{
+    background-color: #ffffff !important;
+    color: #f05f40 !important;
+}
+
+.btn{
+    background-color: #f05f40 !important;
+    color: #ffffff !important;
+    border: #f05f40 !important;
+}
+.btn:hover{
+    background-color: #d43511 !important;
+}
+#search{
+    display: none;
+    /*background-color: #f05f40 !important;
+    color: #ffffff;*/
+}
+.mb_text{
+  color: #f05f40 !important;
+  font-weight: bold !important;
+}
+.modal-header{
+  /*background-color: #f05f40 !important;*/
+}
+.modal-title{
+  /*color: #ffffff !important;*/
+}
+
+.search{
+  width: 500px;
+}

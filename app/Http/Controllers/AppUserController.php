@@ -134,6 +134,7 @@ class AppUserController extends Controller
 
         $achievement = new Achievement;
 
+        $achievement -> term = $request -> term;
         $achievement -> gather_name = $request -> gather_name;
         $achievement -> gather_grade = $request -> gather_grade;
         $achievement -> gather_email = $request -> gather_email;

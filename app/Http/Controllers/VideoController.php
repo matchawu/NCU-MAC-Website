@@ -14,7 +14,7 @@ class VideoController extends Controller
         $single_classes=Single_class::all();
         $module_classes=Module_class::all();
         $fractal_classes=Fractal_class::all();
-        return view('video.index',["single_classes"=>$single_classes,"module_classes"=>$module_classes,"fractal_classes"=>$fractal_classes]);
+        return view('video.video',["single_classes"=>$single_classes,"module_classes"=>$module_classes,"fractal_classes"=>$fractal_classes]);
     }
 
 

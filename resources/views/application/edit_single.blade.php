@@ -30,6 +30,21 @@
         </div>
       </div>
 
+      <!-- text req way-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">開課模式</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+            <select class="form-control" id="way" name="way" value="{{$single_class->way}}">
+              <option value="單位創課" id="way1">單位創課</option>
+              <option value="學生募課" id="way2">學生募課</option>
+              <option value="企業捐課" id="way3">企業捐課</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       <!-- Text name req-->
       <div class="form-group">
         <label class="col-md-4 control-label">課程名稱</label>
@@ -250,9 +265,16 @@
 <script>
 $(document).ready(function(){
   var x = $("#field").attr("value");
+  var b = $("#way").attr("value");
   for(y=1;y<=8;y++){
     if(x== $("#field"+y).attr("value")){
       $("#field"+y).attr('selected','selected');
+    }
+  }
+
+  for(a=1;a<=3;a++){
+    if(b== $("#way"+a).attr("value")){
+      $("#way"+a).attr('selected','selected');
     }
   }
 

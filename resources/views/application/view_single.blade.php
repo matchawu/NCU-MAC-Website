@@ -16,7 +16,7 @@
   <form class="well form-horizontal" action="{{asset('/application/view_single')}}/{{$single_class->id}}" method="post"  id="contact_form">
     <fieldset>
       <!-- Form Name -->
-      <legend><b>查看個別課程</b></legend>
+      <legend><b>{{$single_class->name}}</b></legend>
 
       <!-- 此處input name更改 -->
       <!-- Text term req-->
@@ -26,6 +26,17 @@
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
         <input  name="term" value="{{$single_class->term}}" placeholder="ex. 106-1" class="form-control"  type="text" disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text way req-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">開課模式</label>
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+        <input  id="way" name="way" value="{{$single_class->way}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>

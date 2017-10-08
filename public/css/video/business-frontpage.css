@@ -1,0 +1,88 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (http://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.business-header {
+    height: 50vh;
+    min-height: 300px;
+    background: url('http://4d4f0m31gq4npdzgk1jun891.wpengine.netdna-cdn.com/wp-content/uploads/2014/11/summer-homepage-hero-11-1920x400.jpg') center center no-repeat scroll;
+    /*http://placehold.it/1920x400*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.card {
+    height: 100%;
+}
+
+.navbar-brand{
+    color: #f05f40 !important;
+}
+
+.nav-link{
+    color: #f05f40 !important;
+}
+
+.bg-dark{
+    background-color: #ffffff !important;
+}
+
+.m-0{
+    background-color: #ffffff !important;
+    color: #f05f40 !important;
+}
+
+.btn{
+    background-color: #f05f40 !important;
+    color: #ffffff !important;
+    border: #f05f40 !important;
+}
+.btn:hover{
+    background-color: #d43511 !important;
+}
+
+/*.list{
+    color: #f05f40;
+}
+.list:hover{
+    color: #ffffff;
+    background-color: #f05f40;
+}
+*/
+/*詭異的按鈕*/
+.btn-group{
+    height: 6vh;
+}
+.cla{
+    background-color: #ffffff !important;
+    color: #f05f40 !important;
+}
+.cla:hover{
+    background-color: #fbd8d0 !important;
+    color: #f05f40 !important;
+}
+.nav-link:hover{
+  background-color: #fbd8d0 !important;
+}
+
+ #single, #module{
+    /*display: none;*/
+}
+#single_tp, #module_tp{
+    display: none;
+}

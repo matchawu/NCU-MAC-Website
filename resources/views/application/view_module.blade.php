@@ -16,7 +16,7 @@
   <form class="well form-horizontal" action="{{asset('/application/view_module')}}/{{$module_class->id}}" method="post"  id="contact_form">
     <fieldset>
       <!-- Form Name -->
-      <legend><b>查看模組課程</b></legend>
+      <legend><b>{{$module_class->name}}</b></legend>
 
       <!-- 此處input name更改 -->
       <!-- Text term req-->
@@ -36,7 +36,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <input  id="way" name="field" value="{{$module_class->way}}" class="form-control"  type="text" disabled>
+        <input  id="way" name="way" value="{{$module_class->way}}" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>

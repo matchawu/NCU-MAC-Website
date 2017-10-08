@@ -21,6 +21,17 @@
       <legend><b>成果基本資料表</b></legend>
 
       <!-- 此處input name 已更改 -->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">發表學期</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="term" placeholder="ex.106-1" class="form-control" type="text" required>
+          </div>
+        </div>
+      </div>
+
       <!-- text req term-->
       <div class="form-group">
         <label class="col-md-4 control-label">申請召集人</label>
@@ -80,7 +91,7 @@
 
       <!-- text req date-->
       <div class="form-group">
-        <label class="col-md-4 control-label">社群成員1</label>
+        <label class="col-md-4 control-label">社群成員2</label>
           <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>

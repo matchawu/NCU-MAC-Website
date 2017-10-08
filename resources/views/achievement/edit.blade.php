@@ -21,6 +21,17 @@
       <legend><b>編輯優異成果</b></legend>
 
       <!-- 此處input name 已更改 -->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">發表學期</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="term"  value="{{$achievement->term}}" class="form-control" type="text" required>
+          </div>
+        </div>
+      </div>
+
       <!-- text req term-->
       <div class="form-group">
         <label class="col-md-4 control-label">申請召集人</label>

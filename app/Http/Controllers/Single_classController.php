@@ -18,6 +18,7 @@ class Single_classController extends Controller
         $single_class = new Single_class;
 
         $single_class -> term = $request -> term;
+        $single_class -> way = $request -> way;
         $single_class -> name = $request -> name;
         $single_class -> field = $request -> field;
         $single_class -> other_field = $request -> other_field;
@@ -63,6 +64,7 @@ class Single_classController extends Controller
       $single_class = Single_class::find($id);
 
       $single_class -> term = $request -> term;
+      $single_class -> way = $request -> way;
       $single_class -> name = $request -> name;
       $single_class -> field = $request -> field;
       $single_class -> other_field = $request -> other_field;
