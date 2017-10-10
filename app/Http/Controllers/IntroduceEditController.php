@@ -18,13 +18,13 @@ class IntroduceEditController extends Controller
 		$introduce_questions->question = $request->question;
 		$introduce_questions->answer = $request->answer;
 		$introduce_questions->save();
-		return redirect('/introduce/edit');
+		return redirect('/authrize/menu/introduce/edit');
 	}
 	//刪除
 	public function destroy(Request $request, IntroduceQuestion $introduce_question)
 	{
 		$introduce_question->delete();
-		return redirect('/introduce/edit');
+		return redirect('/authrize/menu/introduce/edit');
 	}
 	// 編輯
 	public function edit(IntroduceQuestion $introduce_questions)
@@ -38,6 +38,6 @@ class IntroduceEditController extends Controller
 		$introduce_question->answer = $request->answer;
 		$introduce_question->save();
 
-		return redirect('/introduce/edit');
+		return redirect('/authrize/menu/introduce/edit');
 	}
 }

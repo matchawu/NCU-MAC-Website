@@ -17,28 +17,29 @@ class IntroduceController extends Controller
 		return view('introduce.index',['introduce_questions'=>$introduce_questions, 'introduce_classtypes'=>$introduce_classtypes, 
 			'introduce_classsteps'=>$introduce_classsteps]);
 	}
-	// 新增
-	// public function store(Request $request)
-	// {
-	// 	$introduce_classtypes = new IntroduceClasstype;
-	// 	$introduce_classtypes->body = $request->editor1;
-	// 	$introduce_classtypes->save();
-	// 	return redirect('introduce');
-	// }
+
+	public function show()
+	{
+		$introduce_questions = IntroduceQuestion::all();
+		$introduce_classtypes = IntroduceClasstype::all();
+		$introduce_classsteps = IntroduceClassstep::all();
+		return view('authrize.introduce.index',['introduce_questions'=>$introduce_questions, 'introduce_classtypes'=>$introduce_classtypes, 
+			'introduce_classsteps'=>$introduce_classsteps]);
+	}
 
 	public function update(Request $request, IntroduceClasstype $introduce_classtypes)
 	{
 		// $introduce_questions->update(['question' => $request->question]);
 		$introduce_classtypes->body = $request->editor1;
 		$introduce_classtypes->save();
-		return redirect('/introduce');
+		return redirect('/authrize/menu/introduce');
 	}
 
 	public function update1(Request $request, IntroduceClassstep $introduce_classsteps)
 	{
 		$introduce_classsteps->body = $request->editor2;
 		$introduce_classsteps->save();
-		return redirect('/introduce');
+		return redirect('/authrize/menu/introduce');
 	}
 
 }
