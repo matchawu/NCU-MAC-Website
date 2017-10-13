@@ -8,6 +8,7 @@ use App\Module_class;
 use App\Single_class;
 use App\Fractal_class;
 use App\Achievement;
+use App\News;
 use Mail;
 
 
@@ -196,6 +197,25 @@ class AppUserController extends Controller
         ]);
     }
 
+    public function editClient($id){
+      $applicants = appUser::find($id);
+      return view('authrize.accountmanage',["applicants"=>$applicants]);
+    }
+
+    public function edit_fin($id,Request $request){
+      $appUser = appUser::find($id);
+
+      $appUser -> unitname = $request -> unitname;
+      $appUser -> mail = $request -> mail;
+      $appUser -> phone = $request -> phone;
+      $appUser -> name = $request -> name;
+      
+
+
+      $appUser->save();
+      
+      return redirect('/authrize/menu/addClient');
+    }
 
     public function edit_goto(){
       return view('application.edit_pwd');
@@ -234,10 +254,12 @@ class AppUserController extends Controller
           $single_classes =  Single_class::all();
           $module_classes =  Module_class::all();
           $fractal_classes = Fractal_class::all();
+          $news = News::all();
           return view('Homepage.homepage',[
             "single_classes"=>$single_classes,
             "module_classes"=>$module_classes,
             "fractal_classes"=>$fractal_classes,
+            "news"=>$news,
           ]);
     }
     /**

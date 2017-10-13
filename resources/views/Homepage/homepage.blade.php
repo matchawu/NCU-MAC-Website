@@ -34,7 +34,38 @@
 
             <div class="tab-content">
 
-                <div class="panel panel-default tab-pane active " id="tab2">
+                
+
+                <div class="panel panel-default tab-pane active " id="tab1">
+                    <div class="panel-body"  style="height:500px; background-color:#b0e0e6; border-style:inset; overflow-x: hidden;overflow-y: scroll;">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>主標題</th>
+                            <th>副標題</th>
+                            <th>內容</th>
+                            <th>發布時間</th>                          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($news as $news)
+                          <tr class="success" style="height:50px;">
+                            <td>{{$news->title}}</td>
+                            <td>{{$news->subtitle}}</td>
+                            <td>{{$news->content}}</td>
+                            <?php
+                              $timestamp = strtotime($news->created_at) + 8*60*60;
+                              $time = date('Y-m-d H:i', $timestamp);
+                            ?>
+                            <td>{{$time}}</td>
+                          </tr>
+                        @endforeach
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+
+                <div class="panel panel-default tab-pane " id="tab2">
                     <div class="panel-body"  style="height:500px; background-color:#b0e0e6; border-style:inset; overflow-x: hidden;overflow-y: scroll;">
                     <table class="table table-striped">
           <thead>
@@ -114,13 +145,6 @@
         </table>
                     </div>
                 </div>
-
-                <div class="panel panel-default tab-pane  " id="tab1">
-                    <div class="panel-body"  style="height:500px; background-color:#b0e0e6; border-style:inset; overflow-x: hidden;overflow-y: scroll;">
-                        Basic panel example2
-                    </div>
-                </div>
-
                 <!-- <div class="panel panel-default tab-pane  " id="tab3">
                     <div class="panel-body"  style="height:350px;">
                         Basic panel example3

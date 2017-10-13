@@ -62,7 +62,7 @@
         <th>聯絡信箱</th>
         <th>聯絡電話</th>
         <th>申請人姓名</th>
-        <th colspan = 2>操作</th>
+        <th colspan = 3>操作</th>
       </tr>
     </thead>
     <tbody>
@@ -73,6 +73,13 @@
         <td>{{$applicants->mail}}</td>
         <td>{{$applicants->phone}}</td>
         <td>{{$applicants->name}}</td>
+        <td>
+                  <a href="{{ url('/authrize/editClient') }}/{{$applicants->id}}">
+                    <button type="button" class="btn btn-info btn-sm">
+                      <span class="glyphicon glyphicon-pencil"></span> 編輯
+                    </button>
+                  </a>
+                </td>
         <td>
           <form action="{{asset('/authrize/menu/addClient/sendmail')}}" method="post">
             <input type="hidden" value="{{$applicants->mail}}" name="mail">

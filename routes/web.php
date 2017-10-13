@@ -50,6 +50,10 @@ Route::get('authrize', function () {
     return view('authrize.login');
 });
 
+//編輯開課單位資訊功能
+Route::get('/authrize/editClient/{id}','AppUserController@editClient');
+Route::post('/authrize/editClient/{id}','AppUserController@edit_fin');
+
 
 Route::get('/authrize/deleteapplicants/{id}','AppUserController@delete');
 
