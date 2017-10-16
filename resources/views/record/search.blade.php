@@ -4,37 +4,156 @@
 
 @section('content')
 	<div class="container">
-		<!--標題-->
-		<div class="page-header">
-			<center>課程搜尋</center>
+
+		<!--圖片及標題-->
+		<div class="bcg">
+			<div style="line-height:500px;color:#fff;padding-top:180px">
+				<center><h1>課&nbsp;程&nbsp;搜&nbsp;尋</h1>
+					<h5 style="font-style:oblique;padding-left:0%;color:#f2f1f2;letter-spacing:1px;">“我寧可做人類中有夢想和有完成夢想的願望的、最渺小的人，而不願做一個最偉大的、無夢想、無願望的人。” - 紀伯倫</h5>
+				</center>
+			</div>
+	</div><br>
+
+	<!-- 回上一頁button -->
+	<div class="row" style="margin-bottom:15px;padding:15px">
+		<div class="col-sm-1">
+			<a href="{{url('/record')}}"><button class="btn btn-defaulte " type="button">回上一頁</button></a>
 		</div>
-		<div class="inline">
-				<a href="{{ url('/record') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;全部</button></a>
-				<a href="{{ url('/record/個別課程') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;個別課程</button></a>
-				<a href="{{ url('/record/模組課程') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;模組課程</button></a>
-				<!-- <a href="{{ url('/record/碎形課程') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;碎形課程</button></a> -->
-        <a href="{{ url('/search') }}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;詳細搜尋</button></a>
-		</div><br><br><br>
-		<center><div style="width:60%;">
-			<ul class="nav nav-tabs">
-				<li class="active"><a data-toggle="tab" href="#singleclass">個別課程</a></li>
-				<li><a data-toggle="tab" href="#menu1">模組課程</a></li>
+	</div><hr>
+
+
+		<!-- 搜尋後的結果顯示 -->
+		@if ($search_single = Session::get('search_single'))
+			@if($time =Session::get('time'))
+			<div class="alert alert-block" style="background-color:#262626">
+				<button type="button" class="close" data-dismiss="alert" style="color:#e65c00;">×</button>
+				<center><h3 style="color:#e74c3c"><span class="glyphicon">&#xe003;</span>&nbsp;搜尋結果</h3></center>
+				@if($search_single->isEmpty())
+					<strong style="color:#e74c3c">查無結果.....</strong>
+				@else
+				<table class="table table-hover" >
+					<tbody style="background-color:">
+						<input type="hidden" name="" value="{{$i=1}}">
+						@foreach ($search_single as $search_single)
+							@if($time==1)
+							<a href="{{ url('record/view_single/'.$search_single->id) }}">
+								<div class="col-sm-4" style="margin-top:20px">
+								<div class="post-module">
+									<div class="post-content">
+										<div class="category"><i class="fa fa-comments"></i><span class="glyphicon">&#xe008;</span>&nbsp;授課者:&nbsp;{{ $search_single->teacher }}</div>
+										<h1 class="title">{{ $search_single->name }}</h1>
+										<div class="post-meta"><span class="timestamp"><span class="glyphicon">&#xe109;</span>&nbsp{{$search_single->date}};&nbsp;星期@if( $search_single->weekday==1)
+																		<?php echo "一" ?>
+																		@elseif($search_single->weekday==2)
+																			<?php echo "二" ?>
+																		@elseif($search_single->weekday==3)
+																			<?php echo "三" ?>
+																		@elseif($search_single->weekday==4)
+																			<?php echo "四" ?>
+																		@elseif($search_single->weekday==5)
+																			<?php echo "五" ?>
+																		@elseif($search_single->weekday==6)
+																			<?php echo "六" ?>
+																		@elseif($search_single->weekday==7)
+																			<?php echo "日" ?>
+																	@endif</span>
+											<span class="comments"><i class="fa fa-comments"></i><a href="#">&nbsp;&nbsp;&nbsp;<span class="glyphicon">&#xe008;</span>&nbsp;
+												開始時間:{{ $search_single->start }}</a></span></div>
+									</div>
+								</div>
+							</div></a>
+							@else
+								@if((int)substr($search_single->start,0,2)==$time)
+								<a href="{{ url('record/view_single/'.$search_single->id) }}">
+									<div class="col-sm-4" style="margin-top:20px">
+									<div class="post-module">
+										<div class="post-content">
+											<div class="category"><i class="fa fa-comments"></i><a href="#">&nbsp;&nbsp;&nbsp;<span class="glyphicon">&#xe008;</span>&nbsp;講師{{ $search_single->teacher }}</div>
+											<h1 class="title">{{ $search_single->name }}</h1>
+											<div class="post-meta"><span class="timestamp"><span class="glyphicon">&#xe109;</span>&nbsp{{$search_single->date}};&nbsp;星期@if( $search_single->weekday==1)
+																			<?php echo "一" ?>
+																			@elseif($search_single->weekday==2)
+																				<?php echo "二" ?>
+																			@elseif($search_single->weekday==3)
+																				<?php echo "三" ?>
+																			@elseif($search_single->weekday==4)
+																				<?php echo "四" ?>
+																			@elseif($search_single->weekday==5)
+																				<?php echo "五" ?>
+																			@elseif($search_single->weekday==6)
+																				<?php echo "六" ?>
+																			@elseif($search_single->weekday==7)
+																				<?php echo "日" ?>
+																		@endif</span>
+												<span class="comments"><i class="fa fa-comments"></i><a href="#">&nbsp;&nbsp;&nbsp;<span class="glyphicon">&#xe008;</span>&nbsp;
+													開始時間:{{ $search_single->start }}</a></span></div>
+										</div>
+									</div>
+								</div></a>
+								@else
+									@if($i==1)
+										<tr>
+											<td><strong>查無結果呢</strong></td>
+										</tr>
+									@endif
+								@endif
+								<input type="hidden" name="" value="{{$i=$i+1}}">
+							@endif
+						@endforeach
+					</tbody>
+				</table>
+				@endif
+			</div>
+			@endif
+		@endif
+
+		@if ($search_other = Session::get('search_other'))
+			@if($type =Session::get('type'))
+			<div class="alert alert-block" style="background-color:#262626">
+				<button type="button" class="close" data-dismiss="alert" style="color:#e65c00;">×</button>
+				<center><h3 style="color:#e74c3c"><span class="glyphicon">&#xe003;</span>&nbsp;搜尋結果</h3></center>
+				@if($search_other->isEmpty())
+					<strong style="color:#e74c3c">查無結果...</strong>
+				@else
+				<table class="table table-hover" >
+
+					<tbody style="background-color:">
+						<input type="hidden" name="" value="{{$i=1}}">
+						@foreach ($search_other as $search_other)
+							<a href="{{ url('record/view_module/'.$search_other->id) }}">
+								<div class="col-sm-4" style="margin-top:20px">
+								<div class="post-module">
+									<div class="post-content">
+
+										<div class="category">{{ $search_other->field }}</div>
+										<h1 class="title">{{ $search_other->name }}</h1>
+										<h2 class="sub_title">{{$search_other->class_intro}}</h2>
+										<div class="post-meta"><span class="timestamp"><span class="glyphicon">&#xe109;</span>&nbsp;{{$search_other->date}}</span>
+											<span class="comments"><i class="fa fa-comments"></i><a href="#">&nbsp;&nbsp;&nbsp;<span class="glyphicon">&#xe008;</span>&nbsp;
+												授課者:{{$search_other->teacher}}</a></span></div>
+									</div>
+								</div>
+							</div></a>
+						@endforeach
+					</tbody>
+				</table>
+				@endif
+			</div>
+			@endif
+		@endif
+
+		<!-- 個別及模組課程查詢輸入區段 -->
+		<div>
+			<ul class="nav nav-tabs" >
+				<li class="active"><a data-toggle="tab" href="#singleclass" >個別課程</a></li>
+				<li><a data-toggle="tab" href="#menu1" >模組課程</a></li>
 			</ul>
 
-			<div class="tab-content" style="border-left:#d9d9d9 solid 1px;border-right:#d9d9d9 solid 1px;border-bottom:#d9d9d9 solid 1px">
+			<div class="tab-content tab-search" >
 				<div id="singleclass" class="tab-pane fade in active">
 					<form  action=" {{ url('search') }} " method="post">
 						{{ csrf_field() }}
 						<br>星期:
-						<!-- <label class="radio-inline"><input type="radio" name="weekofday">全部</label>
-						<label class="radio-inline"><input type="radio" name="weekofday">一</label>
-						<label class="radio-inline"><input type="radio" name="weekofday">二</label>
-						<label class="radio-inline"><input type="radio" name="weekofday">三</label>
-						<label class="radio-inline"><input type="radio" name="weekofday">四</label>
-						<label class="radio-inline"><input type="radio" name="weekofday">五</label>
-						<label class="radio-inline"><input type="radio" name="weekofday">六</label>
-						<label class="radio-inline"><input type="radio" name="weekofday">日</label> -->
-
 						<select name="weekofday">
 							<option value ="0">全部</option>
 							<option value ="1">ㄧ</option>
@@ -86,150 +205,141 @@
 					</form>
 				</div>
 			</div>
-		</div></center><br>
+		</div><br>
 
-				@if ($search_single = Session::get('search_single'))
-					@if($time =Session::get('time'))
-					<div class="alert alert-success alert-block">
-						<button type="button" class="close" data-dismiss="alert">×</button>
-						@if($search_single->isEmpty())
-							<strong>查無結果呢</strong>
-						@else
-						<table class="table table-hover" >
-						<thead style="background-color:#da8b8b;color:#fff">
-							<tr>
-								<th>課程屬性</th>
-								<th>課程名稱</th>
-								<th>上課時間</th>
-								<th>上課時段</th>
-								<th></th>
-							</tr>
-						</thead>
-							<tbody style="background-color:">
-								<input type="hidden" name="" value="{{$i=1}}">
-								@foreach ($search_single as $search_single)
-									@if($time==1)
-										<tr>
-											<td>個別課程</td>
-											<td>{{ $search_single->name }}</td>
-											<td>星期@if( $search_single->weekday==1)
-																			<?php echo "一" ?>
-																			@elseif($search_single->weekday==2)
-																				<?php echo "二" ?>
-																			@elseif($search_single->weekday==3)
-																				<?php echo "三" ?>
-																			@elseif($search_single->weekday==4)
-																				<?php echo "四" ?>
-																			@elseif($search_single->weekday==5)
-																				<?php echo "五" ?>
-																			@elseif($search_single->weekday==6)
-																				<?php echo "六" ?>
-																			@elseif($search_single->weekday==7)
-																				<?php echo "日" ?>
-																		@endif
-											</td>
-											<td>{{ $search_single->start }}</td>
-											<td>
-												<a href="{{ url('record/view_single/'.$search_single->id) }}" target="_blank"><button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal1">查看詳情</button></a>
-											</td>
-										</tr>
-									@else
-										@if((int)substr($search_single->start,0,2)==$time)
-										<tr>
-											<td>個別課程</td>
-											<td>{{ $search_single->name }}</td>
-											<td>星期@if( $search_single->weekday==1)
-																			<?php echo "一" ?>
-																			@elseif($search_single->weekday==2)
-																				<?php echo "二" ?>
-																			@elseif($search_single->weekday==3)
-																				<?php echo "三" ?>
-																			@elseif($search_single->weekday==4)
-																				<?php echo "四" ?>
-																			@elseif($search_single->weekday==5)
-																				<?php echo "五" ?>
-																			@elseif($search_single->weekday==6)
-																				<?php echo "六" ?>
-																			@elseif($search_single->weekday==7)
-																				<?php echo "日" ?>
-																		@endif
-											</td>
-											<td>{{ $search_single->start }}</td>
-											<td>
-												<a href="{{ url('record/view_single/'.$search_single->id) }}" target="_blank"><button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal1">查看詳情</button></a>
-											</td>
-										</tr>
-										@else
-											@if($i==1)
-												<tr>
-													<td><strong>查無結果呢</strong></td>
-												</tr>
-											@endif
-										@endif
-										<input type="hidden" name="" value="{{$i=$i+1}}">
-									@endif
-								@endforeach
-							</tbody>
-						</table>
-						@endif
-					</div>
-					@endif
-				@endif
 
-				@if ($search_other = Session::get('search_other'))
-					@if($type =Session::get('type'))
-					<div class="alert alert-success alert-block">
-						<button type="button" class="close" data-dismiss="alert">×</button>
-						@if($search_other->isEmpty())
-							<strong>查無結果呢</strong>
-						@else
-						<table class="table table-hover" >
-						<thead style="background-color:#da8b8b;color:#fff">
-							<tr>
-								<th>課程屬性</th>
-								<th>課程名稱</th>
-								<th>上課時數</th>
-								<th>認證時數</th>
-								<th></th>
-							</tr>
-						</thead>
-							<tbody style="background-color:">
-								<input type="hidden" name="" value="{{$i=1}}">
-								@foreach ($search_other as $search_other)
-									<tr>
-										<td>@if($type==1)模組課程@else碎形課程@endif</td>
-										<td>{{ $search_other->name }}</td>
-										<td>{{ $search_other->class_hr }}
-										</td>
-										<td>{{ $search_other->auth_hr }}</td>
-										<td>
-											@if($type==1)<a href="{{ url('record/view_module/'.$search_other->id) }}" target="_blank"><button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal1">查看詳情</button></a>
-											@else<a href="{{ url('record/view_fractal/'.$search_other->id) }}" target="_blank"><button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal1">查看詳情</button></a>
-											@endif
-										</td>
-									</tr>
-								@endforeach
-							</tbody>
-						</table>
-						@endif
-					</div>
-					@endif
-				@endif
 	 </div>
 @endsection
 
 @section('css')
 
 	<style type="text/css">
-	.btn, .btn.inverse:hover{color:#fff; background-color:#669999; border-color:#669999;}
-	.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
-	*, *::before, *::after{transition:all .28s ease-in-out;}
+	.tab-search{
+		border-left:#d9d9d9 solid 1px;
+		border-right:#d9d9d9 solid 1px;
+		border-bottom:#d9d9d9 solid 1px;
+		background-color:#fbfbfb;
+		padding:3% 5% 3% 5%;
+	}
+	.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #00264d;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+		.bcg {
+		    /* The image used */
+		    background-image: url("/img/record1.png");
 
-		.page-header{
-			font-size: 35px;
-			margin-top: 100px;
-			/*font-weight: bold;*/
+		    /* Full height */
+		    height: 400px;
+				margin-left: -210px;
+				margin-right:-173px;
+		    /* Center and scale the image nicely */
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
 		}
+		.post-module {
+	  position: relative;
+	  z-index: 1;
+	  display: block;
+	  background: #00264d;
+	  min-width: 270px;
+	  height: 290px;
+	  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+	  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+	  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+	  -webkit-transition: all 0.3s linear 0s;
+	  -moz-transition: all 0.3s linear 0s;
+	  -ms-transition: all 0.3s linear 0s;
+	  -o-transition: all 0.3s linear 0s;
+	  transition: all 0.3s linear 0s;
+	}
+	.post-module:hover,
+	.hover {
+	  -webkit-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+	  -moz-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+	  box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+	}
+
+
+
+	.post-module .post-content {
+	  position: absolute;
+	  bottom: 0;
+	  background: #fbfbfb;
+	  width: 100%;
+	  padding: 30px;
+	  -webkti-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	  -webkit-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+	  -moz-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+	  -ms-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+	  -o-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+	  transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+	}
+	.post-module .post-content .category {
+	  position: absolute;
+	  top: -34px;
+	  left: 0;
+	  background: #e74c3c;
+	  padding: 10px 15px;
+	  color: #FFFFFF;
+	  font-size: 14px;
+	  font-weight: 600;
+	  text-transform: uppercase;
+	}
+	.post-module .post-content .title {
+	  margin:10px;
+
+	  color: #333333;
+	  font-size: 26px;
+	  font-weight: 700;
+	}
+	.post-module .post-content .sub_title {
+	  margin: 10px;
+	  padding: 10 10 20 10px;
+	  color: #e74c3c;
+	  font-size: 15px;
+
+	}
+	.post-module .post-content .description {
+	  display: none;
+	  color: #666666;
+	  font-size: 14px;
+	  line-height: 1.8em;
+	}
+	.post-module .post-content .post-meta {
+	  margin: 30px 0 0;
+	  color: #999999;
+	}
+	.post-module .post-content .post-meta .timestamp {
+	  margin: 10 16px 10 10;
+	}
+	.post-module .post-content .post-meta a {
+	  color: #999999;
+	  text-decoration: none;
+	}
+	.hover .post-content .description {
+	  display: block !important;
+	  height: auto !important;
+	  opacity: 1 !important;
+	}
+	.containercard {
+	  max-width: 800px;
+	  min-width: 640px;
+	  margin: 0 auto;
+	}
+
+
+
+		.btn, .btn.inverse:hover{color:#fff; background-color:#e74c3c; border-color:#e74c3c;}
+		.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
+		*, *::before, *::after{transition:all .28s ease-in-out;}
+
 		/*查詢歷年課程字體*/
 		font{
 			font-size: 20px;

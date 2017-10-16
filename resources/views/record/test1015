@@ -1,44 +1,76 @@
 @extends('layouts.app')
 
-@section('title', '課程查詢')
+@section('title', '課程查詢#f05f40')
 
 @section('content')
 	<div class="container">
 		<!--標題-->
-		<div class="bcg">
-			<div style="line-height:500px;color:#fff;padding-top:180px">
-				<center><h1>模&nbsp;組&nbsp;課&nbsp;程</h1>
-					<h5 style="font-style:oblique;padding-left:0%;color:#f2f1f2;letter-spacing:1px;">“我寧可做人類中有夢想和有完成夢想的願望的、最渺小的人，而不願做一個最偉大的、無夢想、無願望的人。” - 紀伯倫</h5>
-				</center>
-			</div>
+		<div class="page-header">
+			<center>課程查詢</center>
+		</div>
+		<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    請選擇總類
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	    <li><a href="#k1" data-value="all">全部</a></li>
+	    <li><a href="#k2" data-value="another action">人文思想</a></li>
+	    <li><a href="#k3" data-value="something else here">自然科學</a></li>
+	    <li><a href="#k4" data-value="separated link">應用科學</a></li>
+			<li><a href="#k5" data-value="another action">社會思潮與創意</a></li>
+	    <li><a href="#k6" data-value="something else here">跨域整合</a></li>
+	    <li><a href="#k7" data-value="separated link">社會實踐</a></li>
+			<li><a href="#k8" data-value="something else here">創意創業</a></li>
+	    <li><a href="#k9" data-value="separated link">其他</a></li>
+	  </ul>
 	</div>
-		<br>
-		<div class="row">
-				<div class="col-sm-1">
-					<a href="{{url('/record')}}"><button class="btn btn-defaulte " type="button">回上一頁</button></a>
-				</div>
-				<div class="dropdown col-sm-1">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						請選擇總類
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						<li onclick="openAl()"><a href="#全部" data-value="all" >全部</a></li>
-						<li onclick="openHumanities()"><a href="#人文思想" data-value="another action" >人文思想</a></li>
-						<li onclick="openNscience()"><a href="#自然科學" data-value="something else here">自然科學</a></li>
-						<li onclick="openAscience()"><a href="#應用科學" data-value="separated link">應用科學</a></li>
-						<li onclick="openTrend()"><a href="#社會思潮與現象" data-value="another action">社會思潮與創意</a></li>
-						<li onclick="openInterdisciplinary()"><a href="#跨域整合" data-value="something else here">跨域整合</a></li>
-						<li onclick="openSocial()"><a href="#k社會實踐" data-value="separated link">社會實踐</a></li>
-						<li onclick="openCreative()"><a href="#創意創業" data-value="something else here">創意創業</a></li>
-						<li onclick="openOthers()"><a href="#其它" data-value="separated link">其它</a></li>
-					</ul>
-			</div>
+
+	<div class="row" style="margin-bottom:15px;padding:15px">
+		<div class="col-sm-1">
+			<a href="{{url('/record')}}"><button class="btn btn-defaulte " type="button">回上一頁</button></a>
+		</div>
+		<div class="btn-group">
+
+	<button type="button" class="btn btn-default">
+		<i class="glyphicon glyphicon-flash"></i>
+	</button>
+
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="glyphicon glyphicon-plus-sign"></i> <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="#">Action</a></li>
+			<li><a href="#">Another action</a></li>
+			<li><a href="#">Something else here</a></li>
+			<li class="divider"></li>
+			<li><a href="#">Separated link</a></li>
+		</ul>
+	</div>
+
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="#">Action 2</a></li>
+			<li><a href="#">Another action 2</a></li>
+			<li><a href="#">Something else here 2</a></li>
+			<li class="divider"></li>
+			<li><a href="#">Separated link 2</a></li>
+		</ul>
+	</div>
+
+	</div>
+
+
 		</div>
 
 
 	<hr>
 
+	<div style="margin-top:0px">
 	<div class="row">
 
 		<div id="social" style="display:none">
@@ -83,7 +115,7 @@
 
 		<div id="trend" style="display:none">
 			@foreach($module_class as $module_class4)
-			 @if($module_class4->field=='社會思潮與現象')
+			 @if($module_class4->field=='社會思潮與創意')
 				<a href="{{ url('record/view_module/'.$module_class4->id) }}"><div class="col-sm-4" style="margin-top:20px">
 					<div class="post-module">
 						<div class="post-content">
@@ -217,32 +249,97 @@
 			 @endif
 		 @endforeach
 		</div>
+
+
+	<div>
 	</div>
+	</div>
+
+
+		<!-- <div class="inline">
+				<a href="{{ url('record/個別課程') }}"><button type="button" class="btn basic"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;全部</button></a>
+				<a href="{{url('record/個別課程/人文與思想')}}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;人文與思想</button></a>
+				<a href="{{url('record/個別課程/自然科學')}}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;自然科學</button></a>
+				<a href="{{url('record/個別課程/應用科學')}}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;應用科學</button></a>
+        <a href="{{url('record/個別課程/社會思潮與創意')}}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;社會思潮與現象</button></a>
+        <a href="{{url('record/個別課程/跨域整合')}}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;跨域整合</button></a>
+        <a href="{{url('record/個別課程/社會實踐')}}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;社會實踐</button></a>
+        <a href="{{url('record/個別課程/創意創業')}}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;創意創業</button></a>
+        <a href="{{url('record/個別課程/其他')}}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;其他</button></a>
+		</div><br> -->
+<div class="">
+
+ <!-- Normal Demo-->
+ <div class="">
+	 <div class="inline">
+		 <div class="col-sm-4" style="margin-top:20px">
+			 <div class="post-module">
+				 <div class="post-content">
+					 <div class="category">人文與思想</div>
+					 <h1 class="title">知青文學史</h1>
+					 <h2 class="sub_title">探討知青在文化大革命</h2>
+					 <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+					 <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i>2016-07-88</span><span class="comments"><i class="fa fa-comments"></i><a href="#">授課者:張清</a></span></div>
+				 </div>
+			 </div>
+		 </div>
+		 <div class="col-sm-4" style="margin-top:20px">
+			 <div class="post-module">
+				 <div class="post-content">
+					 <div class="category">Photos</div>
+					 <h1 class="title">City Lights in New York</h1>
+					 <h2 class="sub_title">The city that never sleeps.</h2>
+					 <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+					 <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+				 </div>
+			 </div>
+		 </div>
+		 <div class="col-sm-4" style="margin-top:20px">
+			 <div class="post-module">
+				 <div class="post-content">
+					 <div class="category">Photos</div>
+					 <h1 class="title">City Lights in New York</h1>
+					 <h2 class="sub_title">The city that never sleeps.</h2>
+					 <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+					 <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+				 </div>
+			 </div>
+		 </div>
+		 <div class="col-sm-4" style="margin-top:20px">
+			 <div class="post-module">
+				 <div class="post-content">
+					 <div class="category">Photos</div>
+					 <h1 class="title">City Lights in New York</h1>
+					 <h2 class="sub_title">The city that never sleeps.</h2>
+					 <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+					 <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+				 </div>
+			 </div>
+		 </div>
+
+
+		 </div>
+ </div>
+
+</div>
+
+
+
+
+	 </div>
 @endsection
 
 @section('css')
 
 	<style type="text/css">
-	.bcg {
-	    /* The image used */
-	    background-image: url("/img/record4.png");
 
-	    /* Full height */
-	    height: 400px;
-			margin-left: -210px;
-			margin-right:-173px;
-	    /* Center and scale the image nicely */
-	    background-position: center;
-	    background-repeat: no-repeat;
-	    background-size: cover;
-	}
 	.post-module {
   position: relative;
   z-index: 1;
   display: block;
-  background: #00264d;
+  background: #FFFFFF;
   min-width: 270px;
-  height: 290px;
+  height: 250px;
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -264,7 +361,7 @@
 .post-module .post-content {
   position: absolute;
   bottom: 0;
-  background: #fbfbfb;
+  background: #FFFFFF;
   width: 100%;
   padding: 30px;
   -webkti-box-sizing: border-box;
@@ -288,18 +385,18 @@
   text-transform: uppercase;
 }
 .post-module .post-content .title {
-  margin:10px;
-
+  margin: 10px;
+  padding: 10 10 10 10px;
   color: #333333;
   font-size: 26px;
   font-weight: 700;
 }
 .post-module .post-content .sub_title {
   margin: 10px;
-  padding: 10 0 0 0px;
+  padding: 10 10 20 10px;
   color: #e74c3c;
-  font-size: 13px;
-
+  font-size: 20px;
+  font-weight: 400;
 }
 .post-module .post-content .description {
   display: none;
@@ -308,11 +405,11 @@
   line-height: 1.8em;
 }
 .post-module .post-content .post-meta {
-  margin: 10px 0 0 0px;
+  margin: 30px 0 0;
   color: #999999;
 }
 .post-module .post-content .post-meta .timestamp {
-  margin: 10 10px 0 0;
+  margin: 10 16px 10 10;
 }
 .post-module .post-content .post-meta a {
   color: #999999;
@@ -330,9 +427,11 @@
 }
 
 
-	.btn, .btn.inverse:hover{color:#fff; background-color:#e74c3c; border-color:#e74c3c;}
+
+	.btn, .btn.inverse:hover{color:#fff; background-color:#669999; border-color:#669999;}
 	.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
 	*, *::before, *::after{transition:all .28s ease-in-out;}
+
 		.page-header{
 			font-size: 35px;
 			margin-top: 100px;
@@ -361,118 +460,14 @@
 		$(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
 		$(this).parents(".dropdown").find('.btn').val($(this).data('value'));
 		});
-		function openHumanities(){
-			$("#humanities").fadeIn("slow");
-			$("#humanities").css("display","");
-			$("#all").css("display","none");
-			$("#nscience").css("display","none");
-			$("#ascience").css("display","none");
-			$("#trend").css("display","none");
-			$("#interdisciplinary").css("display","none");
-			$("#social").css("display","none");
-			$("#creative").css("display","none");
-			$("#others").css("display","none");
-	};
-
-		function openNscience(){
-			$("#nscience").fadeIn("slow");
-			$("#nscience").css("display","");
-			$("#all").css("display","none");
-			$("#humanities").css("display","none");
-			$("#ascience").css("display","none");
-			$("#trend").css("display","none");
-			$("#interdisciplinary").css("display","none");
-			$("#social").css("display","none");
-			$("#creative").css("display","none");
-			$("#others").css("display","none");
-
-		};
-		function openAscience(){
-			$("#ascience").css("display","");
-			$("#ascience").fadeIn("slow");
-			$("#all").css("display","none");
-			$("#humanities").css("display","none");
-			$("#nscience").css("display","none");
-			$("#trend").css("display","none");
-			$("#interdisciplinary").css("display","none");
-			$("#social").css("display","none");
-			$("#creative").css("display","none");
-			$("#others").css("display","none");
-		};
-		function openTrend(){
-			$("#trend").fadeIn("slow");
-			$("#trend").css("display","");
-
-			$("#all").css("display","none");
-			$("#humanities").css("display","none");
-			$("#nscience").css("display","none");
-			$("#ascience").css("display","none");
-			$("#interdisciplinary").css("display","none");
-			$("#social").css("display","none");
-			$("#creative").css("display","none");
-			$("#others").css("display","none");
-
-		};
-		function openInterdisciplinary(){
-			$("#interdisciplinary").css("display","");
-			$("#interdisciplinary").fadeIn("slow");
-			$("#all").css("display","none");
-			$("#humanities").css("display","none");
-			$("#nscience").css("display","none");
-			$("#ascience").css("display","none");
-			$("#trend").css("display","none");
-			$("#social").css("display","none");
-			$("#creative").css("display","none");
-			$("#others").css("display","none");
-		};
-		function openSocial(){
-			$("#social").css("display","");
-			$("#social").fadeIn("slow");
-			$("#all").css("display","none");
-			$("#humanities").css("display","none");
-			$("#nscience").css("display","none");
-			$("#ascience").css("display","none");
-			$("#trend").css("display","none");
-			$("#interdisciplinary").css("display","none");
-			$("#creative").css("display","none");
-			$("#others").css("display","none");
-		};
-		function openCreative(){
-			$("#creative").css("display","");
-			$("#creative").fadeIn("slow");
-			$("#all").css("display","none");
-			$("#humanities").css("display","none");
-			$("#nscience").css("display","none");
-			$("#ascience").css("display","none");
-			$("#trend").css("display","none");
-			$("#interdisciplinary").css("display","none");
-			$("#social").css("display","none");
-			$("#others").css("display","none");
-		};
-		function openOthers(){
-			$("#others").css("display","");
-			$("#others").fadeIn("slow");
-			$("#all").css("display","none");
-			$("#humanities").css("display","none");
-			$("#nscience").css("display","none");
-			$("#ascience").css("display","none");
-			$("#trend").css("display","none");
-			$("#interdisciplinary").css("display","none");
-			$("#social").css("display","none");
-			$("#creative").css("display","none");
-		};
-		function openAl(){
-			$("#all").css("display","");
-			$("#all").fadeIn("slow");
-			$("#humanities").css("display","none");
-			$("#nscience").css("display","none");
-			$("#ascience").css("display","none");
-			$("#trend").css("display","none");
-			$("#interdisciplinary").css("display","none");
-			$("#social").css("display","none");
-			$("#creative").css("display","none");
-			$("#others").css("display","none");
-
-		};
+		$(window).load(function() {
+  $('.post-module').hover(function() {
+    $(this).find('.description').stop().animate({
+      height: "toggle",
+      opacity: "toggle"
+    }, 300);
+  });
+});
 	</script>
+
 @endsection
