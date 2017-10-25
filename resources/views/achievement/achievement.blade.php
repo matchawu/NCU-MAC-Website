@@ -57,16 +57,6 @@
           <br>
           <br>
             <h1 class="display-3 text-center text-white mt-4">成果展示</h1>
-            <!-- <form>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <div class="input-group-btn">
-                  <button class="btn btn-default" type="submit">
-                    查詢
-                  </button>
-                </div>
-              </div>
-            </form> -->
           </div>
         </div>
       </div>
@@ -75,33 +65,6 @@
     <!-- Page Content -->
     <div class="container">
 
-      <!-- <div class="row">
-        <div class="col-md-8">
-          <h2 class="mt-4">What We Do</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-          <p>
-            <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
-          </p>
-        </div>
-        <div class="col-md-4">
-          <h2 class="mt-4">Contact Us</h2>
-          <address>
-            <strong>Start Bootstrap</strong>
-            <br>3481 Melrose Place
-            <br>Beverly Hills, CA 90210
-            <br>
-          </address>
-          <address>
-            <abbr title="Phone">P:</abbr>
-            (123) 456-7890
-            <br>
-            <abbr title="Email">E:</abbr>
-            <a href="mailto:#">name@example.com</a>
-          </address>
-        </div>
-      </div> -->
-      <!-- /.row -->
 
       <br>
       <div class="row">
@@ -114,23 +77,24 @@
         <div class="col-md-3 my-4">
         </div>
         <div class="col-md-8" id="search">
-          <form class="form-horizontal">
+          <form class="form-horizontal" action="{{ url('achievement/search') }}" method="post">
+            {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label col-md-4">發表學期:</label>
               <div class="col-md-10">
-                <input type="email" class="form-control search" placeholder="ex.106-1">
+                <input type="text" class="form-control" id="term" placeholder="ex.106-1" name="term">
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4">召集人:</label>
               <div class="col-md-10">
-                <input type="password" class="form-control search" placeholder="請輸入中文名">
+                <input type="text" class="form-control" id="gather_name" placeholder="請輸入召集人姓名" name="gather_name">
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4">社群類別:</label>
 
-              <select class=" form-control search" style="margin-left: 15px;">
+              <select class=" form-control search" style="margin-left: 15px;" name="field" id="field">
                 <option>同領域(同院、系)</option>
                 <option>跨領域(跨院、校)</option>
               </select>
@@ -138,20 +102,20 @@
             <div class="form-group">
               <label class="control-label col-md-4">成果主題:</label>
               <div class="col-md-10">
-                <input type="password" class="form-control search"placeholder="">
+                <input type="text" class="form-control" id="result_topic" placeholder="" name="result_topic">
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4">關鍵字:</label>
               <div class="col-md-10">
-                <input type="password" class="form-control search" placeholder="">
+                <input type="text" class="form-control" id="keyword" placeholder="" name="keyword">
               </div>
             </div>
-            
+
             <div class="form-group">
               <div class="col-md-offset-2 col-md-10">
               <center>
-                <button type="submit" class="btn btn-default">查詢</button>
+                <button type="submit" class="btn btn-default" onclick="openResult()">查詢</button>
                 <button type="button" class="btn" onclick="exitSearch()">關閉</button>
               </center>
               </div>
@@ -160,11 +124,98 @@
         </div>
       </div>
 
-        <div class="col-md-4 my-4">
-          <h2>全部成果</h2>
+      <!-- search result -->
+      @if(isset($search_achievements))
+      <div class="col-md-4 my-4" id="result">
+        <h2>查詢結果</h2>
+      </div>
+      @endif
+      <div class="row">
+        @if(isset($search_achievements))
+          @if($search_achievements->isEmpty())
+          <div class="col-md-4 my-4">
+            <h4>查無結果!</h4>
+          </div>
+          @else
+          @foreach ($search_achievements as $search_achievement)
+          <div class="col-md-4 my-4" id="{{$search_achievement->id}}">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">{{$search_achievement->result_topic}}</h4>
+                <p class="card-text">{{$search_achievement->result_intro}}</p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#result{{$search_achievement->id}}">查看詳情</a>
+              </div>
+            </div>
+          </div>
+
+
+        <!-- Modal -->
+        <div id="result{{$search_achievement->id}}" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{$search_achievement->result_topic}}</h4>
+              </div>
+              <div class="modal-body">
+                <p class="mb_text">成果介紹 :</p>
+                <p>{{$search_achievement->result_intro}}</p>
+                <p class="mb_text">發表學期 :</p>
+                <p>{{$search_achievement->term}}</p>
+                <p class="mb_text">召集人 :</p>
+                <p>{{$search_achievement->gather_name}}</p>
+                <p class="mb_text">系級 :</p>
+                <p>{{$search_achievement->gather_grade}}</p>
+                <p class="mb_text">成員 :</p>
+                <p>{{$search_achievement->member1_name}}、{{$search_achievement->member2_name}}</p>
+                <p class="mb_text">社群類別 :</p>
+                <p>{{$search_achievement->field}}</p>
+                <p class="mb_text">學習反思與效益 :</p>
+                <p>{{$search_achievement->result_achievement}}</p>
+                <p class="mb_text">執行所遇之困難 :</p>
+                <p>{{$search_achievement->result_difficulty}}</p>
+                <p class="mb_text">關鍵字 :</p>
+                <p>{{$search_achievement->keyword}}</p>
+                <p class="mb_text">作品附件連結 :</p>
+                <p><a href="{{$search_achievement->accociate}}">{{$search_achievement->accociate}}</a></p>
+                <p class="mb_text">成果上傳時間 :</p>
+                <p>{{$search_achievement->created_at}}</p>
+              </div>
+              @if (Auth::guest())
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+              @else
+              <div class="modal-footer">
+                <!-- <center> -->
+                  <button type="button" class="btn btn-info" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 關閉</button>
+                  <a href="{{ url('/achievement/edit') }}/{{$search_achievement->id}}">
+                    <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> 編輯</button>
+                  </a>
+                <!-- </center> -->
+              </div>
+              @endif
+            </div>
+
+          </div>
         </div>
 
-      <!-- <h2>全部成果</h2> -->
+        @endforeach
+        @endif
+        @endif
+      </div>
+      <!-- /.row -->
+
+      <!-- default -->
+
+      <div class="col-md-4 my-4">
+        <h2>全部成果</h2>
+      </div>
+
       <div class="row">
         @if(isset($achievements))
         @foreach ($achievements as $achievement)
@@ -234,6 +285,8 @@
         </div>
 
         @endforeach
+        @else
+        目前無結果可以顯示!
         @endif
       </div>
       <!-- /.row -->
@@ -274,6 +327,9 @@
     function exitSearch() {
       $("#search").fadeOut("slow");
     }
+    // function openResult() {
+    //   $("#result").fadeIn("slow");
+    // }
     </script>
   </body>
 

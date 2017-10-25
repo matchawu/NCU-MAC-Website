@@ -15,9 +15,8 @@ Route::get('/entry', function () {
     return view('entry');
 });
 //根目錄
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'EntryController@index');
+
 //首頁
 Route::get('/Homepage','AppUserController@refreshhomepage');
 

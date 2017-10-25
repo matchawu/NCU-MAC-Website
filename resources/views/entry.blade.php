@@ -169,22 +169,29 @@
     <section class="p-0" id="portfolio">
       <div class="container-fluid">
         <div class="row no-gutter popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/1.jpg')}}">
-              <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/1.jpg')}}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
+          <!-- @for ($i = 0; $i <= 6; $i++) -->
+          @foreach( range(1,2) as $i)
+            @foreach ( $achievements as $achievement )
+            <div class="col-lg-4 col-sm-6">
+              <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/1.jpg')}}">
+                <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/1.jpg')}}" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      {{$achievement->keyword}}
+                    </div>
+                    <div class="project-name">
+                      {{$achievement->result_topic}}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
+              </a>
+            </div>
+
+            @endforeach
+          @endforeach
+          <!-- @endfor -->
+          <!-- <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/2.jpg')}}">
               <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/2.jpg')}}" alt="">
               <div class="portfolio-box-caption">
@@ -258,7 +265,7 @@
                 </div>
               </div>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
