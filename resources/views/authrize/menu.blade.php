@@ -24,7 +24,7 @@ picture
               <p>在此對開課單位的帳號進行新增修改刪除的操作。</p>
             </div>
             <div class="feature">
-              <a href="{{ url('/authrize/menu/uploadAchievement') }}">
+              <a href="{{ url('/authrize/menu/contralAchievement') }}">
               <i class="glyphicon glyphicon-cloud-upload"></i>
               <h3>優異成果上傳</h3>
               </a>

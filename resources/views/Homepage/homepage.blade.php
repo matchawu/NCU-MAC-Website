@@ -52,7 +52,7 @@
                           <tr class="success" style="height:50px;">
                             <td>{{$news->title}}</td>
                             <td>{{$news->subtitle}}</td>
-                            <td>{{$news->content}}</td>
+                            <td>{!!$news->content!!}</td>
                             <?php
                               $timestamp = strtotime($news->created_at) + 8*60*60;
                               $time = date('Y-m-d H:i', $timestamp);
@@ -196,7 +196,7 @@
             </article>
             <article class="item">
               <header>
-                <a href="#"><img src="{{asset('/img/Negative1.jpg')}}"  alt="" /></a>
+                <a href="#"><img src="{{asset('/img/Negative6.jpg')}}"  alt="" /></a>
                 <h3>我要開課</h3>
               </header>
               <p>文字敘述</p>

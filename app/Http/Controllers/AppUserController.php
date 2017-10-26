@@ -98,7 +98,7 @@ class AppUserController extends Controller
           $newUser = new appUser;
           $newUser -> unitname = $req -> unitname;
           $newUser -> account = $req -> account;
-          $newUser -> password = md5($req->password);
+          $newUser -> password = md5($req->account);
           $newUser -> mail = $req -> mail;
           $newUser -> name = $req -> name;
           $newUser -> phone = $req -> phone;
@@ -204,7 +204,7 @@ class AppUserController extends Controller
 
     public function edit_fin($id,Request $request){
       $appUser = appUser::find($id);
-
+      // return $request-> name;
       $appUser -> unitname = $request -> unitname;
       $appUser -> mail = $request -> mail;
       $appUser -> phone = $request -> phone;

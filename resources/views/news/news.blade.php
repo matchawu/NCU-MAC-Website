@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>中央大學微學分 | 最新公告</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset('vendor/news/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{asset('css/news/modern-business.css')}}" rel="stylesheet">
+  
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url('/Homepage') }}"><strong>中央大學微學分系統</strong></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">關於</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">功能</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">聯絡我們</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Blog
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+              </div>
+            </li> -->
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Other Pages
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+                <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+                <a class="dropdown-item" href="faq.html">FAQ</a>
+                <a class="dropdown-item" href="404.html">404</a>
+                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('https://s-media-cache-ak0.pinimg.com/originals/90/a7/4c/90a74c013f3f1bec2d6e6178676acbd2.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Python程式設計入門課程上線!</h3>
+              <p>快來參與課程學習全球最夯的程式語言吧!</p>
+            </div>
+          </div>
+          <!-- http://placehold.it/1900x1080 -->
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('http://cdn.pcwallart.com/images/bear-wallpaper-7.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>微學分系統使用說明會</h3>
+              <p>中大最新的微學分系統上線了! 如何使用呢?</p>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('http://7wallpapers.net/wp-content/uploads/13_bear-wallpaper.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>微學分平台上線了!</h3>
+              <p>什麼是微學分?要怎麼使用這個平台?</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+    <br>
+      <center>
+        <h1 class="my-4">最新公告</h1>
+      </center>
+    <br>
+
+      <div class="list-group " style="overflow-y:scroll;height:400px" >
+
+        @foreach ($news as $news)
+        <a data-toggle="modal" data-target="#News{{$news->id}}" >
+          <span class="list-group-item"><?php
+              $timestamp = strtotime($news->created_at) + 8*60*60;
+              $time = date('Y-m-d', $timestamp);
+            ?>
+          {{$time}} {{$news->title}}   {{$news->subtitle}}</span>
+          
+
+        </a>
+  
+          <div class="modal fade" id="News{{$news->id}}" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="margin:0px auto;">{{$time}} {{$news->title}}</h4>
+                    <span class="modal-title" style="text-align: right;"><strong>公告</strong></span>
+                  </div>
+                  <div class="modal-body">
+                    <ul style="list-style-type: none;">
+                     {!!$news->content!!}
+                </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+
+        @endforeach
+      </div>
+
+
+      <!-- Marketing Icons Section -->
+      <!-- <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">台灣聯合大學系統開放系統學校學生跨校申請修讀學分學程公告</h4>
+            <div class="card-body">
+              <p class="card-text">台灣聯合大學系統開放系統學校學生跨校申請修讀學分學程公告</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-info">更多資訊</a>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">歡迎同學申請</h4>
+            <div class="card-body">
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-info">Learn More</a>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Card Title</h4>
+            <div class="card-body">
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-info">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- /.row -->
+      
+    
+
+      <br>
+      <br>
+
+      <!-- Portfolio Section -->
+      <center>
+        <h2>最新課程</h2>
+      </center>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://orig00.deviantart.net/244a/f/2010/225/f/2/the_world__700_by_400_by_hecatologue.png" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Python程式設計</a>
+              </h4>
+              <p class="card-text">本課程目的在培養學生獨立思考和解決問題的能力，使其能運用試算表(spreadsheet)和代數(algebric)語言為管理決策問題塑模並求解。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://africanzebra.files.wordpress.com/2012/11/zebra-6-700-x-400.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">線性代數入門</a>
+              </h4>
+              <p class="card-text">本課程目的在培養學生獨立思考和解決問題的能力，使其能運用試算表(spreadsheet)和代數(algebric)語言為管理決策問題塑模並求解。</p>
+            </div>
+          </div>
+        </div>
+        <!-- http://placehold.it/700x400 -->
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://africanzebra.files.wordpress.com/2012/11/zebra-6-700-x-400.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">斑馬概論</a>
+              </h4>
+              <p class="card-text">本課程目的在培養學生獨立思考和解決問題的能力，使其能運用試算表(spreadsheet)和代數(algebric)語言為管理決策問題塑模並求解。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Four</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Five</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Six</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Features Section -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Modern Business Features</h2>
+          <p>The Modern Business template by Start Bootstrap includes:</p>
+          <ul>
+            <li>
+              <strong>Bootstrap v4</strong>
+            </li>
+            <li>jQuery</li>
+            <li>Font Awesome</li>
+            <li>Working contact form with validation</li>
+            <li>Unstyled page elements for easy customization</li>
+          </ul>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Call to Action Section -->
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+        </div>
+        <div class="col-md-4">
+          <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">版權所有 &copy; 大數據暨程式設計研究社 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('vendor/news/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/news/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('vendor/news/bootstrap/js/bootstrap.min.js') }}"></script>
+
+  </body>
+<style type="text/css">
+  
+  
+</style>
+</html>

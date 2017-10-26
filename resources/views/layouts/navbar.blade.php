@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right ">
                     <li class="page-scroll navbtn">
-                        <a href="{{ url('/Homepage') }}">最新公告</a>
+                        <a href="{{ url('/News') }}">最新公告</a>
                     </li>
 
                     <li class="page-scroll navbtn">
@@ -77,6 +77,7 @@
         border-color: #f5f5dc;
         border-right-style:solid;
         border-radius:25%;
+        !important
     }
 
 </style>

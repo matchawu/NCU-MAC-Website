@@ -27,7 +27,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="term" value="{{$applicants->unitname}}" placeholder="開課單位" class="form-control"  type="text" required>
+        <input  name="unitname" value="{{$applicants->unitname}}" placeholder="開課單位" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" value="{{$applicants->mail}}" placeholder="聯絡信箱" class="form-control"  type="text" required>
+        <input  name="mail" value="{{$applicants->mail}}" placeholder="聯絡信箱" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
         <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-        <input  name="name" value="{{$applicants->phone}}" placeholder="申請人電話" class="form-control"  type="text" required>
+        <input  name="phone" value="{{$applicants->phone}}" placeholder="申請人電話" class="form-control"  type="text" required>
           </div>
         </div>
       </div>

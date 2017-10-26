@@ -21,6 +21,9 @@ Route::get('/', function () {
 //首頁
 Route::get('/Homepage','AppUserController@refreshhomepage');
 
+//公告頁面
+Route::get('/News','NewsController@refresh_news');
+
 //管理員登入
 Route::get('/authrize', function () {
     return view('authrize.login');
@@ -33,9 +36,15 @@ Route::resource('authrize/menu/news','NewsController');
 
 Route::get('/authrize/menu/addClient','AppUserController@addApplicant')->middleware('auth');
 
+
+Route::get('authrize/menu/contralAchievement','AchievementController@indexshow')->middleware('auth');
+Route::delete('authrize/achievement/{id}','AchievementController@achievement_delete')->middleware('auth');
+
+
 Route::get('authrize/menu/uploadAchievement', function () {
     return view('authrize.uploadachievement');
 })->middleware('auth');
+
 
 Route::get('/authrize/achievement','AppUserController@storeachievement');
 Route::post('/authrize/achievement','AppUserController@storeachievement');

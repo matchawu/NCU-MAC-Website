@@ -155,8 +155,26 @@ class AchievementController extends Controller
       // $achievement -> account = $request->session()->get('account');
 
       $achievement->save();
-      return redirect('/achievement');
+      return redirect('authrize/menu/contralAchievement');
     }
+
+    public function indexshow(){
+      $achievements=Achievement::all();
+
+      // return $search_achievement;
+      return view('authrize.achievements.index',[
+        'achievements'=>$achievements
+      ]);
+    }
+
+    public function achievement_delete($id,Request $request){
+      $achievement = Achievement::find($id);
+      $achievement -> delete();
+      $achievements=Achievement::all();
+      return view('authrize.achievements.index',[
+        'achievements'=>$achievements
+      ]);
+}
 
 
 

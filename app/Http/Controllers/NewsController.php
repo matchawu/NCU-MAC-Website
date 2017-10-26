@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+
 class NewsController extends Controller
 {
     public function index(){
@@ -58,5 +59,13 @@ class NewsController extends Controller
       News::destroy($id);
       return back()->with('success','success')->with('title',$title);
 
+    }
+
+    public function refresh_news()
+    {
+          $news = News::all();
+          return view('News.news',[
+            "news"=>$news,
+          ]);
     }
 }
