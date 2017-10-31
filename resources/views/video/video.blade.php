@@ -29,20 +29,51 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/News') }}">最新公告</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ asset('/introduce') }}">簡介</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/achievement') }}">成果展示</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/record') }}">課程查詢</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/video/video') }}">課程影音</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/application') }}">開課單位登入</a>
+            </li>
+            @if (Auth::guest())
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/authrize') }}">管理員登入</a>
+            </li>
+            @else
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle js-scroll-trigger" data-toggle="dropdown" role="button" aria-expanded="false" >
+                管理員 您好
+                <span class="caret"></span>
+                <small class="tips"></small>
               </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{ url('/authrize/menu') }}" class="nav-link waves-effect waves-light"><i class="fa fa-user" aria-hidden="true"> </i>功能主頁</a>
+                </li>
+                <li class="page-scroll navbtn">
+                  <a href="{{ url('/logout') }}" class="nav-link" onclick="event.preventDefault();document.getElementById('logout-formm').submit();">
+                    登出
+                  </a>
+                  <form id="logout-formm" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+            @endif
+
           </ul>
         </div>
       </div>

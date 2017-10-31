@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>中央大學微學分系統</title>
+        <title>國立中央大學自主學習微學分系統</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
 
 
             <div class="content">
-                <a href="{{ url('/Homepage') }}">
+                <a href="{{ url('/entry') }}">
                 <img src="{{asset('/img/micro-credit-page.jpg')}}" class="img-responsive" alt="Enter!" style="width: 60%">
                 </a>
             </div>
