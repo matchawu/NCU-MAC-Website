@@ -116,7 +116,7 @@ class AchievementController extends Controller
       $achievements=Achievement::all();
 
       // return $search_achievement;
-      return view('achievement.index',[
+      return view('achievement.achievement',[
         'search_achievements'=>$search_achievement,
         'achievements'=>$achievements
       ]);
