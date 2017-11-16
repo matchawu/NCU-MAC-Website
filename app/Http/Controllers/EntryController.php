@@ -12,6 +12,7 @@ class EntryController extends Controller
       //  $achievements=Achievement::all();
       $achievements=Achievement::orderBy('id', 'desc')->take(6)->get();
        return view('entry',["achievements"=>$achievements]);
+      // return $achievements;
    }
 
 }
