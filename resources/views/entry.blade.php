@@ -167,107 +167,52 @@
     </section>
 
     <section class="p-0" id="portfolio">
+      @if(isset($achievements))
       <div class="container-fluid">
         <div class="row no-gutter popup-gallery">
-          <!-- @for ($i = 0; $i <= 6; $i++) -->
-          @foreach( range(1,2) as $i)
-            @foreach ( $achievements as $achievement )
-            <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/1.jpg')}}">
-                <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/1.jpg')}}" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      {{$achievement->keyword}}
-                    </div>
-                    <div class="project-name">
-                      {{$achievement->result_topic}}
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            @endforeach
-          @endforeach
-          <!-- @endfor -->
-          <!-- <div class="col-lg-4 col-sm-6">
+          @foreach ($achievements as $achievement)
+          <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/2.jpg')}}">
               <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/2.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    {{$achievement->keyword}}
                   </div>
                   <div class="project-name">
-                    Project Name
+                    {{$achievement->result_topic}}
                   </div>
                 </div>
               </div>
             </a>
           </div>
+          @endforeach
+          @if(count($achievements)<6)
+          @for($i=0 ; $i<6-(count($achievements));$i++)
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/3.jpg')}}">
-              <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/3.jpg')}}" alt="">
+            <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/2.jpg')}}">
+              <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/2.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    敬請期待!
                   </div>
                   <div class="project-name">
-                    Project Name
+                    敬請期待!
                   </div>
                 </div>
               </div>
             </a>
           </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/4.jpg')}}">
-              <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/4.jpg')}}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('img/home/home/portfolio/fullsize/5.jpg')}}">
-              <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/5.jpg')}}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('img/home/portfolio/fullsize/6.jpg')}}">
-              <img class="img-fluid" src="{{asset('img/home/portfolio/thumbnails/6.jpg')}}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div> -->
+          @endfor
+          @endif
+
         </div>
       </div>
+
+      @else
+      <p>目前無成果可顯示!</p>
+      @endif
     </section>
 
     <div class="call-to-action bg-dark">
