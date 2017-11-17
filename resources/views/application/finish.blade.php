@@ -30,7 +30,7 @@
         <a href="{{ url('/application') }}">
           <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> 查看已開設課程</button>
         </a>
-        <a href="{{ url('/Homepage') }}">
+        <a href="{{ url('/entry') }}">
           <button type="button" class="btn btn-info">返回首頁 <span class="glyphicon glyphicon-log-out"></span></button>
         </a>
       </center>

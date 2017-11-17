@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{{ url('/entry') }}"><img src="http://www.ncu.edu.tw/assets/thumbs/pic/df1dfaf0f9e30b8cc39505e1a5a63254.png" height="25" width="25" >中央大學微學分系統</a>
+        <a class="navbar-brand js-scroll-trigger" href="{{ url('/entry') }}"><img src="http://www.ncu.edu.tw/assets/thumbs/pic/df1dfaf0f9e30b8cc39505e1a5a63254.png" height="25" width="25" >自主學習微學分</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -237,8 +237,9 @@
           </div>
         </div>
           @endforeach
-          @if(count($module_class)<2)
-          @for($i=0 ; $i<2-(count($module_class));$i++)
+
+          @if(count($module_class)<1)
+          @for($i=0 ; $i<3-(count($module_class));$i++)
           <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="https://africanzebra.files.wordpress.com/2012/11/zebra-6-700-x-400.jpg" alt=""></a>
@@ -252,6 +253,7 @@
         </div>
           @endfor
           @endif
+
           @foreach ($single_class as $single_class)
           <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
@@ -265,8 +267,9 @@
           </div>
         </div>
           @endforeach
-          @if(count($single_class)<2)
-          @for($i=0 ; $i<2-(count($single_class));$i++)
+
+          @if(count($single_class)<1)
+          @for($i=0 ; $i<3-(count($single_class));$i++)
           <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="https://orig00.deviantart.net/244a/f/2010/225/f/2/the_world__700_by_400_by_hecatologue.png" alt=""></a>
