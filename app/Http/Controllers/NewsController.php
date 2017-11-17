@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use App\Module_class;
+use App\Single_class;
+use App\Fractal_class;
+use App\Achievement;
 
 class NewsController extends Controller
 {
@@ -64,8 +68,12 @@ class NewsController extends Controller
     public function refresh_news()
     {
           $news = News::all();
-          return view('News.news',[
+          $module_class=Module_class::orderBy('id', 'desc')->take(3)->get();
+          $single_class=Single_class::orderBy('id', 'desc')->take(3)->get();
+          return view('news.news',[
             "news"=>$news,
+            "module_class"=>$module_class,
+            "single_class"=>$single_class,
           ]);
     }
 }

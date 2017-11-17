@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="{{ url('/entry') }}"><strong>中央大學微學分系統</strong></a>
+        <a class="navbar-brand js-scroll-trigger" href="{{ url('/entry') }}"><img src="http://www.ncu.edu.tw/assets/thumbs/pic/df1dfaf0f9e30b8cc39505e1a5a63254.png" height="25" width="25" >中央大學微學分系統</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -217,74 +217,79 @@
       <br>
 
       <div class="row">
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        
+      
+
+      <section class="p-0" id="portfolio">
+      @if(isset($module_class))
+      <div class="container-fluid">
+        <div class="row no-gutter popup-gallery">
+          @foreach ($module_class as $module_class)
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://africanzebra.files.wordpress.com/2012/11/zebra-6-700-x-400.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{$module_class->name}}</a>
+              </h4>
+              <p class="card-text">{{$module_class->class_intro}}</p>
+            </div>
+          </div>
+        </div>
+          @endforeach
+          @if(count($module_class)<3)
+          @for($i=0 ; $i<2-(count($module_class));$i++)
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://africanzebra.files.wordpress.com/2012/11/zebra-6-700-x-400.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">資料過少</a>
+              </h4>
+              <p class="card-text">資料過少</p>
+            </div>
+          </div>
+        </div>
+          @endfor
+          @endif
+          @foreach ($single_class as $single_class)
+          <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="https://orig00.deviantart.net/244a/f/2010/225/f/2/the_world__700_by_400_by_hecatologue.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Python程式設計</a>
+                <a href="#">{{$single_class->name}}</a>
               </h4>
-              <p class="card-text">本課程目的在培養學生獨立思考和解決問題的能力，使其能運用試算表(spreadsheet)和代數(algebric)語言為管理決策問題塑模並求解。</p>
+              <p class="card-text">{{$single_class->class_intro}}</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+          @endforeach
+          @if(count($single_class)<3)
+          @for($i=0 ; $i<2-(count($single_class));$i++)
+          <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="https://africanzebra.files.wordpress.com/2012/11/zebra-6-700-x-400.jpg" alt=""></a>
+            <a href="#"><img class="card-img-top" src="https://orig00.deviantart.net/244a/f/2010/225/f/2/the_world__700_by_400_by_hecatologue.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">線性代數入門</a>
+                <a href="#">資料不足</a>
               </h4>
-              <p class="card-text">本課程目的在培養學生獨立思考和解決問題的能力，使其能運用試算表(spreadsheet)和代數(algebric)語言為管理決策問題塑模並求解。</p>
+              <p class="card-text">資料不足</p>
             </div>
           </div>
         </div>
-        <!-- http://placehold.it/700x400 -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="https://africanzebra.files.wordpress.com/2012/11/zebra-6-700-x-400.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">斑馬概論</a>
-              </h4>
-              <p class="card-text">本課程目的在培養學生獨立思考和解決問題的能力，使其能運用試算表(spreadsheet)和代數(algebric)語言為管理決策問題塑模並求解。</p>
-            </div>
-          </div>
+          @endfor
+          @endif
+
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Four</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Five</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Six</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+      @else
+      <p>目前無成果可顯示!</p>
+      @endif
+
+    </section>
+    </div>
       <!-- /.row -->
 
       <!-- Features Section -->

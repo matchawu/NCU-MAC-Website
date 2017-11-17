@@ -30,7 +30,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: #FFF; height: 55px;">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{{ url('/entry') }}"><b>中央大學微學分系統</b></a>
+        <a class="navbar-brand js-scroll-trigger" href="{{ url('/entry') }}"><img src="http://www.ncu.edu.tw/assets/thumbs/pic/df1dfaf0f9e30b8cc39505e1a5a63254.png" height="25" width="25" ><b>中央大學微學分系統</b></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('/Homepage') }}"><b>最新公告</b></a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/News') }}"><b>最新公告</b></a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{{ asset('/introduce') }}"><b>簡介</b></a>
