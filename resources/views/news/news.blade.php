@@ -237,16 +237,16 @@
           </div>
         </div>
           @endforeach
-          @if(count($module_class)<3)
+          @if(count($module_class)<2)
           @for($i=0 ; $i<2-(count($module_class));$i++)
           <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="https://africanzebra.files.wordpress.com/2012/11/zebra-6-700-x-400.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">資料過少</a>
+                <a href="#">模組課程</a>
               </h4>
-              <p class="card-text">資料過少</p>
+              <p class="card-text">模組課程介紹</p>
             </div>
           </div>
         </div>
@@ -265,16 +265,16 @@
           </div>
         </div>
           @endforeach
-          @if(count($single_class)<3)
+          @if(count($single_class)<2)
           @for($i=0 ; $i<2-(count($single_class));$i++)
           <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="https://orig00.deviantart.net/244a/f/2010/225/f/2/the_world__700_by_400_by_hecatologue.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">資料不足</a>
+                <a href="#">單獨課程</a>
               </h4>
-              <p class="card-text">資料不足</p>
+              <p class="card-text">單獨課程介紹</p>
             </div>
           </div>
         </div>
